@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Link from "@/components/InternalLink";
 import type { Guide } from "@/lib/guides";
 
 export function GuideCard({ guide }: { guide: Guide }) {

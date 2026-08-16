@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Link from "@/components/InternalLink";
 
 type Block =
   | { type: "h2" | "h3"; text: string }

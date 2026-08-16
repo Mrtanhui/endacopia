@@ -1,6 +1,11 @@
-import Link from "next/link";
+import type { Metadata } from "next";
+import Link from "@/components/InternalLink";
 import { GuideCard } from "@/components/GuideCard";
 import { getGuides } from "@/lib/guides";
+
+export const metadata: Metadata = {
+  alternates: { canonical: "/" },
+};
 
 const stats = [
   ["Released", "Jul 27, 2026"],
