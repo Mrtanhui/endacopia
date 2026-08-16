@@ -24,8 +24,29 @@ test("server-renders the finished homepage with its own metadata", async () => {
   assert.match(html, /Independent, source-aware guides/i);
   assert.match(html, /href="\/wiki"/i);
   assert.match(html, /href="\/puzzles"/i);
+  assert.match(html, /<link[^>]+rel="canonical"[^>]+href="https:\/\/endacopia\.example\/?"/i);
+  assert.match(html, /<meta[^>]+name="google-site-verification"[^>]+content="gsc-test-token"/i);
+  assert.match(html, /googletagmanager\.com\/gtag\/js\?id=G-TEST123/i);
   assert.doesNotMatch(html, /codex-preview|SkeletonPreview|react-loading-skeleton/i);
   assert.equal((html.match(/<h1\b/gi) ?? []).length, 1);
+});
+
+test("publishes crawl controls for the configured production origin", async () => {
+  const robotsResponse = await render("/robots.txt");
+  assert.equal(robotsResponse.status, 200);
+  assert.match(robotsResponse.headers.get("content-type") ?? "", /^text\/plain/i);
+  const robots = await robotsResponse.text();
+  assert.match(robots, /Allow: \//);
+  assert.match(robots, /Host: https:\/\/endacopia\.example/);
+  assert.match(robots, /Sitemap: https:\/\/endacopia\.example\/sitemap\.xml/);
+
+  const sitemapResponse = await render("/sitemap.xml");
+  assert.equal(sitemapResponse.status, 200);
+  assert.match(sitemapResponse.headers.get("content-type") ?? "", /^application\/xml/i);
+  const sitemap = await sitemapResponse.text();
+  assert.match(sitemap, /<loc>https:\/\/endacopia\.example\/<\/loc>/);
+  assert.match(sitemap, /<loc>https:\/\/endacopia\.example\/puzzles<\/loc>/);
+  assert.equal((sitemap.match(/<url>/g) ?? []).length, 20);
 });
 
 test("renders the navigation, listing, and detail page types", async () => {

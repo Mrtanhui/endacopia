@@ -1,10 +1,15 @@
 import type { Metadata } from "next";
-import { headers } from "next/headers";
+import Script from "next/script";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
+import { googleAnalyticsId, googleSiteVerification, siteUrl } from "@/lib/site-url";
 import "./globals.css";
 
-const siteMetadata: Metadata = {
+const verificationToken = googleSiteVerification();
+const gaMeasurementId = googleAnalyticsId();
+
+export const metadata: Metadata = {
+  metadataBase: siteUrl,
   title: {
     default: "Endacopia Wiki — Walkthrough, Endings & Puzzle Guides",
     template: "%s | Endacopia Guide",
@@ -31,14 +36,8 @@ const siteMetadata: Metadata = {
     description: "Walkthroughs, endings, characters, bosses, and focused puzzle answers for Endacopia.",
     images: ["/og.png"],
   },
+  verification: verificationToken ? { google: verificationToken } : undefined,
 };
-
-export async function generateMetadata(): Promise<Metadata> {
-  const requestHeaders = await headers();
-  const host = requestHeaders.get("x-forwarded-host") ?? requestHeaders.get("host") ?? "localhost:3000";
-  const protocol = requestHeaders.get("x-forwarded-proto") ?? (host.startsWith("localhost") ? "http" : "https");
-  return { ...siteMetadata, metadataBase: new URL(`${protocol}://${host}`) };
-}
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
@@ -49,6 +48,23 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <SiteHeader />
         <main id="main-content">{children}</main>
         <SiteFooter />
+        {gaMeasurementId ? (
+          <>
+            <Script
+              id="ga4-loader"
+              src={`https://www.googletagmanager.com/gtag/js?id=${encodeURIComponent(gaMeasurementId)}`}
+              strategy="afterInteractive"
+            />
+            <Script id="ga4-init" strategy="afterInteractive">
+              {`
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+                gtag('config', ${JSON.stringify(gaMeasurementId)});
+              `}
+            </Script>
+          </>
+        ) : null}
       </body>
     </html>
   );

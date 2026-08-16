@@ -8,9 +8,11 @@
   "scripts": {
     "dev": "WRANGLER_LOG_PATH=.wrangler/wrangler.log vinext dev",
     "build": "WRANGLER_LOG_PATH=.wrangler/wrangler.log vinext build",
+    "build:vercel": "NITRO_PRESET=vercel vite build",
     "start": "WRANGLER_LOG_PATH=.wrangler/wrangler.log vinext start",
-    "test": "npm run build && node --test tests/rendered-html.test.mjs",
-    "lint": "eslint . --ignore-pattern dist --ignore-pattern .next",
+    "test": "SITE_URL=https://endacopia.example GOOGLE_SITE_VERIFICATION=gsc-test-token NEXT_PUBLIC_GA_ID=G-TEST123 npm run build && SITE_URL=https://endacopia.example GOOGLE_SITE_VERIFICATION=gsc-test-token NEXT_PUBLIC_GA_ID=G-TEST123 node --test tests/rendered-html.test.mjs",
+    "test:vercel": "SITE_URL=https://endacopia.example GOOGLE_SITE_VERIFICATION=gsc-test-token NEXT_PUBLIC_GA_ID=G-TEST123 npm run build:vercel && SITE_URL=https://endacopia.example GOOGLE_SITE_VERIFICATION=gsc-test-token NEXT_PUBLIC_GA_ID=G-TEST123 node --test tests/vercel-output.test.mjs",
+    "lint": "eslint . --ignore-pattern dist --ignore-pattern .next --ignore-pattern .vercel --ignore-pattern .output",
     "db:generate": "drizzle-kit generate"
   },
   "dependencies": {
@@ -34,6 +36,7 @@
     "eslint-plugin-react": "7.37.5",
     "eslint-plugin-react-hooks": "7.1.1",
     "globals": "16.4.0",
+    "nitro": "^3.0.260610-beta",
     "react-server-dom-webpack": "19.2.6",
     "tailwindcss": "4.2.1",
     "typescript": "5.9.3",
