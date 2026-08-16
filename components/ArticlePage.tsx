@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Link from "@/components/InternalLink";
 import { GuideCard } from "@/components/GuideCard";
 import { getHeadings, MdxContent } from "@/components/MdxContent";
 import { categoryLabel, getGuides, type Guide } from "@/lib/guides";
