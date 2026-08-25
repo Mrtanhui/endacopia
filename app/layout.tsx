@@ -11,7 +11,7 @@ const gaMeasurementId = googleAnalyticsId();
 export const metadata: Metadata = {
   metadataBase: siteUrl,
   title: {
-    default: "Endacopia Wiki — Walkthrough, Endings & Puzzle Guides",
+    default: "Endacopia Guide — Walkthrough, Endings & Puzzle Solutions",
     template: "%s | Endacopia Guide",
   },
   description: "An independent Endacopia guide with a complete walkthrough, endings, character profiles, achievements, bosses, and puzzle solutions.",
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     siteName: "Endacopia Guide",
-    title: "Endacopia Wiki — Walkthrough, Endings & Puzzle Guides",
+    title: "Endacopia Guide — Walkthrough, Endings & Puzzle Solutions",
     description: "A spoiler-aware route through Endacopia: walkthroughs, endings, characters, achievements, bosses, and direct puzzle answers.",
     images: [{ url: "/og.png", width: 1200, height: 630, alt: "Endacopia Guide — Walkthroughs, Endings, Puzzle Answers" }],
   },

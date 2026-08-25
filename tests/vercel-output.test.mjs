@@ -33,6 +33,7 @@ test("Vercel output contains production SEO and Google integrations", async () =
   assert.match(robots, /Sitemap: https:\/\/endacopia\.example\/sitemap\.xml/);
 
   const sitemap = await (await render("/sitemap.xml")).text();
-  assert.equal((sitemap.match(/<url>/g) ?? []).length, 20);
+  assert.equal((sitemap.match(/<url>/g) ?? []).length, 23);
   assert.match(sitemap, /<loc>https:\/\/endacopia\.example\/puzzles<\/loc>/);
+  assert.match(sitemap, /<loc>https:\/\/endacopia\.example\/puzzles\/old-key<\/loc>/);
 });

@@ -18,7 +18,7 @@ test("server-renders the finished homepage with its own metadata", async () => {
   assert.equal(response.status, 200);
   const html = await response.text();
 
-  assert.match(html, /<title>Endacopia Wiki — Walkthrough, Endings &amp; Puzzle Guides<\/title>/i);
+  assert.match(html, /<title>Endacopia Guide — Walkthrough, Endings &amp; Puzzle Solutions<\/title>/i);
   assert.match(html, /<h1[^>]*>[^<]*Find your way through/i);
   assert.match(html, /Start the walkthrough/i);
   assert.match(html, /Independent, source-aware guides/i);
@@ -46,7 +46,10 @@ test("publishes crawl controls for the configured production origin", async () =
   const sitemap = await sitemapResponse.text();
   assert.match(sitemap, /<loc>https:\/\/endacopia\.example\/<\/loc>/);
   assert.match(sitemap, /<loc>https:\/\/endacopia\.example\/puzzles<\/loc>/);
-  assert.equal((sitemap.match(/<url>/g) ?? []).length, 20);
+  assert.match(sitemap, /<loc>https:\/\/endacopia\.example\/puzzles\/old-key<\/loc>/);
+  assert.match(sitemap, /<loc>https:\/\/endacopia\.example\/puzzles\/core-key<\/loc>/);
+  assert.match(sitemap, /<loc>https:\/\/endacopia\.example\/puzzles\/projector-remote<\/loc>/);
+  assert.equal((sitemap.match(/<url>/g) ?? []).length, 23);
 });
 
 test("renders the navigation, listing, and detail page types", async () => {
@@ -55,6 +58,9 @@ test("renders the navigation, listing, and detail page types", async () => {
     ["/puzzles", /Endacopia puzzle solutions/i],
     ["/puzzles/password", /The formal-release Saw box code is 471/i],
     ["/endings/ending-c", /Collect all 18 fish/i],
+    ["/puzzles/old-key", /six day and night states/i],
+    ["/puzzles/core-key", /Transparent Mug/i],
+    ["/puzzles/projector-remote", /eight colored seats/i],
   ];
 
   for (const [path, expected] of cases) {
@@ -67,10 +73,10 @@ test("renders the navigation, listing, and detail page types", async () => {
   }
 });
 
-test("keeps exactly 18 researched MDX guides and the generated favicon", async () => {
+test("keeps exactly 21 researched MDX guides and the generated favicon", async () => {
   const contentRoot = new URL("../content/guides/", import.meta.url);
   const files = (await readdir(contentRoot)).filter((file) => file.endsWith(".mdx"));
-  assert.equal(files.length, 18);
+  assert.equal(files.length, 21);
 
   for (const file of files) {
     const source = await readFile(new URL(file, contentRoot), "utf8");
