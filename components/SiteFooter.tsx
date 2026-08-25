@@ -29,8 +29,8 @@ export function SiteFooter() {
         <div className="footer-status">
           <span className="pulse" />
           <p>GUIDE STATUS</p>
-          <strong>18 PAGES ONLINE</strong>
-          <small>Last research review: Aug 14, 2026</small>
+          <strong>21 GUIDES ONLINE</strong>
+          <small>Last research review: Aug 24, 2026</small>
         </div>
       </div>
       <div className="section-shell footer-bottom">

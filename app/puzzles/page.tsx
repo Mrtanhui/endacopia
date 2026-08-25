@@ -5,7 +5,7 @@ import { getGuides } from "@/lib/guides";
 
 export const metadata: Metadata = {
   title: "Endacopia Puzzle Solutions",
-  description: "Direct, source-checked answers for Endacopia's clown, password, switch, soccer ball, and blue inflatable man puzzles.",
+  description: "Direct, source-checked answers for Endacopia's key, projector, clown, password, switch, soccer ball, and blue inflatable man puzzles.",
   alternates: { canonical: "/puzzles" },
 };
 
@@ -22,10 +22,11 @@ export default function PuzzlesPage() {
       <section className="section-shell section-pad listing-grid">
         {puzzles.map((guide) => <GuideCard guide={guide} key={guide.slug} />)}
         <article className="deferred-card">
-          <span>RESEARCH HOLD</span>
-          <h2>Looking for a lost key?</h2>
-          <p>The search can refer to the Old Key, Core Key, or another missed item. We will not merge them into one misleading answer until the intent is clear.</p>
-          <Link href="/endings/ending-c">Old Key in Ending C →</Link>
+          <span>KEY CHECK</span>
+          <h2>Which Endacopia key are you missing?</h2>
+          <p>The Old or Lost Key belongs to the Ending C fishing route. The Core Key comes from the Office plant, Wrench, and water-cooler chain.</p>
+          <Link href="/puzzles/old-key">Find the Old Key →</Link>
+          <Link href="/puzzles/core-key">Find the Core Key →</Link>
         </article>
       </section>
     </>
