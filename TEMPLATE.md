@@ -39,3 +39,20 @@
 ## 广告接入位置
 
 首个普通 Banner 放在攻略正文/来源之后、关联攻略之前。不要遮挡 Quick Answer、步骤或导航。需要广告平台审核后的真实代码、尺寸及域名配置，再接入并验证移动端、加载失败和拒绝追踪时的行为。现在尚未收到广告代码，正式站不加载广告脚本，也不展示空白广告占位。广告账户、隐私说明、同意机制和 ads.txt 按最终选定平台的实际要求配置，不能使用示例广告 ID。
+
+## 统计校准与信息页（2026-09-11）
+
+新增 `/about`、`/contact`、`/privacy`，与攻略数量分开统计。维护者、GitHub 联系地址在 `config/site.json` 的 `maintainer` 中配置；复用时必须替换。`informationUpdated` 是信息页更新日期，不能用部署时间自动冒充政策更新。新增页面进入 sitemap，替换测试现在验证 7 个页面。
+
+统计由 `components/Analytics.tsx` 与 `public/analytics.js` 管理。仅正式 `SITE_URL` 域名、用户明确允许统计后加载 GA4；本地和 Vercel 预览不发正式统计。页面链接使用完整文档导航，只有一次 `gtag config` 自动发送 page_view，没有第二份手动 page_view。GA4 后台关闭基于浏览器历史的 page_view，避免页内目录操作混入浏览量。标准滚动事件保留；没有表单、搜索、嵌入视频/下载功能时不启用相应自动事件。
+
+- `guide_card_click`：攻略卡片。
+- `internal_link_click`：其他站内页面链接；页内锚点不算。
+- `outbound_source_click`：正文及来源区的外部引用。
+- 参数：`page_path`、`destination_path`、`link_placement`；不发送链接文字、查询参数或片段。
+
+自测排除：打开正式站 `/?analytics=off`，当前浏览器后续访问将停止加载 GA。每个浏览器/设备需分别设置。恢复为正常访客：`/?analytics=on`，仍需用户允许统计。`?analytics=debug` 仅供明确需要向 GA4 DebugView 发送测试事件时使用，事件标记 `debug_mode` 和 `traffic_type=internal`；完成后立即恢复排除模式。不要把 debug 事件当真实用户访问。
+
+`npm run test:analytics` 验证 consent、正式域名限制、测试访问排除、事件去重、参数去敏和撤回后的停止收集。`CHECK_ORIGIN=https://your-domain CHECK_REPORT=/tmp/crawl.json node scripts/check-live.mjs` 复查全部公开页面、canonical、内链、锚点、sitemap 和真实 404。
+
+统计口径：从此版本起仅计同意统计且未被排除的访问，不能直接拿改版前后的原始 PV 涨跌判断搜索增长。GA4 按页面路径比较完整 7 天（不足则延长），GSC 独立看同一 URL/查询的展示、点击、CTR 与抓取时间。GA4 中的 Internal Traffic 过滤器仍在 Testing，源头排除是日常维护的主要方式；不根据共享代理 IP 直接开启永久过滤。

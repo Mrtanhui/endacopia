@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Script from "next/script";
+import { Analytics } from "@/components/Analytics";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
 import { googleAnalyticsId, googleSiteVerification, siteUrl } from "@/lib/site-url";
@@ -34,23 +34,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <SiteHeader />
         <main id="main-content">{children}</main>
         <SiteFooter />
-        {gaMeasurementId ? (
-          <>
-            <Script
-              id="ga4-loader"
-              src={`https://www.googletagmanager.com/gtag/js?id=${encodeURIComponent(gaMeasurementId)}`}
-              strategy="afterInteractive"
-            />
-            <Script id="ga4-init" strategy="afterInteractive">
-              {`
-                window.dataLayer = window.dataLayer || [];
-                function gtag(){dataLayer.push(arguments);}
-                gtag('js', new Date());
-                gtag('config', ${JSON.stringify(gaMeasurementId)});
-              `}
-            </Script>
-          </>
-        ) : null}
+        <Analytics measurementId={gaMeasurementId} origin={siteUrl.origin} />
       </body>
     </html>
   );

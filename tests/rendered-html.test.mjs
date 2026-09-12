@@ -27,7 +27,8 @@ test("server-renders the finished homepage with its own metadata", async () => {
   assert.match(html, /href="\/puzzles"/i);
   assert.match(html, /<link[^>]+rel="canonical"[^>]+href="https:\/\/endacopia\.example\/?"/i);
   assert.match(html, /<meta[^>]+name="google-site-verification"[^>]+content="gsc-test-token"/i);
-  assert.match(html, /googletagmanager\.com\/gtag\/js\?id=G-TEST123/i);
+  assert.match(html, /data-measurement-id="G-TEST123"/i);
+  assert.doesNotMatch(html, /src="https:\/\/www\.googletagmanager\.com/);
   assert.doesNotMatch(html, /codex-preview|SkeletonPreview|react-loading-skeleton/i);
   assert.equal((html.match(/<h1\b/gi) ?? []).length, 1);
 });
@@ -50,7 +51,7 @@ test("publishes crawl controls for the configured production origin", async () =
   assert.match(sitemap, /<loc>https:\/\/endacopia\.example\/puzzles\/old-key<\/loc>/);
   assert.match(sitemap, /<loc>https:\/\/endacopia\.example\/puzzles\/core-key<\/loc>/);
   assert.match(sitemap, /<loc>https:\/\/endacopia\.example\/puzzles\/projector-remote<\/loc>/);
-  assert.equal((sitemap.match(/<url>/g) ?? []).length, guides.length + 2);
+  assert.equal((sitemap.match(/<url>/g) ?? []).length, guides.length + 5);
 });
 
 test("renders the navigation, listing, and detail page types", async () => {

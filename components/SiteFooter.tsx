@@ -33,7 +33,7 @@ export function SiteFooter() {
       </div>
       <div className="section-shell footer-bottom">
         <span>© {site.copyrightYear} {site.siteName}</span>
-        <span>{site.languageLabel}</span>
+        <nav className="footer-info" aria-label="Site information">{site.informationPages.map(([label, href]) => <Link key={href} href={href}>{label}</Link>)}<Link href="/privacy#analytics-choices">Analytics preferences</Link></nav>
       </div>
     </footer>
   );
