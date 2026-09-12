@@ -8,12 +8,15 @@
   "scripts": {
     "dev": "WRANGLER_LOG_PATH=.wrangler/wrangler.log vinext dev",
     "build": "WRANGLER_LOG_PATH=.wrangler/wrangler.log vinext build",
-    "build:vercel": "NITRO_PRESET=vercel vite build",
+    "build:vercel": "npm run check:content && NITRO_PRESET=vercel vite build",
     "start": "WRANGLER_LOG_PATH=.wrangler/wrangler.log vinext start",
     "test": "SITE_URL=https://endacopia.example GOOGLE_SITE_VERIFICATION=gsc-test-token NEXT_PUBLIC_GA_ID=G-TEST123 npm run build && SITE_URL=https://endacopia.example GOOGLE_SITE_VERIFICATION=gsc-test-token NEXT_PUBLIC_GA_ID=G-TEST123 node --test tests/rendered-html.test.mjs",
     "test:vercel": "SITE_URL=https://endacopia.example GOOGLE_SITE_VERIFICATION=gsc-test-token NEXT_PUBLIC_GA_ID=G-TEST123 npm run build:vercel && SITE_URL=https://endacopia.example GOOGLE_SITE_VERIFICATION=gsc-test-token NEXT_PUBLIC_GA_ID=G-TEST123 node --test tests/vercel-output.test.mjs",
     "lint": "eslint . --ignore-pattern dist --ignore-pattern .next --ignore-pattern .vercel --ignore-pattern .output",
-    "db:generate": "drizzle-kit generate"
+    "db:generate": "drizzle-kit generate",
+    "check:content": "node scripts/check-content.mjs",
+    "test:template": "node scripts/test-template.mjs",
+    "typecheck": "tsc --noEmit -p tsconfig.site.json"
   },
   "dependencies": {
     "drizzle-orm": "0.45.2",

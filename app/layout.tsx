@@ -4,44 +4,30 @@ import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
 import { googleAnalyticsId, googleSiteVerification, siteUrl } from "@/lib/site-url";
 import "./globals.css";
+import site from "@/config/site.json";
 
 const verificationToken = googleSiteVerification();
 const gaMeasurementId = googleAnalyticsId();
 
 export const metadata: Metadata = {
   metadataBase: siteUrl,
-  title: {
-    default: "Endacopia Guide — Walkthrough, Endings & Puzzle Solutions",
-    template: "%s | Endacopia Guide",
-  },
-  description: "An independent Endacopia guide with a complete walkthrough, endings, character profiles, achievements, bosses, and puzzle solutions.",
-  keywords: ["endacopia", "endacopia wiki", "endacopia walkthrough", "endacopia endings", "endacopia characters", "endacopia puzzle guide"],
-  icons: {
-    icon: "/favicon.png",
-    shortcut: "/favicon.png",
-    apple: "/favicon.png",
-  },
+  title: { default: site.title, template: `%s | ${site.siteName}` },
+  description: site.description,
+  keywords: site.keywords,
+  icons: { icon: site.favicon, shortcut: site.favicon, apple: site.favicon },
   robots: { index: true, follow: true },
   openGraph: {
-    type: "website",
-    locale: "en_US",
-    siteName: "Endacopia Guide",
-    title: "Endacopia Guide — Walkthrough, Endings & Puzzle Solutions",
-    description: "A spoiler-aware route through Endacopia: walkthroughs, endings, characters, achievements, bosses, and direct puzzle answers.",
-    images: [{ url: "/og.png", width: 1200, height: 630, alt: "Endacopia Guide — Walkthroughs, Endings, Puzzle Answers" }],
+    type: "website", locale: site.locale, siteName: site.siteName,
+    title: site.title, description: site.description,
+    images: [{ url: site.socialImage, width: 1200, height: 630, alt: site.title }],
   },
-  twitter: {
-    card: "summary",
-    title: "Endacopia Guide",
-    description: "Walkthroughs, endings, characters, bosses, and focused puzzle answers for Endacopia.",
-    images: ["/og.png"],
-  },
+  twitter: { card: "summary", title: site.siteName, description: site.description, images: [site.socialImage] },
   verification: verificationToken ? { google: verificationToken } : undefined,
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en">
+    <html lang={site.language}>
       <body>
         <a className="skip-link" href="#main-content">Skip to content</a>
         <div className="site-noise" aria-hidden="true" />

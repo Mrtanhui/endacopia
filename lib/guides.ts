@@ -1,5 +1,7 @@
 /// <reference types="vite/client" />
 
+import site from "@/config/site.json";
+
 export type GuideSource = {
   label: string;
   url: string;
@@ -9,7 +11,7 @@ export type Guide = {
   slug: string;
   title: string;
   description: string;
-  category: "Walkthrough" | "Endings" | "Characters" | "Puzzles" | "Bosses" | "Reference";
+  category: string;
   keyword: string;
   updated: string;
   readTime: string;
@@ -46,8 +48,8 @@ export function getGuide(slug: string): Guide | undefined {
   return guides.find((guide) => guide.slug === slug);
 }
 
-export const categoryOrder: Guide["category"][] = ["Reference", "Walkthrough", "Endings", "Characters", "Puzzles", "Bosses"];
+export const categoryOrder: Guide["category"][] = site.categories.map((category) => category.name);
 
 export function categoryLabel(category: Guide["category"]): string {
-  return category === "Reference" ? "Start here" : category;
+  return site.categories.find((item) => item.name === category)?.label ?? category;
 }

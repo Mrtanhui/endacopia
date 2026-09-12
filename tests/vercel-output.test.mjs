@@ -1,5 +1,6 @@
 import assert from "node:assert/strict";
 import test from "node:test";
+import { guides } from "../scripts/check-content.mjs";
 
 const { default: app } = await import(
   "../.vercel/output/functions/__server.func/index.mjs"
@@ -33,7 +34,7 @@ test("Vercel output contains production SEO and Google integrations", async () =
   assert.match(robots, /Sitemap: https:\/\/endacopia\.example\/sitemap\.xml/);
 
   const sitemap = await (await render("/sitemap.xml")).text();
-  assert.equal((sitemap.match(/<url>/g) ?? []).length, 23);
+  assert.equal((sitemap.match(/<url>/g) ?? []).length, guides.length + 2);
   assert.match(sitemap, /<loc>https:\/\/endacopia\.example\/puzzles<\/loc>/);
   assert.match(sitemap, /<loc>https:\/\/endacopia\.example\/puzzles\/old-key<\/loc>/);
 });
@@ -51,4 +52,15 @@ test("key and secrets answers include readable tables, sources and task links", 
   assert.match(secrets, /<table>/);
   for (const target of ["puzzles/old-key", "puzzles/core-key", "puzzles/projector-remote", "endings/ending-c"]) assert.ok(secrets.includes(target), target);
   assert.doesNotMatch(secrets, /hidden map information in Chapter 2/);
+});
+
+test("every configured guide keeps a canonical, one heading and a working route", async () => {
+  for (const guide of guides) {
+    const response = await render(`/${guide.slug}`);
+    assert.equal(response.status, 200, guide.slug);
+    const html = await response.text();
+    assert.equal((html.match(/<h1\b/g) ?? []).length, 1, guide.slug);
+    assert.ok(html.includes(`rel="canonical" href="https://endacopia.example/${guide.slug}"`), guide.slug);
+    assert.doesNotMatch(html, /name="robots" content="noindex/);
+  }
 });

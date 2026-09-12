@@ -1,0 +1,153 @@
+{
+  "updated": "2026-09-11",
+  "stats": [
+    [
+      "Released",
+      "Jul 27, 2026"
+    ],
+    [
+      "Creator",
+      "Andyland"
+    ],
+    [
+      "Achievements",
+      "16"
+    ],
+    [
+      "Steam Deck",
+      "Playable"
+    ]
+  ],
+  "starts": [
+    {
+      "number": "01",
+      "title": "Complete walkthrough",
+      "description": "Follow the prologue and three chapters, with key items and route warnings called out before they cost you time.",
+      "href": "/walkthrough",
+      "label": "Start the route"
+    },
+    {
+      "number": "02",
+      "title": "Endings",
+      "description": "Compare the main outcomes without spoilers first, then open the exact route you want when you are ready.",
+      "href": "/endings",
+      "label": "Choose an ending"
+    },
+    {
+      "number": "03",
+      "title": "Characters",
+      "description": "Meet Mellow and the strange residents of the House, Misery Town, Timesville, and the Office.",
+      "href": "/characters",
+      "label": "Open the index"
+    },
+    {
+      "number": "04",
+      "title": "Puzzle solutions",
+      "description": "Get focused help for the clown room, blue inflatable man, password, soccer ball, and switch puzzle.",
+      "href": "/puzzles",
+      "label": "Solve a puzzle"
+    }
+  ],
+  "categories": [
+    [
+      "Routes",
+      "Walkthrough & endings",
+      "Move through the game in order, then branch only when a decision matters.",
+      "/walkthrough"
+    ],
+    [
+      "People",
+      "Characters",
+      "A spoiler-aware directory of allies, antagonists, bosses, and uncertain faces.",
+      "/characters"
+    ],
+    [
+      "Answers",
+      "Puzzle solutions",
+      "Short, direct fixes for the questions players search while they are stuck.",
+      "/puzzles"
+    ],
+    [
+      "Combat",
+      "Boss archive",
+      "Main bosses, optional encounters, pacifist options, and achievement links.",
+      "/bosses"
+    ]
+  ],
+  "featuredSlugs": [
+    "guide/secrets",
+    "guide/achievements",
+    "endings/ending-c"
+  ],
+  "prioritySlugs": [
+    "guide/secrets",
+    "puzzles/old-key",
+    "puzzles/projector-remote",
+    "endings/ending-c"
+  ],
+  "heroLead": "A precise, spoiler-aware field guide for Mellow’s surreal adventure—built around the question you have now, not a wall of lore.",
+  "primaryLink": {
+    "href": "/walkthrough",
+    "label": "Start the walkthrough"
+  },
+  "consoleName": "GUARDIAN_LINK",
+  "objective": "Help Mellow recover what is missing and find a place to call home.",
+  "areas": [
+    [
+      "HOUSE",
+      "ONLINE"
+    ],
+    [
+      "MISERY TOWN",
+      "GUIDES"
+    ],
+    [
+      "TIMESVILLE",
+      "GUIDES"
+    ],
+    [
+      "THE OFFICE",
+      "GUIDES"
+    ]
+  ],
+  "about": {
+    "eyebrow": "Something is wrong underneath",
+    "title": "A childhood computer adventure with a darker signal",
+    "lead": "Endacopia is a surreal point-and-click puzzle adventure presented through Mellow, a lost boy guided by the player as his Guardian Angel.",
+    "description": "Its early-computer edutainment look hides abstract puzzles, unsettling characters, first-person fights, optional minigames, collectible tools, and secrets that reward careful exploration.",
+    "features": [
+      "Explore major areas in a flexible order",
+      "Solve environmental and inventory puzzles",
+      "Fight—or avoid—several important bosses",
+      "Unlock multiple endings and 16 achievements"
+    ],
+    "trailer": "https://www.youtube.com/watch?v=_wJsmY8huvk",
+    "fileLabel": "ENDACOPIA.EXE",
+    "facts": [
+      [
+        "Developer",
+        "Andyland"
+      ],
+      [
+        "Platform",
+        "Windows · Steam"
+      ],
+      [
+        "Genre",
+        "Puzzle adventure"
+      ],
+      [
+        "Players",
+        "Single-player"
+      ],
+      [
+        "Language",
+        "English"
+      ]
+    ]
+  },
+  "cta": {
+    "eyebrow": "Guardian Angel, connected",
+    "title": "Ready to help Mellow find a way home?"
+  }
+}

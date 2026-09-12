@@ -2,8 +2,10 @@ import type { MetadataRoute } from "next";
 import { getGuides } from "@/lib/guides";
 import { absoluteUrl } from "@/lib/site-url";
 
-const fallbackUpdated = new Date("2026-08-14T00:00:00.000Z");
-const siteUpdated = new Date("2026-09-11T00:00:00.000Z");
+import home from "@/content/home.json";
+
+const fallbackUpdated = new Date(`${home.updated}T00:00:00.000Z`);
+const siteUpdated = new Date(Math.max(fallbackUpdated.valueOf(), ...getGuides().map((guide) => guideUpdated(guide.updated).valueOf())));
 
 function guideUpdated(value: string): Date {
   const parsed = new Date(value);

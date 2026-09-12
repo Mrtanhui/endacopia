@@ -1,41 +1,39 @@
 import Link from "@/components/InternalLink";
+import site from "@/config/site.json";
+import { getGuides } from "@/lib/guides";
 
 export function SiteFooter() {
+  const guides = getGuides();
+  const latest = guides.map((guide) => guide.updated).sort((a, b) => new Date(b).valueOf() - new Date(a).valueOf())[0];
   return (
     <footer className="site-footer">
       <div className="section-shell footer-grid">
         <div>
           <Link className="brand footer-brand" href="/">
             <span className="brand-eye" aria-hidden="true"><i /></span>
-            <span><b>ENDACOPIA</b><small>FIELD GUIDE</small></span>
+            <span><b>{site.gameName.toUpperCase()}</b><small>{site.brandSubtitle}</small></span>
           </Link>
-          <p>Independent, source-aware guides for Mellow&apos;s surreal puzzle adventure.</p>
-          <p className="disclaimer">Fan-made and not affiliated with or endorsed by Andyland.</p>
+          <p>{site.footerDescription}</p>
+          <p className="disclaimer">{site.disclaimer}</p>
         </div>
         <div>
           <h2>Explore</h2>
-          <Link href="/walkthrough">Walkthrough</Link>
-          <Link href="/endings">Endings</Link>
-          <Link href="/characters">Characters</Link>
-          <Link href="/bosses">Bosses</Link>
+          {site.navigation.map(([label, href]) => <Link key={href} href={href}>{label}</Link>)}
         </div>
         <div>
           <h2>Official links</h2>
-          <a href="https://store.steampowered.com/app/2684630/Endacopia/" rel="noreferrer" target="_blank">Steam ↗</a>
-          <a href="https://www.youtube.com/watch?v=_wJsmY8huvk" rel="noreferrer" target="_blank">Official trailer ↗</a>
-          <a href="https://www.kickstarter.com/projects/endacopia/endacopia" rel="noreferrer" target="_blank">Kickstarter ↗</a>
-          <a href="https://andyl4nd.itch.io/endacopiademo" rel="noreferrer" target="_blank">Original demo ↗</a>
+          {site.officialLinks.map(([label, href]) => <a key={href} href={href} rel="noreferrer" target="_blank">{label} ↗</a>)}
         </div>
         <div className="footer-status">
           <span className="pulse" />
           <p>GUIDE STATUS</p>
-          <strong>21 GUIDES ONLINE</strong>
-          <small>Last research review: Aug 24, 2026</small>
+          <strong>{guides.length} GUIDES ONLINE</strong>
+          <small>Latest guide update: {latest}</small>
         </div>
       </div>
       <div className="section-shell footer-bottom">
-        <span>© 2026 Endacopia Guide</span>
-        <span>English edition · Localization-ready</span>
+        <span>© {site.copyrightYear} {site.siteName}</span>
+        <span>{site.languageLabel}</span>
       </div>
     </footer>
   );
