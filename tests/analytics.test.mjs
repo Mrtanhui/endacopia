@@ -3,8 +3,9 @@ import test from 'node:test';
 import vm from 'node:vm';
 import { readFileSync } from 'node:fs';
 const source = readFileSync('public/analytics.js', 'utf8');
-function harness({ origin = 'https://endacopia.example', consent, excluded, search = '' } = {}) {
+function harness({ origin = 'https://endacopia.example', consent, excluded, search = '', debugSession = false } = {}) {
   const store = new Map();
+  const session = new Map(debugSession ? [['guide-analytics-debug', '1']] : []);
   if (consent) store.set('guide-analytics-consent-v1', consent);
   if (excluded) store.set('guide-analytics-excluded', '1');
   const listeners = {}, scripts = [], banner = {dataset: {measurementId: 'G-TEST123', productionOrigin: 'https://endacopia.example'}}, status = {};
@@ -17,7 +18,7 @@ function harness({ origin = 'https://endacopia.example', consent, excluded, sear
     createElement: () => ({}), head: { appendChild: (script) => scripts.push(script) }
   };
   const location = new URL(origin + '/guide/secrets' + search);
-  const context = vm.createContext({ window, document, location, Element, URL, URLSearchParams, localStorage: { getItem: (key) => store.get(key), setItem: (key, value) => store.set(key, value) } });
+  const context = vm.createContext({ window, document, location, Element, URL, URLSearchParams, sessionStorage: {getItem:(key)=>session.get(key),setItem:(key,value)=>session.set(key,value),removeItem:(key)=>session.delete(key)}, localStorage: { getItem: (key) => store.get(key), setItem: (key, value) => store.set(key, value) } });
   vm.runInContext(source, context);
   const commands = () => Array.from(window.dataLayer ?? [], (args) => Array.from(args));
   return { window, scripts, banner, status, commands, context, listeners, store,
@@ -56,6 +57,8 @@ test('debug is explicitly marked, browser exclusion persists until cleared', () 
   const h = harness({consent:'granted',search:'?analytics=debug'});
   const config = h.commands().find(([name]) => name === 'config')[2];
   assert.equal(config.debug_mode, true); assert.equal(config.traffic_type, 'internal');
+  const next = harness({consent:'granted',debugSession:true});
+  assert.equal(next.commands().find(([name]) => name === 'config')[2].debug_mode, true);
   const off = harness({consent:'granted',search:'?analytics=off'}); assert.equal(off.store.get('guide-analytics-excluded'), '1');
   const on = harness({consent:'granted',excluded:true,search:'?analytics=on'}); assert.equal(on.scripts.length, 1);
 });

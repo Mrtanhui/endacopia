@@ -16,7 +16,13 @@
   var mode = new URLSearchParams(location.search).get('analytics');
   if (mode === 'off') { excluded = true; write(exclusionKey, '1'); }
   if (mode === 'on') { excluded = false; write(exclusionKey, '0'); }
+  // Keep an explicit QA session marked across full-document navigation.
   var debug = mode === 'debug';
+  try {
+    if (mode === 'debug') sessionStorage.setItem('guide-analytics-debug', '1');
+    if (mode === 'on' || mode === 'off') sessionStorage.removeItem('guide-analytics-debug');
+    debug = sessionStorage.getItem('guide-analytics-debug') === '1';
+  } catch { /* A blocked session store limits debug mode to this page. */ }
   var production = location.origin === productionOrigin && !/^(localhost|127\.0\.0\.1|\[::1\])$/.test(location.hostname);
   var started = false;
   var active = false;
