@@ -3,6 +3,8 @@ import Link from "@/components/InternalLink";
 type Block =
   | { type: "h2" | "h3"; text: string }
   | { type: "p" | "quote"; text: string }
+  | { type: "table"; headers: string[]; rows: string[][] }
+  | { type: "image"; alt: string; src: string; caption?: string }
   | { type: "ul" | "ol"; items: string[] };
 
 function anchor(text: string) {
@@ -42,8 +44,25 @@ function parse(body: string): Block[] {
     listType = null;
   };
 
-  for (const line of lines) {
+  const cells = (line: string) => line.trim().replace(/^\|/, "").replace(/\|$/, "").split("|").map((cell) => cell.trim());
+  for (let index = 0; index < lines.length; index++) {
+    const line = lines[index];
     const trimmed = line.trim();
+    const picture = trimmed.match(/^!\[([^\]]+)\]\((\/[^\s)]+)(?:\s+"([^"]+)")?\)$/);
+    if (picture) {
+      flushParagraph(); flushList();
+      blocks.push({ type: "image", alt: picture[1], src: picture[2], caption: picture[3] });
+      continue;
+    }
+    if (trimmed.startsWith("|") && /^\|?\s*:?-{3,}:?\s*\|/.test(lines[index + 1]?.trim() ?? "")) {
+      flushParagraph(); flushList();
+      const headers = cells(trimmed);
+      const rows: string[][] = [];
+      index++;
+      while (lines[index + 1]?.trim().startsWith("|")) rows.push(cells(lines[++index]));
+      blocks.push({ type: "table", headers, rows });
+      continue;
+    }
     const unordered = trimmed.match(/^[-*]\s+(.+)$/);
     const ordered = trimmed.match(/^\d+\.\s+(.+)$/);
     if (trimmed.startsWith("## ")) {
@@ -75,6 +94,12 @@ export function MdxContent({ body }: { body: string }) {
   return (
     <div className="mdx-content">
       {blocks.map((block, index) => {
+        // Keyboard users must be able to focus and horizontally scroll wide tables.
+        // eslint-disable-next-line jsx-a11y/no-noninteractive-tabindex
+        if (block.type === "table") return <div className="guide-table-scroll" key={index} tabIndex={0} role="region" aria-label="Guide reference table"><table><thead><tr>{block.headers.map((cell, cellIndex) => <th scope="col" key={cellIndex}>{inline(cell)}</th>)}</tr></thead><tbody>{block.rows.map((row, rowIndex) => <tr key={rowIndex}>{block.headers.map((_, cellIndex) => <td key={cellIndex}>{inline(row[cellIndex] ?? "")}</td>)}</tr>)}</tbody></table></div>;
+        // Only local editorial assets are accepted by the image parser.
+        // eslint-disable-next-line @next/next/no-img-element
+        if (block.type === "image") return <figure className="guide-figure" key={index}><img src={block.src} alt={block.alt} loading="lazy" />{block.caption && <figcaption>{inline(block.caption)}</figcaption>}</figure>;
         if (block.type === "h2") return <h2 id={anchor(block.text)} key={index}>{block.text}</h2>;
         if (block.type === "h3") return <h3 id={anchor(block.text)} key={index}>{block.text}</h3>;
         if (block.type === "quote") return <blockquote key={index}>{inline(block.text)}</blockquote>;

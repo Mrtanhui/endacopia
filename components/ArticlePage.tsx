@@ -5,9 +5,10 @@ import { categoryLabel, getGuides, type Guide } from "@/lib/guides";
 
 export function ArticlePage({ guide }: { guide: Guide }) {
   const headings = getHeadings(guide.body);
-  const related = getGuides()
-    .filter((item) => item.category === guide.category && item.slug !== guide.slug)
-    .slice(0, 3);
+  const guides = getGuides();
+  const related = guide.relatedSlugs
+    ? guide.relatedSlugs.flatMap((slug) => guides.filter((item) => item.slug === slug && item.slug !== guide.slug))
+    : guides.filter((item) => item.category === guide.category && item.slug !== guide.slug).slice(0, 3);
 
   return (
     <>
@@ -21,32 +22,28 @@ export function ArticlePage({ guide }: { guide: Guide }) {
             <h1>{guide.title}</h1>
             <p className="article-description">{guide.description}</p>
           </div>
-          <div className="article-stamp"><span>RESEARCHED</span><b>{guide.updated}</b></div>
+          <div className="article-stamp"><span>UPDATED</span><b>{guide.updated}</b></div>
         </div>
-        {guide.spoiler && <div className="spoiler-warning"><strong>Spoiler warning</strong><span>This guide discusses story events, routes, or character identities. Continue when you are ready.</span></div>}
+        {guide.spoiler && <div className="spoiler-warning"><strong>Spoilers ahead</strong><span>Steps below reveal puzzle solutions and route details.</span></div>}
+        {guide.quickAnswer && <section className="quick-answer" aria-label="Quick answer"><p>QUICK ANSWER</p><strong>{guide.quickAnswer}</strong></section>}
+        {guide.scope && <p className="guide-scope">{guide.scope}</p>}
       </section>
 
       <div className="article-layout section-shell">
         <aside className="article-sidebar">
-          <p className="sidebar-title">ON THIS PAGE</p>
-          <nav aria-label="Table of contents">
+          <nav className="desktop-toc" aria-label="Table of contents">
+            <p className="sidebar-title">ON THIS PAGE</p>
+            {headings.map((heading, index) => <a href={`#${heading.id}`} key={heading.id}><span>{String(index + 1).padStart(2, "0")}</span>{heading.text}</a>)}
+          </nav>
+          <details className="article-toc">
+          <summary className="sidebar-title">ON THIS PAGE</summary>
+          <nav aria-label="Mobile table of contents">
             {headings.map((heading, index) => <a href={`#${heading.id}`} key={heading.id}><span>0{index + 1}</span>{heading.text}</a>)}
           </nav>
-          <div className="sidebar-meta">
-            <span>Target query</span>
-            <strong>{guide.keyword}</strong>
-            <span>Last checked</span>
-            <strong>{guide.updated}</strong>
-          </div>
+          </details>
         </aside>
 
         <article className="article-body">
-          {guide.quickAnswer && (
-            <section className="quick-answer">
-              <p>QUICK ANSWER</p>
-              <strong>{guide.quickAnswer}</strong>
-            </section>
-          )}
           {guide.slug === "wiki" && <WikiNavigator />}
           <MdxContent body={guide.body} />
           <section className="source-panel">

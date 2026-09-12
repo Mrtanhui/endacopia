@@ -3,7 +3,7 @@ import { getGuides } from "@/lib/guides";
 import { absoluteUrl } from "@/lib/site-url";
 
 const fallbackUpdated = new Date("2026-08-14T00:00:00.000Z");
-const siteUpdated = new Date("2026-08-24T00:00:00.000Z");
+const siteUpdated = new Date("2026-09-11T00:00:00.000Z");
 
 function guideUpdated(value: string): Date {
   const parsed = new Date(value);

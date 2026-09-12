@@ -15,6 +15,8 @@ export type Guide = {
   readTime: string;
   spoiler?: boolean;
   quickAnswer?: string;
+  relatedSlugs?: string[];
+  scope?: string;
   sources: GuideSource[];
   body: string;
 };

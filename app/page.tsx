@@ -56,6 +56,8 @@ export default function Home() {
   const featured = getGuides()
     .filter((guide) => ["guide/secrets", "guide/achievements", "endings/ending-c"].includes(guide.slug))
     .slice(0, 3);
+  const prioritySlugs = ["guide/secrets", "puzzles/old-key", "puzzles/projector-remote", "endings/ending-c"];
+  const priorityGuides = prioritySlugs.flatMap((slug) => getGuides().filter((guide) => guide.slug === slug));
 
   return (
     <>
@@ -95,6 +97,11 @@ export default function Home() {
             <span>THE OFFICE</span><b>INDEXED</b>
           </div>
         </div>
+      </section>
+
+      <section className="section-shell section-pad" aria-labelledby="stuck-title">
+        <div className="section-heading"><p className="eyebrow">Stuck on a secret?</p><h2 id="stuck-title">Find the missing step</h2></div>
+        <div className="guide-grid">{priorityGuides.map((guide) => <GuideCard guide={guide} key={guide.slug} />)}</div>
       </section>
 
       <section className="start-section section-shell section-pad">

@@ -37,3 +37,18 @@ test("Vercel output contains production SEO and Google integrations", async () =
   assert.match(sitemap, /<loc>https:\/\/endacopia\.example\/puzzles<\/loc>/);
   assert.match(sitemap, /<loc>https:\/\/endacopia\.example\/puzzles\/old-key<\/loc>/);
 });
+
+test("key and secrets answers include readable tables, sources and task links", async () => {
+  const key = await (await render("/puzzles/old-key")).text();
+  assert.match(key, /<table>/);
+  for (const fish of ["Nautilus", "Colisa Lalia", "Pirate", "Drawing of a Fish"]) assert.ok(key.includes(fish), fish);
+  assert.match(key, /3772931269/);
+  assert.match(key, /Alt\+Enter/);
+  assert.doesNotMatch(key, /Target query|targets the wording players/);
+  assert.ok(key.indexOf('aria-label="Quick answer"') < key.indexOf('class="article-toc"'));
+  assert.match(key, /href="\/endings\/ending-c"/);
+  const secrets = await (await render("/guide/secrets")).text();
+  assert.match(secrets, /<table>/);
+  for (const target of ["puzzles/old-key", "puzzles/core-key", "puzzles/projector-remote", "endings/ending-c"]) assert.ok(secrets.includes(target), target);
+  assert.doesNotMatch(secrets, /hidden map information in Chapter 2/);
+});
