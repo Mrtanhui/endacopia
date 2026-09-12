@@ -1,7 +1,8 @@
+import site from "@/config/site.json";
 import Link from "@/components/InternalLink";
 import { GuideCard } from "@/components/GuideCard";
 import { getHeadings, MdxContent } from "@/components/MdxContent";
-import { categoryLabel, getGuides, type Guide } from "@/lib/guides";
+import { categoryLabel, categoryOrder, getGuides, type Guide } from "@/lib/guides";
 
 export function ArticlePage({ guide }: { guide: Guide }) {
   const headings = getHeadings(guide.body);
@@ -38,7 +39,7 @@ export function ArticlePage({ guide }: { guide: Guide }) {
           <details className="article-toc">
           <summary className="sidebar-title">ON THIS PAGE</summary>
           <nav aria-label="Mobile table of contents">
-            {headings.map((heading, index) => <a href={`#${heading.id}`} key={heading.id}><span>0{index + 1}</span>{heading.text}</a>)}
+            {headings.map((heading, index) => <a href={`#${heading.id}`} key={heading.id}><span>{String(index + 1).padStart(2, "0")}</span>{heading.text}</a>)}
           </nav>
           </details>
         </aside>
@@ -69,15 +70,15 @@ export function ArticlePage({ guide }: { guide: Guide }) {
 
 function WikiNavigator() {
   const guides = getGuides().filter((guide) => guide.slug !== "wiki");
-  const groups = ["Walkthrough", "Endings", "Characters", "Puzzles", "Bosses"] as const;
+  const groups = categoryOrder.filter((category) => guides.some((guide) => guide.category === category));
   return (
     <section className="wiki-navigator" aria-labelledby="wiki-directory-title">
       <p className="eyebrow">Directory</p>
-      <h2 id="wiki-directory-title">All published Endacopia guides</h2>
+      <h2 id="wiki-directory-title">All published {site.gameName} guides</h2>
       <div className="wiki-groups">
         {groups.map((group) => (
           <div key={group}>
-            <h3>{group}</h3>
+            <h3>{categoryLabel(group)}</h3>
             {guides.filter((guide) => guide.category === group).map((guide) => <Link href={`/${guide.slug}`} key={guide.slug}>{guide.title}<span>→</span></Link>)}
           </div>
         ))}

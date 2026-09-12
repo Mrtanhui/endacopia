@@ -1,11 +1,14 @@
 import Link from "@/components/InternalLink";
 
 type Block =
-  | { type: "h2" | "h3"; text: string }
-  | { type: "p" | "quote"; text: string }
+  | { type: "h2"; text: string }
+  | { type: "h3"; text: string }
+  | { type: "p"; text: string }
+  | { type: "quote"; text: string }
   | { type: "table"; headers: string[]; rows: string[][] }
   | { type: "image"; alt: string; src: string; caption?: string }
-  | { type: "ul" | "ol"; items: string[] };
+  | { type: "ul"; items: string[] }
+  | { type: "ol"; items: string[] };
 
 function anchor(text: string) {
   return text.toLowerCase().replace(/[^a-z0-9\s-]/g, "").trim().replace(/\s+/g, "-");
@@ -48,7 +51,7 @@ function parse(body: string): Block[] {
   for (let index = 0; index < lines.length; index++) {
     const line = lines[index];
     const trimmed = line.trim();
-    const picture = trimmed.match(/^!\[([^\]]+)\]\((\/[^\s)]+)(?:\s+"([^"]+)")?\)$/);
+    const picture = trimmed.match(/^!\[([^\]]+)\]\((\/(?!\/)[^\s)]+)(?:\s+"([^"]+)")?\)$/);
     if (picture) {
       flushParagraph(); flushList();
       blocks.push({ type: "image", alt: picture[1], src: picture[2], caption: picture[3] });

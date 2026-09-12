@@ -1,3 +1,5 @@
+import site from "@/config/site.json";
+import home from "@/content/home.json";
 import type { Metadata } from "next";
 import Link from "@/components/InternalLink";
 import { GuideCard } from "@/components/GuideCard";
@@ -7,73 +9,31 @@ export const metadata: Metadata = {
   alternates: { canonical: "/" },
 };
 
-const stats = [
-  ["Released", "Jul 27, 2026"],
-  ["Creator", "Andyland"],
-  ["Achievements", "16"],
-  ["Steam Deck", "Playable"],
-];
 
-const starts = [
-  {
-    number: "01",
-    title: "Complete walkthrough",
-    description: "Follow the prologue and three chapters, with key items and route warnings called out before they cost you time.",
-    href: "/walkthrough",
-    label: "Start the route",
-  },
-  {
-    number: "02",
-    title: "Endings",
-    description: "Compare the main outcomes without spoilers first, then open the exact route you want when you are ready.",
-    href: "/endings",
-    label: "Choose an ending",
-  },
-  {
-    number: "03",
-    title: "Characters",
-    description: "Meet Mellow and the strange residents of the House, Misery Town, Timesville, and the Office.",
-    href: "/characters",
-    label: "Open the index",
-  },
-  {
-    number: "04",
-    title: "Puzzle solutions",
-    description: "Get focused help for the clown room, blue inflatable man, password, soccer ball, and switch puzzle.",
-    href: "/puzzles",
-    label: "Solve a puzzle",
-  },
-];
 
-const categories = [
-  ["Routes", "Walkthrough & endings", "Move through the game in order, then branch only when a decision matters.", "/walkthrough"],
-  ["People", "Characters", "A spoiler-aware directory of allies, antagonists, bosses, and uncertain faces.", "/characters"],
-  ["Answers", "Puzzle solutions", "Short, direct fixes for the questions players search while they are stuck.", "/puzzles"],
-  ["Combat", "Boss archive", "Main bosses, optional encounters, pacifist options, and achievement links.", "/bosses"],
-];
+
+
+
 
 export default function Home() {
-  const featured = getGuides()
-    .filter((guide) => ["guide/secrets", "guide/achievements", "endings/ending-c"].includes(guide.slug))
-    .slice(0, 3);
-  const prioritySlugs = ["guide/secrets", "puzzles/old-key", "puzzles/projector-remote", "endings/ending-c"];
-  const priorityGuides = prioritySlugs.flatMap((slug) => getGuides().filter((guide) => guide.slug === slug));
+  const featured = home.featuredSlugs.flatMap((slug) => getGuides().filter((guide) => guide.slug === slug));
+  const priorityGuides = home.prioritySlugs.flatMap((slug) => getGuides().filter((guide) => guide.slug === slug));
 
   return (
     <>
       <section className="hero section-shell">
         <div className="hero-copy">
           <p className="eyebrow"><span className="pulse" /> Independent game guide · v0.1</p>
-          <h1>Find your way through <span>Endacopia</span></h1>
+          <h1>Find your way through <span>{site.gameName}</span></h1>
           <p className="hero-lead">
-            A precise, spoiler-aware field guide for Mellow&apos;s surreal adventure—built around the question you have now, not a wall of lore.
+            {home.heroLead}
           </p>
           <div className="button-row">
-            <Link className="button button-primary" href="/walkthrough">Start the walkthrough <span aria-hidden="true">→</span></Link>
+            <Link className="button button-primary" href={home.primaryLink.href}>{home.primaryLink.label} <span aria-hidden="true">→</span></Link>
             <Link className="button button-quiet" href="/wiki">Browse the wiki</Link>
           </div>
           <dl className="hero-stats">
-            {stats.map(([label, value]) => (
+            {home.stats.map(([label, value]) => (
               <div key={label}>
                 <dt>{label}</dt>
                 <dd>{value}</dd>
@@ -84,17 +44,14 @@ export default function Home() {
 
         <div className="hero-console" aria-label="Guide coverage overview">
           <div className="console-bar">
-            <span>GUARDIAN_LINK</span>
+            <span>{home.consoleName}</span>
             <span className="console-dots" aria-hidden="true"><i /><i /><i /></span>
           </div>
           <div className="eye-mark" aria-hidden="true"><span /></div>
           <p className="console-kicker">CURRENT OBJECTIVE</p>
-          <p className="console-objective">Help Mellow recover what is missing and find a place to call home.</p>
+          <p className="console-objective">{home.objective}</p>
           <div className="signal-grid" aria-hidden="true">
-            <span>HOUSE</span><b>ONLINE</b>
-            <span>MISERY TOWN</span><b>INDEXED</b>
-            <span>TIMESVILLE</span><b>INDEXED</b>
-            <span>THE OFFICE</span><b>INDEXED</b>
+            {home.areas.map(([name, status]) => <div className="signal-row" key={name}><span>{name}</span><b>{status}</b></div>)}
           </div>
         </div>
       </section>
@@ -113,7 +70,7 @@ export default function Home() {
           <p>Four ways into the guide. Each route brings you back to the larger map when you need more context.</p>
         </div>
         <div className="start-grid">
-          {starts.map((item) => (
+          {home.starts.map((item) => (
             <Link className="start-card" href={item.href} key={item.number}>
               <span className="card-number">{item.number}</span>
               <h3>{item.title}</h3>
@@ -134,7 +91,7 @@ export default function Home() {
             <Link className="text-link header-link" href="/wiki">View every published guide →</Link>
           </div>
           <div className="category-grid">
-            {categories.map(([eyebrow, title, description, href], index) => (
+            {home.categories.map(([eyebrow, title, description, href], index) => (
               <Link className="category-card" href={href} key={title}>
                 <span>0{index + 1} / {eyebrow}</span>
                 <h3>{title}</h3>
@@ -150,30 +107,23 @@ export default function Home() {
           <span className="vertical-word">ABOUT THE GAME</span>
         </div>
         <div className="about-copy">
-          <p className="eyebrow">Something is wrong underneath</p>
-          <h2>A childhood computer adventure with a darker signal</h2>
+          <p className="eyebrow">{home.about.eyebrow}</p>
+          <h2>{home.about.title}</h2>
           <p className="about-lead">
-            Endacopia is a surreal point-and-click puzzle adventure presented through Mellow, a lost boy guided by the player as his Guardian Angel.
+            {home.about.lead}
           </p>
           <p>
-            Its early-computer edutainment look hides abstract puzzles, unsettling characters, first-person fights, optional minigames, collectible tools, and secrets that reward careful exploration.
+            {home.about.description}
           </p>
           <ul className="feature-list">
-            <li>Explore major areas in a flexible order</li>
-            <li>Solve environmental and inventory puzzles</li>
-            <li>Fight—or avoid—several important bosses</li>
-            <li>Unlock multiple endings and 16 achievements</li>
+            {home.about.features.map((feature) => <li key={feature}>{feature}</li>)}
           </ul>
-          <a className="button button-quiet" href="https://www.youtube.com/watch?v=_wJsmY8huvk" rel="noreferrer" target="_blank">Watch the official trailer ↗</a>
+          <a className="button button-quiet" href={home.about.trailer} rel="noreferrer" target="_blank">Watch the official trailer ↗</a>
         </div>
         <aside className="game-file">
-          <p>FILE / ENDACOPIA.EXE</p>
+          <p>FILE / {home.about.fileLabel}</p>
           <dl>
-            <div><dt>Developer</dt><dd>Andyland</dd></div>
-            <div><dt>Platform</dt><dd>Windows · Steam</dd></div>
-            <div><dt>Genre</dt><dd>Puzzle adventure</dd></div>
-            <div><dt>Players</dt><dd>Single-player</dd></div>
-            <div><dt>Language</dt><dd>English</dd></div>
+            {home.about.facts.map(([label, value]) => <div key={label}><dt>{label}</dt><dd>{value}</dd></div>)}
           </dl>
         </aside>
       </section>
@@ -193,12 +143,12 @@ export default function Home() {
 
       <section className="final-cta section-shell">
         <div>
-          <p className="eyebrow">Guardian Angel, connected</p>
-          <h2>Ready to help Mellow find a way home?</h2>
+          <p className="eyebrow">{home.cta.eyebrow}</p>
+          <h2>{home.cta.title}</h2>
           <p>Begin with the full route, or jump straight to the exact character, boss, ending, or puzzle that brought you here.</p>
         </div>
         <div className="button-row">
-          <Link className="button button-primary" href="/walkthrough">Open walkthrough →</Link>
+          <Link className="button button-primary" href={home.primaryLink.href}>{home.primaryLink.label} →</Link>
           <Link className="button button-quiet" href="/wiki">View all guides</Link>
         </div>
       </section>

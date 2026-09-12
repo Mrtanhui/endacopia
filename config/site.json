@@ -1,0 +1,115 @@
+{
+  "gameName": "Endacopia",
+  "siteName": "Endacopia Guide",
+  "brandSubtitle": "FIELD GUIDE",
+  "language": "en",
+  "locale": "en_US",
+  "languageLabel": "English edition",
+  "languageCode": "EN",
+  "copyrightYear": 2026,
+  "title": "Endacopia Guide — Walkthrough, Endings & Puzzle Solutions",
+  "description": "An independent Endacopia guide with a complete walkthrough, endings, character profiles, achievements, bosses, and puzzle solutions.",
+  "keywords": [
+    "endacopia",
+    "endacopia wiki",
+    "endacopia walkthrough",
+    "endacopia endings",
+    "endacopia characters",
+    "endacopia puzzle guide"
+  ],
+  "favicon": "/favicon.png",
+  "socialImage": "/og.png",
+  "footerDescription": "Independent, source-aware guides for Mellow’s surreal puzzle adventure.",
+  "disclaimer": "Fan-made and not affiliated with or endorsed by Andyland.",
+  "navigation": [
+    [
+      "Wiki",
+      "/wiki"
+    ],
+    [
+      "Walkthrough",
+      "/walkthrough"
+    ],
+    [
+      "Endings",
+      "/endings"
+    ],
+    [
+      "Characters",
+      "/characters"
+    ],
+    [
+      "Puzzles",
+      "/puzzles"
+    ],
+    [
+      "Bosses",
+      "/bosses"
+    ]
+  ],
+  "officialLinks": [
+    [
+      "Steam",
+      "https://store.steampowered.com/app/2684630/Endacopia/"
+    ],
+    [
+      "Official trailer",
+      "https://www.youtube.com/watch?v=_wJsmY8huvk"
+    ],
+    [
+      "Kickstarter",
+      "https://www.kickstarter.com/projects/endacopia/endacopia"
+    ],
+    [
+      "Original demo",
+      "https://andyl4nd.itch.io/endacopiademo"
+    ]
+  ],
+  "categories": [
+    {
+      "name": "Reference",
+      "label": "Start here"
+    },
+    {
+      "name": "Walkthrough",
+      "label": "Walkthrough"
+    },
+    {
+      "name": "Endings",
+      "label": "Endings"
+    },
+    {
+      "name": "Characters",
+      "label": "Characters"
+    },
+    {
+      "name": "Puzzles",
+      "label": "Puzzles"
+    },
+    {
+      "name": "Bosses",
+      "label": "Bosses"
+    }
+  ],
+  "puzzles": {
+    "title": "Endacopia Puzzle Solutions",
+    "description": "Direct, source-checked answers for Endacopia's key, projector, clown, password, switch, soccer ball, and blue inflatable man puzzles.",
+    "heading": "Endacopia puzzle solutions",
+    "intro": "Choose the scene that has you stuck. Every answer begins with the shortest verified route, then explains the item chain or timing behind it.",
+    "callout": {
+      "label": "KEY CHECK",
+      "title": "Which Endacopia key are you missing?",
+      "description": "The Old or Lost Key belongs to the Ending C fishing route. The Core Key comes from the Office plant, Wrench, and water-cooler chain.",
+      "links": [
+        [
+          "Find the Old Key",
+          "/puzzles/old-key"
+        ],
+        [
+          "Find the Core Key",
+          "/puzzles/core-key"
+        ]
+      ]
+    }
+  }
+}
