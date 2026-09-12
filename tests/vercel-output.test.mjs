@@ -28,13 +28,14 @@ test("Vercel output contains production SEO and Google integrations", async () =
   const html = await home.text();
   assert.match(html, /href="https:\/\/endacopia\.example\/?"/i);
   assert.match(html, /name="google-site-verification"[^>]+content="gsc-test-token"/i);
-  assert.match(html, /googletagmanager\.com\/gtag\/js\?id=G-TEST123/i);
+  assert.match(html, /data-measurement-id="G-TEST123"/i);
+  assert.doesNotMatch(html, /src="https:\/\/www\.googletagmanager\.com/);
 
   const robots = await (await render("/robots.txt")).text();
   assert.match(robots, /Sitemap: https:\/\/endacopia\.example\/sitemap\.xml/);
 
   const sitemap = await (await render("/sitemap.xml")).text();
-  assert.equal((sitemap.match(/<url>/g) ?? []).length, guides.length + 2);
+  assert.equal((sitemap.match(/<url>/g) ?? []).length, guides.length + 5);
   assert.match(sitemap, /<loc>https:\/\/endacopia\.example\/puzzles<\/loc>/);
   assert.match(sitemap, /<loc>https:\/\/endacopia\.example\/puzzles\/old-key<\/loc>/);
 });
@@ -63,4 +64,23 @@ test("every configured guide keeps a canonical, one heading and a working route"
     assert.ok(html.includes(`rel="canonical" href="https://endacopia.example/${guide.slug}"`), guide.slug);
     assert.doesNotMatch(html, /name="robots" content="noindex/);
   }
+});
+
+test("information pages are crawlable and linked without inflating guide counts", async () => {
+  for (const path of ['/about', '/contact', '/privacy']) {
+    const response = await render(path);
+    assert.equal(response.status, 200);
+    const html = (await response.text()).replaceAll('<!-- -->', '');
+    assert.equal((html.match(/<h1\b/g) ?? []).length, 1);
+    assert.ok(html.includes(`rel="canonical" href="https://endacopia.example${path}"`));
+    assert.match(html, /21 GUIDES ONLINE/);
+    for (const link of ['/about','/contact','/privacy']) assert.ok(html.includes(`href="${link}"`));
+  }
+  const contact = await (await render('/contact')).text();
+  assert.match(contact, /https:\/\/github.com\/Mrtanhui\/endacopia\/issues/);
+  assert.doesNotMatch(contact, /mailto:|tandonghui2003@gmail/);
+  const privacy = await (await render('/privacy')).text();
+  assert.match(privacy, /data-analytics-choice="denied"/);
+  assert.match(privacy, /data-analytics-choice="granted"/);
+  assert.match(privacy, /id="analytics-choices"/);
 });

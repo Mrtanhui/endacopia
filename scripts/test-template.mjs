@@ -13,7 +13,7 @@ try {
   for (const name of ['app', 'components', 'lib', 'config', 'content', 'public', 'build', 'worker', '.openai', 'scripts', 'vite.config.ts', 'next.config.ts', 'tsconfig.json', 'next-env.d.ts', 'postcss.config.mjs', 'package.json']) cpSync(name, join(root, name), { recursive: true });
   symlinkSync(resolve('node_modules'), join(root, 'node_modules'), 'dir');
   const site = JSON.parse(readFileSync('config/site.json', 'utf8'));
-  Object.assign(site, { gameName: 'Moon Archive', siteName: 'Moon Archive Guide', title: 'Moon Archive Guide', description: 'A fictional puzzle guide used only to test this template.', keywords: ['moon archive'], footerDescription: 'Independent Moon Archive guides.', disclaimer: 'Fictional test content.', officialLinks: [['Game', 'https://moon-archive.example/game']], navigation: [['Wiki', '/wiki'], ['Puzzles', '/puzzles']], categories: [{ name: 'Reference', label: 'Start here' }, { name: 'Puzzles', label: 'Puzzles' }], favicon: '/moon.svg', socialImage: '/moon.svg', puzzles: { title: 'Moon Archive Puzzles', description: 'Moon Archive puzzle solutions', heading: 'Moon Archive puzzles', intro: 'Choose a puzzle.', callout: { label: '', title: '', description: '', links: [] } } });
+  Object.assign(site, { gameName: 'Moon Archive', siteName: 'Moon Archive Guide', title: 'Moon Archive Guide', description: 'A fictional puzzle guide used only to test this template.', maintainer: {name:'Test Maintainer',profileUrl:'https://moon-archive.example/maintainer',issuesUrl:'https://moon-archive.example/issues'}, keywords: ['moon archive'], footerDescription: 'Independent Moon Archive guides.', disclaimer: 'Fictional test content.', officialLinks: [['Game', 'https://moon-archive.example/game']], navigation: [['Wiki', '/wiki'], ['Puzzles', '/puzzles']], categories: [{ name: 'Reference', label: 'Start here' }, { name: 'Puzzles', label: 'Puzzles' }], favicon: '/moon.svg', socialImage: '/moon.svg', puzzles: { title: 'Moon Archive Puzzles', description: 'Moon Archive puzzle solutions', heading: 'Moon Archive puzzles', intro: 'Choose a puzzle.', callout: { label: '', title: '', description: '', links: [] } } });
   writeFileSync(join(root, 'config/site.json'), JSON.stringify(site));
   const home = JSON.parse(readFileSync('content/home.json', 'utf8'));
   Object.assign(home, { stats: [['Creator', 'Test Studio']], starts: [{ number: '01', title: 'Moon gate', description: 'Open the gate.', href: '/puzzles/moon-gate', label: 'Read' }], categories: [['Puzzles', 'Moon puzzles', 'Solve the gate.', '/puzzles']], featuredSlugs: ['puzzles/moon-gate'], prioritySlugs: ['puzzles/moon-gate'], heroLead: 'Explore Moon Archive.', primaryLink: { href: '/wiki', label: 'Start the guide' }, consoleName: 'MOON_LINK', objective: 'Open the gate.', areas: [['MOON', 'GUIDES']], about: { eyebrow: 'Moon', title: 'Explore the Moon', lead: 'A fictional puzzle adventure.', description: 'Template test fixture.', features: ['Open the gate'], trailer: 'https://moon-archive.example/trailer', fileLabel: 'MOON.EXE', facts: [['Creator', 'Test Studio']] }, cta: { eyebrow: 'Ready', title: 'Open the moon gate?' } });
@@ -31,23 +31,24 @@ try {
   writeFileSync(join(root, 'verify.mjs'), `
 import assert from 'node:assert/strict';
 import app from './.vercel/output/functions/__server.func/index.mjs';
-for (const path of ['/', '/wiki', '/puzzles', '/puzzles/moon-gate']) {
+for (const path of ['/', '/wiki', '/puzzles', '/puzzles/moon-gate', '/about', '/contact', '/privacy']) {
  const response = await app.fetch(new Request('https://moon-archive.example' + path), {waitUntil(){}});
  assert.equal(response.status, 200, path);
  const html = (await response.text()).replaceAll('<!-- -->', '');
  assert.match(html, /Moon Archive/);
+ assert.doesNotMatch(html, /Mrtanhui/);
  assert.doesNotMatch(html, /Endacopia|Mellow|Andyland|andyl4nd|2684630|_wJsmY8huvk/i, path);
  assert.equal((html.match(/<h1\\b/g) || []).length, 1);
  assert.match(html, /2 GUIDES ONLINE/);
  assert.doesNotMatch(html, /googletagmanager/);
 }
 const sitemap = await (await app.fetch(new Request('https://moon-archive.example/sitemap.xml'), {waitUntil(){}})).text();
-assert.equal((sitemap.match(/<url>/g) || []).length, 4);
+assert.equal((sitemap.match(/<url>/g) || []).length, 7);
 assert.doesNotMatch(sitemap, /endacopia|old-key/i);
 assert.equal((await app.fetch(new Request('https://moon-archive.example/puzzles/old-key'), {waitUntil(){}})).status, 404);
 `);
   run(['verify.mjs']);
-  console.log('Template replacement passed: second game renders 4 pages, correct canonical origin and sitemap, no old-game text or routes, analytics disabled.');
+  console.log('Template replacement passed: second game renders 7 pages, correct canonical origin and sitemap, no old-game text or routes, analytics disabled.');
 } finally {
   rmSync(root, { recursive: true, force: true });
 }

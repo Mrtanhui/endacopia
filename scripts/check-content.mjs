@@ -11,14 +11,14 @@ export const guides = readdirSync('content/guides').filter((name) => name.endsWi
 });
 const slugs = new Set(guides.map((guide) => guide.slug));
 assert.equal(slugs.size, guides.length, 'Duplicate guide slug');
-const paths = new Set(['/', '/puzzles', ...guides.map((guide) => `/${guide.slug}`)]);
+const paths = new Set(['/', '/puzzles', ...site.informationPages.map(([, path]) => path), ...guides.map((guide) => `/${guide.slug}`)]);
 const checkLink = (href) => {
   if (href.startsWith('/') && !href.startsWith('//')) assert.ok(paths.has(href.split('#')[0]), `Broken internal link: ${href}`);
 };
 for (const guide of guides) {
   for (const key of ['slug', 'title', 'description', 'category', 'updated', 'readTime', 'body']) assert.ok(guide[key]?.trim(), `${guide.slug}: missing ${key}`);
   assert.match(guide.slug, /^[a-z0-9]+(?:[-/][a-z0-9]+)*$/);
-  assert.ok(!['puzzles', 'robots.txt', 'sitemap.xml'].includes(guide.slug), 'Reserved slug');
+  assert.ok(!['puzzles', 'about', 'contact', 'privacy', 'robots.txt', 'sitemap.xml'].includes(guide.slug), 'Reserved slug');
   assert.ok(site.categories.some((category) => category.name === guide.category), `Unknown category: ${guide.category}`);
   assert.ok(Number.isFinite(new Date(guide.updated).valueOf()), `${guide.slug}: invalid update date`);
   assert.ok(guide.sources?.length, `${guide.slug}: sources required`);
@@ -26,6 +26,7 @@ for (const guide of guides) {
   for (const related of guide.relatedSlugs ?? []) assert.ok(slugs.has(related), `${guide.slug}: missing related ${related}`);
   for (const link of guide.body.matchAll(/(?<!!)\[[^\]]+\]\(([^\s)]+)\)/g)) checkLink(link[1]);
 }
+for (const [, href] of site.informationPages) checkLink(href);
 for (const [, href] of site.navigation) checkLink(href);
 for (const [, href] of site.puzzles.callout.links) checkLink(href);
 for (const item of home.starts) checkLink(item.href);

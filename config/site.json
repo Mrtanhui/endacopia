@@ -7,7 +7,7 @@
   "languageLabel": "English edition",
   "languageCode": "EN",
   "copyrightYear": 2026,
-  "title": "Endacopia Guide — Walkthrough, Endings & Puzzle Solutions",
+  "title": "Endacopia Guide \u2014 Walkthrough, Endings & Puzzle Solutions",
   "description": "An independent Endacopia guide with a complete walkthrough, endings, character profiles, achievements, bosses, and puzzle solutions.",
   "keywords": [
     "endacopia",
@@ -19,7 +19,7 @@
   ],
   "favicon": "/favicon.png",
   "socialImage": "/og.png",
-  "footerDescription": "Independent, source-aware guides for Mellow’s surreal puzzle adventure.",
+  "footerDescription": "Independent, source-aware guides for Mellow\u2019s surreal puzzle adventure.",
   "disclaimer": "Fan-made and not affiliated with or endorsed by Andyland.",
   "navigation": [
     [
@@ -111,5 +111,25 @@
         ]
       ]
     }
-  }
+  },
+  "maintainer": {
+    "name": "Mrtanhui",
+    "profileUrl": "https://github.com/Mrtanhui",
+    "issuesUrl": "https://github.com/Mrtanhui/endacopia/issues"
+  },
+  "informationUpdated": "2026-09-11",
+  "informationPages": [
+    [
+      "About",
+      "/about"
+    ],
+    [
+      "Contact",
+      "/contact"
+    ],
+    [
+      "Privacy",
+      "/privacy"
+    ]
+  ]
 }

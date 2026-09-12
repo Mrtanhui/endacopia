@@ -409,3 +409,13 @@ p { line-height: 1.72; }
 }
 
 .signal-row { display: contents; }
+
+.info-page { max-width: 860px; padding-bottom: 5rem; }
+.footer-info { display: flex; gap: 1.2rem; flex-wrap: wrap; }
+.analytics-banner { position: fixed; z-index: 50; bottom: 1rem; left: 1rem; right: 1rem; max-width: 720px; margin-inline: auto; padding: 1.2rem; background: var(--night-2); border: 1px solid var(--line-strong); box-shadow: 0 10px 40px #0008; }
+.analytics-banner p { margin: 0 0 1rem; line-height: 1.6; font-size: .9rem; }
+.analytics-banner a { color: var(--cyan-soft); text-decoration: underline; }
+.analytics-banner .button, .analytics-choices .button { cursor: pointer; font-size: .8rem; }
+.analytics-choices { border: 1px solid var(--line-strong); padding: 1.25rem; margin-block: 2rem; scroll-margin-top: 6rem; }
+.analytics-choices h2 { margin-top: 0; }
+[hidden] { display: none !important; }
