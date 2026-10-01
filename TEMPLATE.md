@@ -26,11 +26,13 @@
 `.mdx` 文件使用 JSON frontmatter 和受限 Markdown，不执行 MDX/JSX。支持二、三级标题、段落、引用、有序/无序列表、加粗、行内代码、链接、表格、本地图片。
 
 必填：`slug`、`title`、`description`、`category`、`updated`、`readTime`、`sources`。
-可选：`spoiler`、`quickAnswer`、`scope`、`relatedSlugs`。
+可选：`spoiler`、`quickAnswer`、`scope`、`relatedSlugs`、`taskLinks`、`checklist`。`taskLinks` 为 `{ label, anchor }` 数组，必须指向真实正文标题。`checklist` 包含稳定 `id`、`title`、`groups: [{ title, items: [{ id, label }] }]`，正文放置一次 `:::checklist`。条目 ID 不要随文案修改，以免丢失用户已保存的勾选。
 
 `updated` 是该篇攻略实际更新日期，不能为了 SEO 批量刷新。首页更新时间在 `content/home.json`。页脚数量和最新攻略日期自动计算；它不表示所有攻略均已重新研究。
 
-截图写法：`![说明文字](/images/example.webp "来源和图注")`。请使用亲自截取或已获许可的图片。不要将推测或生成图片当作游戏内证据。
+截图写法：`![说明文字](/images/example.webp "来源和图注")`。当前图框按 960×540（16:9）保留空间，点击可打开原图。请使用亲自截取或已获许可的图片。不要将推测或生成图片当作游戏内证据；原创流程图须明确标注为示意图。
+
+所有攻略输出 Article 与 BreadcrumbList 结构化数据，作者取自 maintainer，日期取自真实内容更新日期。纠错链接只预填 GitHub issue 草稿，不自动发布。`/wiki#find-a-guide` 为本地筛选目录，无搜索服务和查询上传。新增浏览器功能回归检查：`npm run test:guide-tools`。收集清单只保存 `guide-checklist-v1:<id>`，与统计同意分开；禁用存储时降级为本页勾选。信息页日期在 `informationUpdated`，隐私页可用 `privacyUpdated` 单独设置。
 
 ## 模板验收
 

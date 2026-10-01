@@ -15,10 +15,11 @@ export default function PuzzlesPage() {
   return (
     <>
       <section className="listing-hero section-shell">
-        <nav className="breadcrumbs"><Link href="/">Home</Link><span>/</span><Link href="/wiki">Wiki</Link><span>/</span><span>Puzzles</span></nav>
+        <nav className="breadcrumbs" aria-label="Breadcrumb"><Link href="/">Home</Link><span aria-hidden="true">/</span><span aria-current="page">Puzzles</span></nav>
         <p className="eyebrow">Focused answers</p>
         <h1>{site.puzzles.heading}</h1>
         <p>{site.puzzles.intro}</p>
+        <p><Link className="search-link" href="/wiki#find-a-guide">Search all guides →</Link></p>
       </section>
       <section className="section-shell section-pad listing-grid">
         {puzzles.map((guide) => <GuideCard guide={guide} key={guide.slug} />)}

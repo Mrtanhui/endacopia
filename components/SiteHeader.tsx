@@ -18,6 +18,7 @@ export function SiteHeader() {
         <div className="language-status" title={site.languageLabel}>
           <span>{site.languageCode}</span><i aria-hidden="true" />
         </div>
+        <Link className="search-link" href="/wiki#find-a-guide">Search</Link>
         <details className="mobile-menu">
           <summary aria-label="Open navigation"><span /><span /><span /></summary>
           <nav aria-label="Mobile navigation">

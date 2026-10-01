@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" width="960" height="540" role="img">
+<title>From beach search to Old / Lost Key</title>
+<rect width="960" height="540" fill="#0b1829"/>
+<g font-family="Arial, sans-serif">
+<text x="40" y="60" fill="#f3f1e8" font-size="30" font-weight="bold">From beach search to Old / Lost Key</text>
+<text x="40" y="96" fill="#adc0d0" font-size="18">Use the Fishing Paper to confirm the collection, then claim the reward.</text>
+<rect x="40" y="140" width="270" height="128" rx="10" fill="#142b41" stroke="#2f677b"/>
+<text x="58" y="172" font-size="18" fill="#6ee1e7">01</text>
+<text x="58" y="205" font-size="23" font-weight="bold" fill="#f3f1e8">Metal Detector</text>
+<text x="58" y="239" font-size="17" fill="#adc0d0">Sweep the beach sand</text>
+<text x="318" y="217" font-size="25" fill="#6ee1e7">→</text>
+<rect x="345" y="140" width="270" height="128" rx="10" fill="#142b41" stroke="#2f677b"/>
+<text x="363" y="172" font-size="18" fill="#6ee1e7">02</text>
+<text x="363" y="205" font-size="23" font-weight="bold" fill="#f3f1e8">Fishing Paper</text>
+<text x="363" y="239" font-size="17" fill="#adc0d0">Inspect the collection</text>
+<text x="623" y="217" font-size="25" fill="#6ee1e7">→</text>
+<rect x="650" y="140" width="270" height="128" rx="10" fill="#142b41" stroke="#2f677b"/>
+<text x="668" y="172" font-size="18" fill="#6ee1e7">03</text>
+<text x="668" y="205" font-size="23" font-weight="bold" fill="#f3f1e8">Six clock states</text>
+<text x="668" y="239" font-size="17" fill="#adc0d0">Three species in each</text>
+<rect x="40" y="308" width="270" height="128" rx="10" fill="#142b41" stroke="#2f677b"/>
+<text x="58" y="340" font-size="18" fill="#6ee1e7">04</text>
+<text x="58" y="373" font-size="23" font-weight="bold" fill="#f3f1e8">18 unique fish</text>
+<text x="58" y="407" font-size="17" fill="#adc0d0">Duplicates do not count</text>
+<text x="318" y="385" font-size="25" fill="#6ee1e7">→</text>
+<rect x="345" y="308" width="270" height="128" rx="10" fill="#142b41" stroke="#2f677b"/>
+<text x="363" y="340" font-size="18" fill="#6ee1e7">05</text>
+<text x="363" y="373" font-size="23" font-weight="bold" fill="#f3f1e8">Inspect paper</text>
+<text x="363" y="407" font-size="17" fill="#adc0d0">Leave the fishing rod first</text>
+<text x="623" y="385" font-size="25" fill="#6ee1e7">→</text>
+<rect x="650" y="308" width="270" height="128" rx="10" fill="#142b41" stroke="#2f677b"/>
+<text x="668" y="340" font-size="18" fill="#6ee1e7">06</text>
+<text x="668" y="373" font-size="23" font-weight="bold" fill="#f3f1e8">Pick up the key</text>
+<text x="668" y="407" font-size="17" fill="#adc0d0">Continue to the small room</text>
+<text x="40" y="510" font-size="17" fill="#adc0d0">Read 01–06 in order · Original guide schematic · Not an in-game screenshot</text>
+</g></svg>
