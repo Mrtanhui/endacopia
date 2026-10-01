@@ -17,7 +17,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return [
     { url: absoluteUrl("/"), lastModified: siteUpdated, changeFrequency: "weekly", priority: 1 },
     { url: absoluteUrl("/puzzles"), lastModified: siteUpdated, changeFrequency: "weekly", priority: 0.8 },
-    ...site.informationPages.map(([, path]) => ({ url: absoluteUrl(path), lastModified: new Date(`${site.informationUpdated}T00:00:00.000Z`), changeFrequency: "monthly" as const, priority: 0.3 })),
+    ...site.informationPages.map(([, path]) => ({ url: absoluteUrl(path), lastModified: new Date(`${path === "/privacy" ? site.privacyUpdated ?? site.informationUpdated : site.informationUpdated}T00:00:00.000Z`), changeFrequency: "monthly" as const, priority: 0.3 })),
     ...getGuides().map((guide) => ({ url: absoluteUrl(`/${guide.slug}`), lastModified: guideUpdated(guide.updated), changeFrequency: "weekly" as const, priority: guide.slug === "wiki" ? 0.9 : 0.7 })),
   ];
 }

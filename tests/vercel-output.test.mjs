@@ -63,7 +63,32 @@ test("every configured guide keeps a canonical, one heading and a working route"
     assert.equal((html.match(/<h1\b/g) ?? []).length, 1, guide.slug);
     assert.ok(html.includes(`rel="canonical" href="https://endacopia.example/${guide.slug}"`), guide.slug);
     assert.doesNotMatch(html, /name="robots" content="noindex/);
+    const structured = [...html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)].map((match) => JSON.parse(match[1]));
+    const graph = structured.find((item) => item['@graph'])['@graph'];
+    const article = graph.find((item) => item['@type'] === 'Article');
+    assert.equal(article.headline, guide.title);
+    assert.equal(article.dateModified, new Date(guide.updated).toISOString().slice(0, 10));
+    const crumbs = graph.find((item) => item['@type'] === 'BreadcrumbList').itemListElement;
+    assert.equal(crumbs.at(-1).item, `https://endacopia.example/${guide.slug}`);
+    assert.ok(html.includes('Sources &amp; corrections'));
+    assert.ok(html.includes('/issues/new?title='));
+    assert.doesNotMatch(html, /pagead2|adsbygoogle|adsterra/i);
   }
+});
+
+test('collection, search and diagrams are rendered without depending on hydration', async () => {
+  const key = await (await render('/puzzles/old-key')).text();
+  assert.equal((key.match(/type="checkbox"/g) ?? []).length, 18);
+  assert.match(key, /data-checklist="timesville-fish"/);
+  assert.match(key, /id="read-the-clock-and-advance-time"/);
+  assert.match(key, /href="#if-a-step-does-not-work"/);
+  assert.match(key, /src="\/images\/fishing-clock.svg"/);
+  const wiki = await (await render('/wiki')).text();
+  assert.equal((wiki.match(/data-search-text=/g) ?? []).length, guides.length);
+  assert.match(wiki, /id="find-a-guide"/);
+  const ending = await (await render('/endings/ending-c')).text();
+  assert.match(ending, /id="seven-office-symbol-stages"/);
+  assert.match(ending, /id="stage-six-reference"/);
 });
 
 test("information pages are crawlable and linked without inflating guide counts", async () => {

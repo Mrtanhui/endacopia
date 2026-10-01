@@ -1,6 +1,9 @@
 import Link from "@/components/InternalLink";
+import { ProgressChecklist } from "@/components/ProgressChecklist";
+import type { GuideChecklist } from "@/lib/guides";
 
 type Block =
+  | { type: "checklist" }
   | { type: "h2"; text: string }
   | { type: "h3"; text: string }
   | { type: "p"; text: string }
@@ -52,6 +55,9 @@ function parse(body: string): Block[] {
     const line = lines[index];
     const trimmed = line.trim();
     const picture = trimmed.match(/^!\[([^\]]+)\]\((\/(?!\/)[^\s)]+)(?:\s+"([^"]+)")?\)$/);
+    if (trimmed === ":::checklist") {
+      flushParagraph(); flushList(); blocks.push({ type: "checklist" }); continue;
+    }
     if (picture) {
       flushParagraph(); flushList();
       blocks.push({ type: "image", alt: picture[1], src: picture[2], caption: picture[3] });
@@ -92,17 +98,18 @@ function parse(body: string): Block[] {
   return blocks;
 }
 
-export function MdxContent({ body }: { body: string }) {
+export function MdxContent({ body, checklist }: { body: string; checklist?: GuideChecklist }) {
   const blocks = parse(body);
   return (
     <div className="mdx-content">
       {blocks.map((block, index) => {
+        if (block.type === "checklist") return checklist ? <ProgressChecklist checklist={checklist} key={index} /> : null;
         // Keyboard users must be able to focus and horizontally scroll wide tables.
         // eslint-disable-next-line jsx-a11y/no-noninteractive-tabindex
         if (block.type === "table") return <div className="guide-table-scroll" key={index} tabIndex={0} role="region" aria-label="Guide reference table"><table><thead><tr>{block.headers.map((cell, cellIndex) => <th scope="col" key={cellIndex}>{inline(cell)}</th>)}</tr></thead><tbody>{block.rows.map((row, rowIndex) => <tr key={rowIndex}>{block.headers.map((_, cellIndex) => <td key={cellIndex}>{inline(row[cellIndex] ?? "")}</td>)}</tr>)}</tbody></table></div>;
         // Only local editorial assets are accepted by the image parser.
         // eslint-disable-next-line @next/next/no-img-element
-        if (block.type === "image") return <figure className="guide-figure" key={index}><img src={block.src} alt={block.alt} loading="lazy" />{block.caption && <figcaption>{inline(block.caption)}</figcaption>}</figure>;
+        if (block.type === "image") return <figure className="guide-figure" key={index}><a href={block.src} aria-label={`Open full-size diagram: ${block.alt}`}><img src={block.src} alt={block.alt} loading="lazy" width={960} height={540} /></a>{block.caption && <figcaption>{inline(block.caption)}</figcaption>}</figure>;
         if (block.type === "h2") return <h2 id={anchor(block.text)} key={index}>{block.text}</h2>;
         if (block.type === "h3") return <h3 id={anchor(block.text)} key={index}>{block.text}</h3>;
         if (block.type === "quote") return <blockquote key={index}>{inline(block.text)}</blockquote>;

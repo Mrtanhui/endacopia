@@ -7,6 +7,12 @@ export type GuideSource = {
   url: string;
 };
 
+export type GuideChecklist = {
+  id: string;
+  title: string;
+  groups: { title: string; items: { id: string; label: string }[] }[];
+};
+
 export type Guide = {
   slug: string;
   title: string;
@@ -19,6 +25,8 @@ export type Guide = {
   quickAnswer?: string;
   relatedSlugs?: string[];
   scope?: string;
+  taskLinks?: { label: string; anchor: string }[];
+  checklist?: GuideChecklist;
   sources: GuideSource[];
   body: string;
 };

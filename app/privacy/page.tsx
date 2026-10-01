@@ -6,7 +6,7 @@ import site from "@/config/site.json";
 
 export const metadata: Metadata = { title: "Privacy", description: "How this site uses optional analytics, browser storage and hosting services, and how to change your choice.", alternates: { canonical: "/privacy" } };
 export default function PrivacyPage() {
-  return <InfoPage title="Privacy" description={`Privacy information for ${site.siteName}. Updated ${site.informationUpdated}.`}>
+  return <InfoPage title="Privacy" description={`Privacy information for ${site.siteName}. Updated ${site.privacyUpdated ?? site.informationUpdated}.`}>
     <p>This site is maintained by {site.maintainer.name}. You can read guides without creating an account. We do not operate an on-site contact form, newsletter, checkout or advertising service.</p>
     <h2>Optional Google Analytics</h2>
     <p>Google Analytics 4 is loaded only after you choose “Allow analytics”. Before that choice, or if you decline, this site does not load the Google Analytics tag or send analytics events. Declining does not limit access to guides.</p>
@@ -15,6 +15,8 @@ export default function PrivacyPage() {
     <p>Google processes analytics data on its infrastructure, which can be outside your country. Read <a href="https://policies.google.com/technologies/partner-sites" rel="noreferrer" target="_blank">how Google uses information from sites using its services</a> and <a href="https://policies.google.com/privacy" rel="noreferrer" target="_blank">Google’s privacy policy</a>. Google Signals and advertising personalization are disabled in our tag.</p>
     <AnalyticsChoices />
     <p>Your choice is stored in this browser under <code>guide-analytics-consent-v1</code>. It remains until changed or browser storage is cleared. Withdrawing consent stops subsequent Analytics collection and attempts to remove this site’s Analytics cookies; it does not erase data previously sent to Google. Clearing browser storage resets your choice, and analytics stays off until allowed again.</p>
+    <h2 id="checklist-storage">Checklist storage</h2>
+    <p>Interactive collection checklists save only the item IDs you tick, locally in your browser under a key beginning with <code>guide-checklist-v1:</code>. These checks are not sent to our servers or Google Analytics, do not read game saves, and do not sync between devices. They remain until you reset the checklist or clear browser storage. If storage is blocked, you can still tick items for the current page visit. Site search filters the guide directory on your device; search text is not submitted to a server.</p>
     <h2>Hosting and essential storage</h2>
     <p>Vercel hosts the site and processes request information, such as IP address, requested URL, browser information and timestamps, to deliver pages, secure the service and troubleshoot errors. This can occur even when analytics is declined. Hosting records are handled under Vercel’s service settings and <a href="https://vercel.com/legal/privacy-policy" rel="noreferrer" target="_blank">privacy policy</a>.</p>
     <p>We store your analytics preference locally so it can be respected. A separate <code>guide-analytics-excluded</code> browser setting is used to exclude the maintainer’s test visits. It contains an on/off value, not an account identifier. During an explicit maintainer debug session, session storage holds a temporary debug flag so test events remain labelled when navigating between pages. Local and preview domains do not send analytics through this site’s loader.</p>
