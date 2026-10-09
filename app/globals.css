@@ -447,6 +447,18 @@ p { line-height: 1.72; }
 .guide-search li a:hover { color: var(--cyan-soft); }
 .guide-search small { color: var(--muted); }
 .progress-checklist { border: 1px solid var(--line-strong); background: var(--night-2); padding: 1.25rem; margin-block: 2rem; border-radius: 6px; }
+.progress-checklist { scroll-margin-top: 170px; }
+.checklist-filter { display: flex; align-items: center; flex-wrap: wrap; gap: .75rem; margin-bottom: 1rem; }
+.checklist-filter button { min-height: 44px; cursor: pointer; }
+.checklist-filter [aria-pressed="true"] { border-color: var(--cyan); color: var(--cyan-soft); }
+.checklist-filter span { font-size: .875rem; color: var(--muted); }
+.collection-shortcuts { display: flex; flex-wrap: wrap; gap: .5rem; padding: .75rem 0; background: var(--night); border-bottom: 1px solid var(--line); }
+.collection-shortcuts a { padding: .65rem .8rem; border: 1px solid var(--line-strong); border-radius: 4px; font-size: .875rem; }
+@media (max-width: 760px) {
+  .collection-shortcuts { position: sticky; top: 66px; z-index: 5; flex-wrap: nowrap; }
+  .collection-shortcuts a { flex: 1; text-align: center; font-size: .75rem; padding: .7rem .3rem; }
+  .article-body:has(.collection-shortcuts) h2, .article-body:has(.collection-shortcuts) h3 { scroll-margin-top: 160px; }
+}
 .checklist-heading { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: .75rem; }
 .checklist-heading h3 { margin: 0; font-size: 1.25rem; }
 .checklist-heading output { color: var(--cyan-soft); font-family: var(--mono); font-size: .9rem; }
