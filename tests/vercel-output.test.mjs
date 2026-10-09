@@ -80,6 +80,11 @@ test('collection, search and diagrams are rendered without depending on hydratio
   const key = await (await render('/puzzles/old-key')).text();
   assert.equal((key.match(/type="checkbox"/g) ?? []).length, 18);
   assert.match(key, /data-checklist="timesville-fish"/);
+  assert.match(key, /id="timesville-fish-checklist"/);
+  assert.match(key, /aria-controls="timesville-fish-items"/);
+  assert.match(key, /data-checklist-filter/);
+  assert.match(key, /href="#your-fish-progress"/);
+  assert.match(key, /aria-label="Collection shortcuts"/);
   assert.match(key, /id="read-the-clock-and-advance-time"/);
   assert.match(key, /href="#if-a-step-does-not-work"/);
   assert.match(key, /src="\/images\/fishing-clock.svg"/);

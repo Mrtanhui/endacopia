@@ -110,10 +110,15 @@
     });
   });
   window.addEventListener('storage', function (event) {
-    if (event.key === consentKey || event.key === exclusionKey) {
+    if (event.key === consentKey || event.key === exclusionKey || event.key === null) {
       consent = read(consentKey);
       excluded = read(exclusionKey) === '1';
-      if (consent !== 'granted' || excluded) { active = false; window['ga-disable-' + id] = true; clearCookies(); }
+      if (consent !== 'granted' || excluded) {
+        active = false;
+        window['ga-disable-' + id] = true;
+        if (started) window.gtag('consent', 'update', { analytics_storage: 'denied', ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied' });
+        clearCookies();
+      }
       else start();
       updateStatus();
     }

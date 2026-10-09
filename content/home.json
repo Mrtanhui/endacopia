@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-11",
+  "updated": "2026-10-08",
   "stats": [
     [
       "Released",
@@ -21,8 +21,8 @@
   "starts": [
     {
       "number": "01",
-      "title": "Complete walkthrough",
-      "description": "Follow the prologue and three chapters, with key items and route warnings called out before they cost you time.",
+      "title": "Walkthrough & area routes",
+      "description": "Choose your current area, find the puzzle steps you need, and prepare optional secrets before committing to an ending.",
       "href": "/walkthrough",
       "label": "Start the route"
     },

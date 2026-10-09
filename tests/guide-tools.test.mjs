@@ -5,19 +5,40 @@ import test from 'node:test';
 
 const checklistScript = readFileSync('public/checklist.js', 'utf8');
 function element(extra = {}) {
-  return { hidden: true, textContent: '', handlers: {}, dataset: {}, addEventListener(type, fn) { this.handlers[type] = fn; }, focus() { this.focused = true; }, ...extra };
+  return { hidden: true, textContent: '', handlers: {}, dataset: {}, attributes: {}, setAttribute(key, value) { this.attributes[key] = value; }, addEventListener(type, fn) { this.handlers[type] = fn; }, focus() { this.focused = true; }, ...extra };
 }
 function collection(initial = null, blocked = false) {
   const store = new Map(initial ? [['guide-checklist-v1:fish', initial]] : []);
-  const boxes = ['a', 'b', 'c'].map((value) => element({ value, checked: false }));
-  const parts = Object.fromEntries(['count', 'progress', 'status', 'reset', 'confirm', 'actions', 'clear', 'cancel'].map((key) => [key, element()]));
-  const root = element({ dataset: { checklist: 'fish' }, querySelectorAll() { return boxes; }, querySelector(selector) { return parts[selector.match(/data-checklist-(\w+)/)[1]]; } });
+  const boxes = ['a', 'b', 'c'].map((value) => { const label = element(); return element({ value, checked: false, label, closest() { return label; } }); });
+  const groups = [element({ querySelectorAll() { return boxes.slice(0, 2); } }), element({ querySelectorAll() { return boxes.slice(2); } })];
+  const parts = Object.fromEntries(['count', 'progress', 'status', 'reset', 'confirm', 'actions', 'clear', 'cancel', 'tools', 'filter', 'remaining', 'empty'].map((key) => [key, element()]));
+  const root = element({ dataset: { checklist: 'fish' }, querySelectorAll(selector) { return selector === '[data-checklist-group]' ? groups : boxes; }, querySelector(selector) { return parts[selector.match(/data-checklist-(\w+)/)[1]]; } });
   const win = element();
   const storage = { getItem(key) { if (blocked) throw Error('blocked'); return store.get(key) ?? null; }, setItem(key, value) { if (blocked) throw Error('blocked'); store.set(key, value); }, removeItem(key) { if (blocked) throw Error('blocked'); store.delete(key); } };
   const context = vm.createContext({ window: win, document: { querySelectorAll() { return [root]; } }, localStorage: storage });
   vm.runInContext(checklistScript, context);
-  return { boxes, parts, root, win, store, context };
+  return { boxes, groups, parts, root, win, store, context };
 }
+
+test('missing filter preserves stored checks, handles completion and keeps focus visible', () => {
+  const page = collection('["a"]');
+  page.parts.filter.handlers.click();
+  assert.equal(page.parts.filter.attributes['aria-pressed'], 'true');
+  assert.deepEqual(page.boxes.map((box) => box.label.hidden), [true, false, false]);
+  page.boxes[1].checked = true;
+  page.root.handlers.change({ target: page.boxes[1] });
+  assert.equal(page.groups[0].hidden, true);
+  assert.equal(page.boxes[2].focused, true);
+  page.boxes[2].checked = true;
+  page.root.handlers.change({ target: page.boxes[2] });
+  assert.equal(page.parts.empty.hidden, false);
+  assert.equal(page.parts.filter.focused, true);
+  assert.equal(page.parts.remaining.textContent, '0 still to collect');
+  page.parts.filter.handlers.click();
+  assert.ok(page.boxes.every((box) => box.checked && !box.label.hidden));
+  assert.ok(page.groups.every((group) => !group.hidden));
+  assert.equal(collection(page.store.get('guide-checklist-v1:fish')).parts.count.textContent, '3 / 3 collected');
+});
 
 test('collection restores valid IDs and preserves checked progress across reloads', () => {
   const page = collection('["a","a","retired-id"]');

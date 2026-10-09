@@ -69,6 +69,7 @@ export function ArticlePage({ guide }: { guide: Guide }) {
         </aside>
 
         <article className="article-body">
+          {guide.checklist && <nav className="collection-shortcuts" aria-label="Collection shortcuts"><a href={`#${guide.checklist.id}-checklist`}>18-fish checklist</a><a href="#use-the-key-on-the-hidden-window-lock">Use the key</a><a href="#if-a-step-does-not-work">Troubleshooting</a></nav>}
           {guide.slug === "wiki" && <><GuideDirectory /><WikiNavigator /></>}
           <MdxContent body={guide.body} checklist={guide.checklist} />
           <section className="source-panel" id="guide-sources">

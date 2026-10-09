@@ -62,3 +62,25 @@ test('debug is explicitly marked, browser exclusion persists until cleared', () 
   const off = harness({consent:'granted',search:'?analytics=off'}); assert.equal(off.store.get('guide-analytics-excluded'), '1');
   const on = harness({consent:'granted',excluded:true,search:'?analytics=on'}); assert.equal(on.scripts.length, 1);
 });
+
+test('consent withdrawal and cleared storage in another tab stop events immediately', () => {
+  for (const key of ['guide-analytics-consent-v1', 'guide-analytics-excluded', null]) {
+    const h = harness({ consent: 'granted' });
+    if (key === null) h.store.clear();
+    else h.store.set(key, key === 'guide-analytics-excluded' ? '1' : 'denied');
+    h.listeners.storage({ key });
+    h.click('https://endacopia.example/wiki');
+    assert.equal(h.window['ga-disable-G-TEST123'], true);
+    assert.equal(h.commands().filter(([name]) => name === 'event').length, 0);
+    assert.equal(h.commands().at(-1)[2].analytics_storage, 'denied');
+  }
+});
+
+test('granting consent in another tab starts one pageview without duplicating it', () => {
+  const h = harness();
+  h.store.set('guide-analytics-consent-v1', 'granted');
+  h.listeners.storage({ key: 'guide-analytics-consent-v1' });
+  h.listeners.storage({ key: 'guide-analytics-consent-v1' });
+  assert.equal(h.scripts.length, 1);
+  assert.equal(h.commands().filter(([name]) => name === 'config').length, 1);
+});
