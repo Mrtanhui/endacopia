@@ -10,7 +10,7 @@ const run = (args) => {
   if (result.status !== 0) throw new Error(`${result.stdout}\n${result.stderr}`);
 };
 try {
-  for (const name of ['app', 'components', 'lib', 'config', 'content', 'public', 'build', 'worker', '.openai', 'scripts', 'vite.config.ts', 'next.config.ts', 'tsconfig.json', 'next-env.d.ts', 'postcss.config.mjs', 'package.json']) cpSync(name, join(root, name), { recursive: true });
+  for (const name of ['app', 'components', 'lib', 'config', 'content', 'public', 'scripts', 'next.config.ts', 'tsconfig.json', 'tsconfig.site.json', 'next-env.d.ts', 'postcss.config.mjs', 'package.json']) cpSync(name, join(root, name), { recursive: true });
   symlinkSync(resolve('node_modules'), join(root, 'node_modules'), 'dir');
   const site = JSON.parse(readFileSync('config/site.json', 'utf8'));
   Object.assign(site, { theme: {...site.theme, cyan:'#123456'}, gameName: 'Moon Archive', siteName: 'Moon Archive Guide', title: 'Moon Archive Guide', description: 'A fictional puzzle guide used only to test this template.', maintainer: {name:'Test Maintainer',profileUrl:'https://moon-archive.example/maintainer',issuesUrl:'https://moon-archive.example/issues'}, keywords: ['moon archive'], footerDescription: 'Independent Moon Archive guides.', disclaimer: 'Fictional test content.', officialLinks: [['Game', 'https://moon-archive.example/game']], navigation: [['Wiki', '/wiki'], ['Puzzles', '/puzzles']], categories: [{ name: 'Reference', label: 'Start here' }, { name: 'Puzzles', label: 'Puzzles' }], favicon: '/moon.svg', socialImage: '/moon.svg', puzzles: { title: 'Moon Archive Puzzles', description: 'Moon Archive puzzle solutions', heading: 'Moon Archive puzzles', intro: 'Choose a puzzle.', callout: { label: '', title: '', description: '', links: [] } } });
@@ -27,12 +27,17 @@ try {
     writeFileSync(join(root, 'content/guides', slug.replaceAll('/', '-') + '.mdx'), `---\n${JSON.stringify(meta)}\n---\n## Open the gate\nUse the moon token.\n`);
   }
   run(['scripts/check-content.mjs']);
-  run([resolve('node_modules/vite/bin/vite.js'), 'build']);
+  rmSync(join(root, 'content/translations'), {recursive:true, force:true});
+  mkdirSync(join(root, 'content/translations/zh'), {recursive:true});
+  for(const slug of ['wiki','puzzles/moon-gate']) writeFileSync(join(root,'content/translations/zh',slug.replaceAll('/','-')+'.json'),JSON.stringify({slug,title:'Moon Archive 中文攻略',description:'测试月亮门。',body:'## 打开门 {#open-the-gate}\n使用月亮令牌。'}));
+  run(['scripts/check-translations.mjs']);
+  run([resolve('node_modules/next/dist/bin/next'), 'build', '--webpack']);
   writeFileSync(join(root, 'verify.mjs'), `
 import assert from 'node:assert/strict';
-import app from './.vercel/output/functions/__server.func/index.mjs';
+import {readFileSync,existsSync} from 'node:fs';
+const render=(path)=>{const file='out'+(path==='/'?'/index.html':path==='/sitemap.xml'?path:path+'.html');return {status:existsSync(file)?200:404,text:async()=>existsSync(file)?readFileSync(file,'utf8'):''};};
 for (const path of ['/', '/wiki', '/puzzles', '/puzzles/moon-gate', '/about', '/contact', '/privacy']) {
- const response = await app.fetch(new Request('https://moon-archive.example' + path), {waitUntil(){}});
+ const response = render(path);
  assert.equal(response.status, 200, path);
  const html = (await response.text()).replaceAll('<!-- -->', '');
  assert.match(html, /Moon Archive/);
@@ -43,13 +48,13 @@ for (const path of ['/', '/wiki', '/puzzles', '/puzzles/moon-gate', '/about', '/
  assert.match(html, /2 GUIDES ONLINE/);
  assert.doesNotMatch(html, /googletagmanager/);
 }
-const sitemap = await (await app.fetch(new Request('https://moon-archive.example/sitemap.xml'), {waitUntil(){}})).text();
-assert.equal((sitemap.match(/<url>/g) || []).length, 7);
+const sitemap = await render('/sitemap.xml').text();
+assert.equal((sitemap.match(/<url>/g) || []).length, 11);
 assert.doesNotMatch(sitemap, /endacopia|old-key/i);
-assert.equal((await app.fetch(new Request('https://moon-archive.example/puzzles/old-key'), {waitUntil(){}})).status, 404);
+assert.equal(render('/puzzles/old-key').status, 404);
 `);
   run(['verify.mjs']);
-  console.log('Template replacement passed: second game renders 7 pages, correct canonical origin and sitemap, no old-game text or routes, analytics disabled.');
+  console.log('Template replacement passed: second game renders 11 bilingual pages, correct canonical origin and sitemap, no old-game text or routes, analytics disabled.');
 } finally {
   rmSync(root, { recursive: true, force: true });
 }

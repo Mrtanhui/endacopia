@@ -1,0 +1,9 @@
+{
+  "slug": "characters/trapezist",
+  "title": "Endacopia Trapezist 攻略",
+  "description": "Trapezist 的身份、Misery Town 遭遇的前置流程，以及战斗与切绳路线的区别。",
+  "readTime": "7 分钟",
+  "body": "## Trapezist 是谁？ {#who-is-the-trapezist}\n\n社区资料将 Trapezist 描述为 Misery Town 的领袖与压轴 Boss。她的出场与马戏团演出、观众及让 Mellow 抵达最终节目的任务链相连。\n\n本页难免包含较多剧透，因为她的身份和遭遇作用本身就是该区域的揭示。如果你只想推进流程，请阅读下面的简短路线，避开更广泛的角色资料。\n\n## 抵达演出 {#reaching-the-performance}\n\nMisery Town 路线将该区域的多个目标连在一起。你需要处理 Red Jester 摊位、帮助 Pierrot 完成礼物任务、取得必要的玩偶，并在正确时机使用麦克风移动或清理观众。\n\n蓝色充气角色的玩偶任务链始于医疗帐篷流程取得的红球。如果缺少它，先查看[蓝色角色谜题攻略](/zh/puzzles/make-blue-guy-cry)，再判断演出路线是否卡住。\n\n## 战斗路线 {#fight-route}\n\n常规路线会进入 Trapezist Boss 战。社区资料描述了以球为基础的攻击及多个阶段。优先观察攻击节奏与安全窗口，不要试图在演出中硬换伤害。\n\nSteam 官方成就列表包含 **Fatal Performance**，为击败结果提供官方信号；具体战术则来自流程攻略与实机证据。\n\n## 避战路线 {#avoid-route}\n\n另一条路线用 **Scalpel（手术刀）**切断绳索，无需完成常规 Boss 战。Scalpel 来自之前的小丑与 Whack-a-Mole 流程，这也是为什么一个局部谜题可以改变后续重要遭遇。\n\nSteam 的 **Cut The Act** 成就确认了这种替代结果受到认可。如果想查看两种结果或高效补成就，请在作出选择前保留存档。\n\n## 路线卡住的常见原因 {#common-reasons-the-route-stalls}\n\n- 没有收取前面的 Scalpel。\n- 玩偶与 Pierrot 礼物任务链尚未完成。\n- Red Jester 尚未离开摊位。\n- 尚未使用麦克风清理观众。\n- 演出状态未准备好，就提前尝试使用路线物品。\n",
+  "quickAnswer": "完成 Misery Town 演出任务链即可抵达 Trapezist。你可以与她战斗，或用之前小丑谜题获得的 Scalpel 切断绳索，进入另一种结果。",
+  "scope": "正式版 · 来源于 2026 年 10 月 29 日复核。路线细节依据所引用攻略，并非所有路线都已在每个游戏版本中重新实测。"
+}

@@ -4,7 +4,7 @@ import { Analytics } from "@/components/Analytics";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
 import { googleAnalyticsId, googleSiteVerification, siteUrl } from "@/lib/site-url";
-import "./globals.css";
+import "../globals.css";
 import site from "@/config/site.json";
 
 const verificationToken = googleSiteVerification();

@@ -6,7 +6,7 @@ import { GuideCard } from "@/components/GuideCard";
 import { getGuides } from "@/lib/guides";
 
 export const metadata: Metadata = {
-  alternates: { canonical: "/" },
+  alternates: { canonical: "/", languages: { en: "/", "zh-Hans": "/zh", "x-default": "/" } },
 };
 
 

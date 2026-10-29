@@ -1,0 +1,8 @@
+{
+  "slug": "characters/henry",
+  "title": "Endacopia 的 Henry",
+  "description": "Henry 的身份、Chapter 2 追逐与电脑记录，以及他的 Floppy Disk 如何揭示正式版 Saw box 密码。",
+  "readTime": "6 分钟",
+  "body": "## Henry 的身份 {#henrys-role}\n\n社区角色页面将 Henry 描述为与 Mellow 有关的重要反派。他的威胁既通过追逐表现，也通过可供玩家间接调查的记录展开。\n\n本页将流程事实与解读分开。Henry 与完整故事的具体关系，最好在游戏中亲自体验；这里的实用内容集中于追逐、Floppy Disk、电脑和密码。\n\n## Chapter 2 遭遇 {#chapter-2-encounter}\n\nNeoseeker 的 Chapter 2 流程将一段重要的 Henry 情节放在镜子区域之后。遵循房间的逃离与追逐逻辑，然后仔细搜索后续路线，不要急于赶往下一个目标。\n\n后面获取信息所需的物品是 **Henry's Floppy Disk（Henry 的软盘）**。它本身不是最终密码，而是用来打开包含密码的记录。\n\n## Floppy Disk 与电脑档案 {#floppy-disk-and-computer-profile}\n\n把软盘带到对应电脑并打开 Henry 档案，阅读其中的 `Passwords` 文件。正式版的 Saw box 条目为 `471`。\n\n物品链很重要，因为它说明这个数字对应哪一个密码。Endacopia 还有其他密码相关搜索，尤其是早期 Demo 内容；不标注场景就直接输入数字会造成混淆。\n\n## 使用密码 471 {#using-code-471}\n\n该密码对应阁楼箱子流程中的 **Saw box**。进入正确状态后，在那里输入 `471`。如果输入没有反应，请确认当前对象是正式版 Saw box，而不是 Demo 或环境中的其他互动。\n\n只想查看密码和获取路线时，请使用独立的[密码攻略](/zh/puzzles/password)。该页在标题和快速答案中明确标注了场景。\n\n## Henry 对攻略的意义 {#why-henry-matters-to-the-guide}\n\nHenry 展示了 Endacopia 的多层线索设计：一次充满威胁的遭遇带来一张普通软盘，软盘打开私人档案，档案再解开别处的实体锁。角色信息与解谜进度在这里相互关联。\n",
+  "quickAnswer": "Henry 是重要的对立角色。在 Chapter 2 取得他的 Floppy Disk，在电脑打开 Henry 档案并阅读 Passwords 文件，即可找到 Saw box 密码 471。"
+}

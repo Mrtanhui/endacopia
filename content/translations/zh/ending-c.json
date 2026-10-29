@@ -1,0 +1,23 @@
+{
+  "slug": "endings/ending-c",
+  "title": "Endacopia Ending C 完整路线",
+  "description": "检查三处秘密遭遇、解开 Office 符号谜题并找到最终卧室路线，包含缺失条件排查和恢复建议。",
+  "readTime": "8 分钟",
+  "body": "## 条件检查清单 {#requirements-checklist}\n\n进入最终故事流程前，先完成三处区域隐藏路线。物品栏中有一件物品只是起点，不能证明对应秘密已经完成。\n\n| 区域 | 路线 | 完成标志 |\n| --- | --- | --- |\n| Timesville | [18 种鱼、Fishing Paper 与 Old/Lost Key](/zh/puzzles/old-key) → 窗口锁 → 隐藏流程 | 天使雕像遭遇 |\n| Misery Town | [Projector Remote](/zh/puzzles/projector-remote) → 地图 → 舱体谜题 | 保龄球瓶状人物，随后返回 |\n| Office | Telescope → 电话 → 楼梯 → 七阶段符号谜题 | 裹着床单的病人遭遇 |\n\n完成标志来自[社区全结局指南](https://steamcommunity.com/sharedfiles/filedetails/?id=3773635669)。不要因为捡到钥匙或遥控器，就把整个区域标为完成。\n\n### 准备存档 {#save-preparation}\n\n如果希望保留较早的恢复点，请在每个区域 Boss 前留一份独立存档。复制存档前完全退出游戏，恢复备份前保留当前存档。这是预防措施，并不要求修改游戏文件，也不证明所有后期状态都能补救。\n\n[秘密目录](/zh/guide/secrets)连接这三条路线。Office 的 **Core Key** 属于常规[饮水机物品链](/zh/puzzles/core-key)，不能代替钓鱼奖励。\n\n## 鱼与 Old Key {#fish-and-the-old-key}\n\n使用[鱼类清单与时钟示意图](/zh/puzzles/old-key#all-18-fish-by-time-period)，再检查已完成的 Fishing Paper 领取钥匙。完成[共享房间设置](/zh/puzzles/old-key#complete-the-shared-room-puzzle)，切换窗口模式，重新进入黑白小房间并开锁。\n\n继续 Timesville 的隐藏场景。脑部扫描谜题中，按共同主题对齐片段；Viri 的[攻略评论](https://steamcommunity.com/sharedfiles/filedetails/?id=3773067527)举了学校与跟踪场景作为例子。继续到天使遭遇，并按其 Enter 提示操作。仅打开窗口锁不代表区域已经完成。\n\n## 投影仪路线 {#projector-route}\n\n在彩色座位剧院挖出遥控器，显示并记录地图，再从 Hands 房间入口开始。跟随 [Projector Remote 攻略](/zh/puzzles/projector-remote#follow-the-checkerboard-route)，穿过隐藏通道和舱体谜题，完成最终遭遇并返回。\n\n## Office 电话与等待条件 {#office-telephone-and-waiting-condition}\n\n1. 把 Telescope 带到车站入口，也就是长椅上的人物和 Wrench 所在位置附近。\n2. 通过望远镜查看电话线索：**277-5944**。\n3. 在 Office 电脑打开 **Jobs**，拨打这个号码。\n4. 返回自动售货机附近的楼梯，在其下方／后方站立约 **一分钟**。\n5. 在出现的绿色房间里，与虚拟头盔互动开始谜题。\n\n[Behind Stairs 攻略](https://steamcommunity.com/sharedfiles/filedetails/?id=3773016498)展示了入口和等待位置。如果没有触发，重新检查是否通过 Jobs 拨号，以及等候的是这座楼梯而非别处。等待本身就是线索的一部分；反复离开去检查其他房间，可能中断尝试。\n\n## Office 七阶段符号谜题 {#seven-office-symbol-stages}\n\n阅读谜题窗口标题栏的提示。下方符号是对游戏图标的文字近似表示。设置方格后按谜题的确认按钮；需要撤销尝试时，使用重置控件。\n\n| 阶段／提示 | 设置方法 |\n| --- | --- |\n| 1 · `$4` | 设出四个美元符号。 |\n| 2 · `* → ^` | 把每个星号换成向上箭头。 |\n| 3 · 交换 `$` 与 `!`，再执行 `! → %` | 原来的美元符号变成百分号；原来的感叹号变成美元符号。无关符号保持不变。 |\n| 4 · 带实心圆的百分号图标 → `!` | 将每块可编辑方格改为感叹号。提示指向整个布局。 |\n| 5 · `#! + #^ → #%` | 让百分号数量等于感叹号与箭头数量之和。来源示例中，等式左侧两类各有三个，百分号共有六个。 |\n| 6 · 悲伤脸 → 眨眼笑脸 | 将布局看成横着的脸。对照下方第六阶段参考，包括应留空的可编辑方格。 |\n| 7 · `^5` | 点击笑脸图标显示缺少的方格，再将全部五块设为向上箭头。 |\n\n关卡与视觉参考见 [Behind Stairs 已解方格](https://steamcommunity.com/sharedfiles/filedetails/?id=3773016498)。[Green room 讨论](https://steamcommunity.com/app/2684630/discussions/0/589559079513582480/)解释了第五阶段的数量规则：这里计算的是**数量**，不是某个符号物理位置左侧的方格。\n\n### 第六阶段参考 {#stage-six-reference}\n\n从上到下逐行读取矩阵。**无格**表示该位置不存在方格；**留空**表示保留这块可编辑方格为空。它是对攻略第六张截图的文字转录，不是在声称游戏每次都以这些符号作为初始状态。\n\n| 行 | 第 1 列 | 第 2 列 | 第 3 列 | 第 4 列 | 第 5 列 |\n| --- | --- | --- | --- | --- | --- |\n| 最上行 | `*` | 无格 | `%` | 无格 | 留空 |\n| 第二行 | 无格 | `^` | 无格 | `%` | 无格 |\n| 第三行 | 无格 | 无格 | 无格 | `%` | 无格 |\n| 最下行 | `^` | 无格 | `%` | 无格 | 留空 |\n\n如果你的版本布局不同，请在继续改动前对照[攻略中的第六阶段原始截图](https://steamcommunity.com/sharedfiles/filedetails/?id=3773016498)。方格流程后继续完成场景，并检查裹着床单的病人遭遇。\n\n## 最终流程与结局选择 {#final-symbol-sequence-and-commitment}\n\n完成三处标志后，继续故事。在 Chapter III 尾声，先回到 **Mellow 的房间**，再考虑常规结局门路线。寻找发生变化的卧室遭遇，完成 Overclockey 战斗，然后进入墙上的开口，沿书本／Surgeon 流程走到结尾。\n\n[全结局攻略作者](https://steamcommunity.com/sharedfiles/filedetails/?id=3773635669)表示，秘密完成后，锯子的选择并不决定这条路线；其他攻略则指定玩具锯。请保留备份，不要把这种说法差异当成必定被锁出路线；本站没有独立重玩过两个分支。\n\n如果卧室没有变化，请重新检查上面三处完成标志。最终战斗本身也不是最后一步：[成就流程攻略](https://steamcommunity.com/sharedfiles/filedetails/?id=3774754099)在之后仍有开口、书本与对话。排查缺少的遭遇时，不要覆盖恢复存档。\n\n## 排查未出现的最终遭遇 {#diagnose-a-missing-final-encounter}\n\n| 最后确认的步骤 | 接下来核对什么 |\n| --- | --- |\n| 已取得 Old/Lost Key | [在窗口锁上使用它](/zh/puzzles/old-key#use-the-key-on-the-hidden-window-lock)，再完成 Timesville 隐藏场景。 |\n| 已显示投影地图 | [跟随地图穿过通道与舱体流程](/zh/puzzles/projector-remote#follow-the-checkerboard-route)。 |\n| 已取得 Office Core Key | 这是常规物品链；请检查上方独立的电话与符号路线。 |\n| 已解开 Office 符号 | 继续到裹着床单的病人遭遇。 |\n| 已完成三处标志 | 选择常规结局门前，先对照上方最终卧室流程。 |\n\n核对不确定步骤时保留恢复存档。如果你的版本表现不同，请通过下方“来源与纠错”反馈最后完成的标志和游戏版本。\n",
+  "quickAnswer": "完成 Timesville、Misery Town 与 Office 的隐藏路线。在 Office，用 Telescope 发现 277-5944，通过 Jobs 拨号，在自动售货机附近楼梯下等待，再解开符号关卡。Chapter III 之后，回到 Mellow 房间查看变化后的遭遇。",
+  "scope": "Windows 正式版 · 社区来源于 2026 年 10 月 1 日复核。并非作者亲自实测；平台与游戏版本可能存在差异。",
+  "taskLinks": [
+    {
+      "label": "检查三个秘密",
+      "anchor": "requirements-checklist"
+    },
+    {
+      "label": "解开 Office 符号",
+      "anchor": "seven-office-symbol-stages"
+    },
+    {
+      "label": "寻找最终路线",
+      "anchor": "final-symbol-sequence-and-commitment"
+    }
+  ]
+}

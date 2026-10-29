@@ -1,0 +1,9 @@
+{
+  "slug": "bosses",
+  "title": "Endacopia Boss 与遭遇路线",
+  "description": "经来源核对的 Boss 目录，区分主要遭遇、小型或隐藏战斗、避战选项及相关 Steam 成就。",
+  "readTime": "9 分钟",
+  "body": "## 区域遭遇 {#regional-encounters}\n\n这里的三条区域路线分别通向 **The AI**、**Trapezist** 和 **The Chameleon**。本页是路线目录，并非官方完整 Boss 分类。Steam 成就描述可佐证它们有名称的结果。\n\n## Trapezist {#trapezist}\n\nTrapezist 位于 Misery Town 主要演出任务链的末尾。你可以进入常规战斗，也可以使用 Chapter 1 获得的 **Scalpel** 切断绳索，进入另一条路线。\n\nSteam 成就 **Fatal Performance** 和 **Cut The Act** 支持这两种结果结构。玩偶、Jester、麦克风、观众和演出的前置要求见 [Trapezist 攻略](/zh/characters/trapezist)。\n\n## The Chameleon {#the-chameleon}\n\nChameleon 遭遇从 Timesville 夜间追逐和相机使用展开。战斗结果与 **No Strings Attached** 有关，**Case Closed** 则确认存在避战路线。\n\n使用 [Chameleon 攻略](/zh/characters/chameleon)区分追逐时机与最终结果。仅仅离开某个追逐画面，不应被视为已经验证的和平路线完成条件。\n\n## The AI 与后期遭遇 {#the-ai-and-later-encounters}\n\nOffice 路线包含 AI 遭遇。Steam 的 **System Override** 成就提供了官方结果名称。周边前置条件见[区域流程目录](/zh/walkthrough)。\n\nClockey 和 RODGER 等名字会出现在更广泛的社区描述中，但仅凭这一点，不能证明它们都属于固定的“五个必打主要 Boss”名单。本页不采用这个缺少依据的数量。\n\n## 小型与隐藏遭遇 {#minor-and-secret-encounters}\n\nFandom 目录还列有 Matchboxer、Tuna、Danu、Nove、Yew、The Mug、Chimeramanticore、Benjamin 等小型或隐藏遭遇。某个名字出现在目录中，并不自动意味着该战斗必须完成。\n\n开始可选战斗前，先检查三点：\n\n1. 房间属于主线还是隐藏区域。\n2. 遭遇能否避开或推迟。\n3. 是否有 Steam 成就认可某个特定结果。\n\n## 通用战斗思路 {#general-combat-approach}\n\n- 先观察一个完整攻击循环，再利用伤害窗口。\n- 留意特殊物品或环境操作是否能替代直接战斗。\n- 在有成对结果成就的遭遇前保留存档。\n- 用无伤视频观察动画时机，不要把它当作路线前置条件的唯一来源。\n- 无法进入 Boss 房间时，返回章节攻略核对；缺失步骤往往发生在场外。\n",
+  "quickAnswer": "本页介绍 Office 的 AI、Misery Town 的 Trapezist 和 Timesville 的 Chameleon 三处区域遭遇。可选战斗与后期角色另行列出，不宣称官方共有五个主要 Boss。",
+  "scope": "正式版 · 来源于 2026 年 10 月 29 日复核。路线细节依据所引用攻略，并非所有路线都已在每个游戏版本中重新实测。"
+}

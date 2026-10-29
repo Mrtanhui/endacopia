@@ -1,0 +1,9 @@
+{
+  "slug": "characters/jester",
+  "title": "Endacopia 的 Jester（Red Jester / Ticketo）",
+  "description": "区分 Red Jester 与 Pierrot，说明摊位和报幕角色、礼物任务链，以及如何推进 Trapezist 演出。",
+  "readTime": "6 分钟",
+  "body": "## 玩家说的是哪位 Jester？ {#which-jester-do-players-mean}\n\n“Endacopia Jester”通常指 **Red Jester**：Misery Town 的摊位管理者和报幕者，社区资料也将其与 Ticketo 这个名字联系起来。他与 **Pierrot** 不应混为一谈，后者在相连的礼物任务链中有自己的角色。\n\n这种区分会直接影响攻略：针对 Pierrot 的建议不会自动改变摊位状态，把两人合成一个角色也会让 Trapezist 路线更难理解。\n\n## 摊位与报幕职责 {#booth-and-announcer-role}\n\nRed Jester 控制或占据 Misery Town 入口处的重要摊位，并参与演出准备。社区资料描述了他与 Pierrot 的关系，以及在正确处理观众之前如何构成一道阻碍。\n\n完成相关对话，并检查每位表演者的需求。解法是一条物品与人物关系链，而不是辱骂、战斗或随机密码。\n\n## 玩偶与礼物任务链 {#plushie-and-gift-sequence}\n\n先通过蓝色充气角色的路线取得玩偶。该流程需要医疗帐篷取得的红球、移动厕所 Bingo、另一名充气人的弱点提示，以及当前存档弱点线索指定的回答（`age`、`smell` 或 `voice`）。\n\n把玩偶用于 Pierrot 的礼物相关任务。相连请求完成后，Red Jester 才能离开摊位，路线才能继续。\n\n## 麦克风与观众 {#microphone-and-crowd}\n\n摊位状态改变后，按 Misery Town 路线取得或使用麦克风。它用于移动或清理观众，以便演出继续。\n\n演出最终通向 Trapezist 的结果选择。如果你拿到了前面的 Scalpel，就能选择切绳替代路线，而不是常规战斗。\n\n## 常见混淆 {#common-mix-ups}\n\n- Red Jester 与 Pierrot 是不同角色。\n- 蓝色充气人谜题为这条任务链提供物品，但不是同一个谜题。\n- 麦克风在人物关系和摊位步骤完成后才起作用；提前使用无法替代前置要求。\n- 前面的小丑谜题虽有同样的马戏团意象，却属于另一种搜索问题。\n",
+  "quickAnswer": "搜索 Jester 通常指 Red Jester，社区资料也将其与 Ticketo 联系起来，并非 Pierrot。完成玩偶和礼物任务链，让他离开摊位，再使用麦克风推进观众与演出流程。",
+  "scope": "正式版 · 来源于 2026 年 10 月 29 日复核。路线细节依据所引用攻略，并非所有路线都已在每个游戏版本中重新实测。"
+}

@@ -3,6 +3,7 @@
   document.querySelectorAll('[data-checklist]').forEach(function (root) {
     if (root.dataset.initialized) return;
     root.dataset.initialized = 'true';
+    var zh = root.dataset.language === 'zh';
     var key = 'guide-checklist-v1:' + root.dataset.checklist;
     var boxes = Array.from(root.querySelectorAll('input[type="checkbox"]'));
     var count = root.querySelector('[data-checklist-count]');
@@ -24,15 +25,15 @@
     }
     function update() {
       var selected = boxes.filter(function (box) { return box.checked; }).map(function (box) { return box.value; });
-      count.textContent = selected.length + ' / ' + boxes.length + ' collected';
+      count.textContent = selected.length + ' / ' + boxes.length + (zh ? ' 已收集' : ' collected');
       progress.value = selected.length;
-      remaining.textContent = (boxes.length - selected.length) + ' still to collect';
+      remaining.textContent = (boxes.length - selected.length) + (zh ? ' 种待收集' : ' still to collect');
       boxes.forEach(function (box) { box.closest('label').hidden = missingOnly && box.checked; });
       groups.forEach(function (group) {
         group.hidden = missingOnly && Array.from(group.querySelectorAll('input[type="checkbox"]')).every(function (box) { return box.checked; });
       });
       empty.hidden = !missingOnly || selected.length !== boxes.length;
-      status.textContent = !storageAvailable ? 'Browser storage is unavailable. Checks will last only on this page.' : selected.length === boxes.length ? 'All items checked. Compare with your in-game collection before claiming the reward.' : 'Saved in this browser. Clear browser data or use Reset checklist to remove your checks.';
+      status.textContent = zh ? (!storageAvailable ? '浏览器存储不可用，勾选仅在本页有效。' : selected.length === boxes.length ? '已全部勾选，请先与游戏内收集记录核对。' : '已保存在当前浏览器，可通过重置清单清除。') : !storageAvailable ? 'Browser storage is unavailable. Checks will last only on this page.' : selected.length === boxes.length ? 'All items checked. Compare with your in-game collection before claiming the reward.' : 'Saved in this browser. Clear browser data or use Reset checklist to remove your checks.';
       return selected;
     }
     try { restore(localStorage.getItem(key)); } catch { storageAvailable = false; }
@@ -44,7 +45,7 @@
     filter.addEventListener('click', function () {
       missingOnly = !missingOnly;
       filter.setAttribute('aria-pressed', String(missingOnly));
-      filter.textContent = missingOnly ? 'Show all fish' : 'Show missing only';
+      filter.textContent = zh ? (missingOnly ? '显示全部' : '仅显示未收集') : (missingOnly ? 'Show all fish' : 'Show missing only');
       update();
     });
     root.addEventListener('change', function (event) {

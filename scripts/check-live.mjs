@@ -2,7 +2,7 @@ import { writeFileSync } from 'node:fs';
 import { guides } from './check-content.mjs';
 const origin = process.env.CHECK_ORIGIN;
 if (!origin || !/^https:\/\//.test(origin)) throw new Error('Set CHECK_ORIGIN to the public production origin.');
-const paths = ['/', '/puzzles', '/about', '/contact', '/privacy', ...guides.map((guide) => '/' + guide.slug)];
+const paths = ['/', '/puzzles', '/about', '/contact', '/privacy', '/zh', '/zh/puzzles', ...guides.flatMap((guide) => ['/' + guide.slug, '/zh/' + guide.slug])];
 const results = [], bodies = new Map(), assets = new Map();
 for (const path of paths) {
   const response = await fetch(origin + path);
@@ -20,6 +20,14 @@ for (const asset of assets.keys()) {
 }
 for (const row of results) {
   if (row.status !== 200 || row.h1 !== 1 || row.noindex || row.canonical?.replace(/\/$/,'') !== (origin+row.path).replace(/\/$/,'')) errors.push(`Crawl/SEO check: ${row.path}`);
+  const html = bodies.get(row.path);
+  if (row.path.startsWith('/zh') && !html.includes('<html lang="zh-Hans"')) errors.push(`Chinese document language: ${row.path}`);
+  if (/G-TEST123|endacopia\.example|localhost:3000/.test(html)) errors.push(`Test configuration leaked: ${row.path}`);
+  const originalPath = row.path.replace(/^\/zh(?=\/|$)/, '') || '/';
+  if (!['/about', '/contact', '/privacy'].includes(originalPath)) {
+    const chinesePath = originalPath === '/' ? '/zh' : '/zh' + originalPath;
+    if (!new RegExp(`hrefLang="en" href="${origin.replaceAll('.', '\\.')}\\/?${originalPath.slice(1)}"`, 'i').test(html) || !html.includes(`href="${origin + chinesePath}"`)) errors.push(`Language alternates: ${row.path}`);
+  }
   for (const href of row.links) {
     const [path, anchor] = href.split('#');
     if (assets.has(path)) continue;

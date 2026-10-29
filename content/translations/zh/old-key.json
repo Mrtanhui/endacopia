@@ -1,0 +1,135 @@
+{
+  "slug": "puzzles/old-key",
+  "title": "Endacopia Old / Lost Key：获取位置与使用方法",
+  "description": "找到 Fishing Paper，钓齐 18 种鱼，领取 Old Key 或 Lost Key，并找到隐藏窗口锁；包含缺少鱼类的检查方法。",
+  "readTime": "9 分钟",
+  "body": "## 钓鱼钥匙或 Lost Key 用在哪里？ {#where-do-you-use-the-fishing-or-lost-key}\n\n完成 Fishing Paper 后得到的 Old Key 或 Lost Key，用于 Timesville 隐藏窗口锁流程。先完成成对房间谜题，再切换窗口模式并重新进入较小房间，让锁显现。如果已经拿到钥匙，请查看[窗口锁详细步骤](#use-the-key-on-the-hidden-window-lock)。Office 的 Core Key 是另一件物品。\n\n## 已经拿到钓鱼钥匙，接下来做什么？ {#i-already-have-the-fishing-key-what-next}\n\n如果 Old Key 或 Lost Key 已经在物品栏中，就不必再次钓鱼。完成成对房间谜题，进入较小房间并听取反向语音。离开、切换窗口模式，再重新进入同一房间，对锁使用钥匙。见[编号开锁步骤](#use-the-key-on-the-hidden-window-lock)。\n\n## 开始前 {#before-you-start}\n\n这把通过收集鱼获得的钥匙用于 Timesville 隐藏路线。有些社区攻略称它为 **Lost Key**，玩家也会称其为 **Old Key**。Office 的 **Core Key** 是不同物品；那条物品链请查看[饮水机攻略](/zh/puzzles/core-key)。\n\n你需要解锁 Timesville 钓鱼，持有 **Metal Detector（金属探测器）**和 **Fishing Paper（鱼类收集纸）**。如果缺少其中条件，请按下方钓鱼与探测器步骤完成。[完整流程目录](/zh/walkthrough)提供周边路线概览。\n\n在该区域 Boss 进度前，保留独立的 Chapter I 存档。这是[社区 Ending C 攻略](https://steamcommunity.com/sharedfiles/filedetails/?id=3773635669)给出的预防建议，不是在断言所有后期存档都会永久无法补做。\n\n### 解锁钓鱼 {#unlock-fishing}\n\n完成 Catthew 的三次捉迷藏遭遇，获得 Fishing License（钓鱼许可证）。向海滩钓鱼平台的潜水员出示许可证，再使用鱼竿。如果猫的对话没有推进，请查看[社区成就流程攻略](https://steamcommunity.com/sharedfiles/filedetails/?id=3774754099)。\n\n### 取得 Metal Detector {#get-the-metal-detector}\n\n1. 从旅馆里 Paisley 的派对取得 Telescope（望远镜）。派对密码是 **Yellow**；推进钓鱼后，与水族箱居民交谈取得邀请。\n2. 在 **Night 3（夜晚 3）**，于上锁的海边棚屋旁使用 Telescope，连接星星打开入口。\n3. 进入后，从左到右设置四块化石：第一块直立，第二块调至最高，第三块调至最高，第四块双臂展开。\n4. 拉动绳子，让昆虫通过，再降下持有探测器的化石，后退拾取。\n\n这些前置步骤依据[成就流程攻略](https://steamcommunity.com/sharedfiles/filedetails/?id=3774754099)。探测器也用于寻找 [Projector Remote](/zh/puzzles/projector-remote)。\n\n## 找到 Fishing Paper {#find-the-fishing-paper}\n\n1. 把 Metal Detector 带到 Timesville 海滩。\n2. 扫描沙地，根据探测器反应寻找挖掘点；检查挖出的物品，确认是 Fishing Paper，而非其他埋藏物。\n3. 检查纸张，查看鱼类收集栏位。\n\n找到纸张并不会立刻获得钥匙，钥匙在完成后的收集中。[Timesville 秘密指南](https://steamcommunity.com/sharedfiles/filedetails/?id=3773067527)记录了“纸张 → 收集 → 钥匙”的顺序。\n\n现有来源尚未确认，找到纸张前钓到的每一条鱼是否都会追溯填入栏位。规划新流程时，建议先取得纸张。\n\n![流程示意：海滩探测器、Fishing Paper、18 个收集栏位、检查纸张、取得钥匙](/images/old-key-flow.svg \"原创攻略示意图，并非游戏截图。步骤不标注准确挖掘坐标。\")\n\n## 读取时钟与推进时间 {#read-the-clock-and-advance-time}\n\n对照指针位置：**Day 1 右上、Day 2 正上、Day 3 左上、Night 1 左下、Night 2 正下、Night 3 右下**。这些标签依据[钓鱼指南的标注时钟](https://steamcommunity.com/sharedfiles/filedetails/?id=3772931269)。\n\n![六个时钟位置：Day 1 右上、Day 2 正上、Day 3 左上、Night 1 左下、Night 2 正下、Night 3 右下](/images/fishing-clock.svg \"依据引用时钟资料绘制的原创方向图。Day 与 Night 编号表示状态，不是真实世界的小时。\")\n\n进入建筑或切换地点会推进城镇的时间循环。离开钓鱼，使用附近建筑切换，再次检查时钟后才抛竿。一直待在鱼竿旁，不是选择新状态的可靠方法。这种行为见[成就攻略](https://steamcommunity.com/sharedfiles/filedetails/?id=3774754099)。\n\n## 六个时段的全部 18 种鱼 {#all-18-fish-by-time-period}\n\n昼夜共有六种状态，每种有三种不同收获。将当前时钟状态与下表对应。重复钓到同一种鱼，不能替代缺少的物种。\n\n| 时钟状态 | 鱼 1 | 鱼 2 | 鱼 3 |\n| --- | --- | --- | --- |\n| Day 1（白天 1） | Nautilus | Colisa Lalia | Jantic Fish |\n| Day 2（白天 2） | Peter Panini | Seahorse | Singin' Fish |\n| Day 3（白天 3） | Eel | Reddest Fish Ever | Sea Man |\n| Night 1（夜晚 1） | Pirate | Skele-Fish | RC Ship |\n| Night 2（夜晚 2） | Crab | Starfish | Big Worm |\n| Night 3（夜晚 3） | Drawing of a Fish | Jelly | Crate |\n\n鱼名和时钟分组依据 [penguinleader911 的钓鱼指南](https://steamcommunity.com/sharedfiles/filedetails/?id=3772931269)。不确定其 Day 1–3 与 Night 1–3 如何对应表盘时，请打开该指南的时钟图片。模糊的 **???** 收获不包含在该指南的 18 种鱼成就清单中。\n\n收集时随时检查 Fishing Paper。若只缺一种鱼，回到对应行的时段，而不必重刷一天中的每个阶段。\n\n## 你的钓鱼进度 {#your-fish-progress}\n\n使用**仅显示未收集**隐藏已勾选的鱼。已完成的时段会从这个视图消失，方便集中处理还缺的时钟状态。清单保存在当前设备上；请与游戏中的 Fishing Paper 对照。\n\n:::checklist\n\n## 领取 Old Key 或 Lost Key {#claim-the-old-or-lost-key}\n\n1. 填满全部 18 个不同的收集栏位。\n2. 退出钓鱼小游戏。\n3. 再次检查已完成的 Fishing Paper。\n4. 收取纸张释放的钥匙。\n\n钓鱼成就与取得钥匙是两个独立检查点。如果成就已解锁但看不到钥匙，请重新检查纸张本身，而不是钓鱼 NPC。\n\n## 完成共享房间谜题 {#complete-the-shared-room-puzzle}\n\n较小的娃娃屋与对应的大房间共享布局。白天时，查看海滩墙上开口中可见的照片，再按它设置小房间：\n\n1. 把小桌向左移动，放到墙上电器下方。\n2. 启动玩具微波炉，等完成提示音，再打开，让橙色物体落到桌上。\n3. 把画面设为**三只鸟**。\n4. 拉垂绳开灯，在另一条天花板绳索处放上风扇贴纸。\n5. 前往对应的大房间，从电视拿到 VHS 录像带。返回小房间，检查是否已经变为黑白。\n\n如果物体之前已被移动，以房间照片为准。也要对照照片检查温控器；Viri 在攻略评论中特意提到它。这些设置依据 [Neoseeker 的 Chapter 1 流程](https://www.neoseeker.com/endacopia/Chapter_1)；[Viri 的图文攻略](https://steamcommunity.com/sharedfiles/filedetails/?id=3773067527)展示了变化后的小房间与锁。\n\n## 在隐藏窗口锁使用钥匙 {#use-the-key-on-the-hidden-window-lock}\n\n锁位于**两个相似房间中较小的那个**，并且要先完成共享谜题。\n\n1. 返回已变为黑白的小房间。\n2. 稍作停留，听取反向语音提示。\n3. 离开房间。\n4. 按 `Alt+Enter`，让游戏退出全屏。\n5. 重新进入同一个小房间。原来的黑色开口此时应变成一把大锁。\n6. 对这把锁使用 Old Key 或 Lost Key。\n\n这些步骤展示在 [Viri 的 Timesville 指南 Step 2](https://steamcommunity.com/sharedfiles/filedetails/?id=3773067527)。该指南的房间前后对比截图可供视觉核对。这个键盘快捷键适用于 Windows 游戏，手柄快捷操作取决于配置的按键布局。\n\n![黑白小房间、离开房间、切换窗口模式、重新进入、使用钥匙](/images/window-lock-flow.svg \"原创状态转换示意图。请将实际房间与所链接的 Viri 截图对照；本图并非截图。\")\n\n打开锁只是隐藏流程的开始，并不代表所有 Ending C 条件都已完成。继续查看 [Ending C 清单](/zh/endings/ending-c)，或用[秘密概览](/zh/guide/secrets)检查其他区域。\n\n## 难点步骤的视觉参考 {#visual-references-for-the-difficult-steps}\n\n| 需要辨认的内容 | 参考资料 |\n| --- | --- |\n| 时钟状态与缺少的鱼 | [全鱼类指南：标注时钟与物种](https://steamcommunity.com/sharedfiles/filedetails/?id=3772931269) |\n| 切换模式前的黑白房间 | [Viri 的 Timesville 指南 Step 2：第一张房间图](https://steamcommunity.com/sharedfiles/filedetails/?id=3773067527) |\n| 重新进入后的大锁 | [Viri 的 Timesville 指南 Step 2：窗口模式房间图](https://steamcommunity.com/sharedfiles/filedetails/?id=3773067527) |\n\n链接指向原始社区资料。本站示意图展示操作顺序，不标记精确挖掘坐标，也不能替代你所用游戏版本的截图。\n\n## 某一步无效时 {#if-a-step-does-not-work}\n\n| 你看到的情况 | 下一步检查 |\n| --- | --- |\n| 纸张仍有空栏 | 把缺少的鱼与上方六个时段对应。 |\n| 成就解锁，但没有钥匙 | 离开钓鱼，再次检查已完成的纸张。 |\n| 出现黑色开口而不是锁 | 完成成对房间谜题，在小房间等待反向语音，离开并确认窗口模式，再进入同一个房间。 |\n| Fishing Paper 已完成，却找不到钥匙 | 离开鱼竿，再次检查完成后的纸张，并检查物品栏中的钓鱼路线钥匙。 |\n| Alt+Enter 似乎无效 | 确认画面明显进入窗口模式；切换后离开再重进。使用手柄时检查键盘快捷键的映射。 |\n| 总是钓到同一种鱼 | 对照方向图检查时钟指针。重复鱼不会填入其他物种栏。 |\n| 钥匙打不开 Office 的门 | 检查该处是否需要的是 Core Key。 |\n| 后期存档已无法到达区域 | 与早期备份对照；不是每一种路线状态都已确认可以补救。 |\n\n[Timesville 社区指南](https://steamcommunity.com/sharedfiles/filedetails/?id=3773067527)描述了语音、窗口模式切换和重新进入的步骤。[Endacopia Unstuck 对照指南](https://endacopiaunstuck.com/guides/fish-key-strange-safe)也链接了玩家报告；它属于综合整理，不能独立证明每个步骤。如果改变显示模式后仍然失败，请查看这些报告，并在尝试重新读取前备份存档。本站尚未复现这个补救方式。\n\n如果其他攻略将物品称为“Ancient Key”，请将其获取步骤与这里的钓鱼奖励对照。本页使用的来源尚未确认这个名称。\n",
+  "quickAnswer": "在 Timesville 海滩用 Metal Detector 找到 Fishing Paper，在六种昼夜状态钓齐 18 种不同的鱼，再次检查完成后的纸张让 Old Key 或 Lost Key 掉落。娃娃屋房间变为黑白后，在隐藏窗口保险锁使用它。",
+  "scope": "Windows 正式版 · 钥匙、鱼类与窗口锁的社区来源于 2026 年 10 月 29 日复核。并非作者亲自实测；平台与游戏版本可能存在差异。",
+  "taskLinks": [
+    {
+      "label": "我要获取钥匙",
+      "anchor": "before-you-start"
+    },
+    {
+      "label": "追踪缺少的鱼",
+      "anchor": "your-fish-progress"
+    },
+    {
+      "label": "我已经有钥匙",
+      "anchor": "use-the-key-on-the-hidden-window-lock"
+    },
+    {
+      "label": "某个步骤无效",
+      "anchor": "if-a-step-does-not-work"
+    }
+  ],
+  "checklist": {
+    "id": "timesville-fish",
+    "title": "18 种鱼收集清单",
+    "groups": [
+      {
+        "title": "白天 1",
+        "items": [
+          {
+            "id": "nautilus",
+            "label": "Nautilus"
+          },
+          {
+            "id": "colisa-lalia",
+            "label": "Colisa Lalia"
+          },
+          {
+            "id": "jantic-fish",
+            "label": "Jantic Fish"
+          }
+        ]
+      },
+      {
+        "title": "白天 2",
+        "items": [
+          {
+            "id": "peter-panini",
+            "label": "Peter Panini"
+          },
+          {
+            "id": "seahorse",
+            "label": "Seahorse"
+          },
+          {
+            "id": "singin-fish",
+            "label": "Singin' Fish"
+          }
+        ]
+      },
+      {
+        "title": "白天 3",
+        "items": [
+          {
+            "id": "eel",
+            "label": "Eel"
+          },
+          {
+            "id": "reddest-fish-ever",
+            "label": "Reddest Fish Ever"
+          },
+          {
+            "id": "sea-man",
+            "label": "Sea Man"
+          }
+        ]
+      },
+      {
+        "title": "夜晚 1",
+        "items": [
+          {
+            "id": "pirate",
+            "label": "Pirate"
+          },
+          {
+            "id": "skele-fish",
+            "label": "Skele-Fish"
+          },
+          {
+            "id": "rc-ship",
+            "label": "RC Ship"
+          }
+        ]
+      },
+      {
+        "title": "夜晚 2",
+        "items": [
+          {
+            "id": "crab",
+            "label": "Crab"
+          },
+          {
+            "id": "starfish",
+            "label": "Starfish"
+          },
+          {
+            "id": "big-worm",
+            "label": "Big Worm"
+          }
+        ]
+      },
+      {
+        "title": "夜晚 3",
+        "items": [
+          {
+            "id": "drawing-of-a-fish",
+            "label": "Drawing of a Fish"
+          },
+          {
+            "id": "jelly",
+            "label": "Jelly"
+          },
+          {
+            "id": "crate",
+            "label": "Crate"
+          }
+        ]
+      }
+    ]
+  }
+}

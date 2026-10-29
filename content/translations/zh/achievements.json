@@ -1,0 +1,9 @@
+{
+  "slug": "guide/achievements",
+  "title": "Endacopia 成就攻略",
+  "description": "规划 Endacopia 的 16 项 Steam 成就，将官方名称和条件与社区整理的易错过路线分开说明。",
+  "readTime": "9 分钟",
+  "body": "## 成就规划 {#achievement-plan}\n\nSteam 官方全局成就页面列出了 16 项成就。名称和描述应以该页面为准；流程攻略用于判断所在章节、容易错过的条件和较高效的完成顺序。\n\n不要依赖旧攻略中复制的解锁比例。随着更多玩家通关，这些数字会变化。真正长期有用的是成就条件，以及它在路线中的位置。\n\n## Boss 结果相关成就 {#boss-outcome-achievements}\n\n规划路线时，有三场主要遭遇尤其需要留意，因为游戏认可战斗与非战斗两种结果。\n\n- **Fatal Performance** 和 **Cut The Act** 与 Trapezist 路线有关。\n- **No Strings Attached** 对应击败 Chameleon，**Case Closed** 则确认存在避开战斗的路线。\n- AI 对应的一组成就是击败它的 **System Override**，以及另一种避战结果的 **Short Circuit**。\n\n条件允许时，在最终选择前保留存档。[Trapezist](/zh/characters/trapezist) 和 [Chameleon](/zh/characters/chameleon) 页面会分别解释路线背景，避免混淆不同结果。\n\n## 技巧与活动成就 {#skill-and-activity-achievements}\n\n**Footwork Master** 要求足球得分达到 100。这项挑战主要考验重复练习和时机，而不是剧情分支，因此通常适合单独安排时间完成。[足球攻略](/zh/puzzles/soccer-ball)区分了官方目标与社区提出的 KICK 标记时机技巧。\n\n其他官方成就示例还有 **A Natural Brawler**。发布清单或翻译条件之前，请核对 Steam 的准确措辞；社区页面有时会简化名称，导致后续搜索困难。\n\n## 结局成就 {#ending-achievements}\n\nEndacopia 有多条结果路线，Steam 也收录了结局相关成就。先尽量不看剧透地完成一次故事，再用[全结局指南](/zh/endings)规划其他结果。Ending C 需要在多个区域提前准备，不能把它当作最后一刻的一次对话选择。\n\n## 补完成就清单 {#clean-up-checklist}\n\n1. 先自行完成一条故事路线，记录自然解锁的成就。\n2. 对照 Steam 中剩余的官方成就和章节攻略。\n3. 读取 Boss 前的存档，尝试另一种战斗或避战结果。\n4. 完成足球 100 分等技巧挑战。\n5. 开始 Ending C 前，先准备需要大量收集的条件。\n6. 完成后重新查看 Steam，不要依赖旧的成就比例截图。\n\n> 本站不会声称所有成就都能在一次不间断流程中完成。在得到充分验证的最少周目方案前，对互斥结果和容易错过的互动应保留独立存档。\n",
+  "quickAnswer": "Endacopia 有 16 项 Steam 成就。请为击败或避开 Boss 的不同结果保留独立存档，在结局前收集可选路线所需物品，并留出时间单独完成 Footwork Master 等技巧挑战。",
+  "scope": "正式版 · 来源于 2026 年 10 月 29 日复核。路线细节依据所引用攻略，并非所有路线都已在每个游戏版本中重新实测。"
+}

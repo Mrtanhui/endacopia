@@ -1,0 +1,8 @@
+{
+  "slug": "wiki",
+  "title": "Endacopia 中文 Wiki",
+  "description": "注意剧透的 Endacopia 指南索引，覆盖已发布的流程、结局、角色、Boss、成就、秘密及谜题攻略。",
+  "readTime": "4 分钟",
+  "body": "## Endacopia 是什么游戏？ {#what-is-endacopia}\n\nEndacopia 是 Andyland 制作的超现实点击式解谜冒险游戏。你以 Guardian Angel（守护天使）的身份引导迷失的孩子 Mellow。起初看似色彩鲜艳的早期电脑教育游戏，逐渐展露出抽象谜题、令人不安的角色、第一人称战斗、小游戏与隐藏路线。\n\n游戏于 2026 年 7 月 27 日在 Steam 发售。Steam 将其列为单人游戏，包含 16 项成就。当旧开发计划或社区概要与当前官方商店冲突时，以商店现有信息为准。\n\n## 本 Wiki 如何组织 {#how-this-wiki-is-organized}\n\n本指南按搜索需求组织内容。宽泛页面用于梳理游戏，聚焦页面则回答具体问题，让你无需通读整章。\n\n- 从[流程与区域目录](/zh/walkthrough)开始，为当前地点找到下一个谜题。\n- 用[结局指南](/zh/endings)在控制剧透的前提下了解分支。\n- 用[角色目录](/zh/characters)定位名字、角色职责或遭遇。\n- 被某个特定互动卡住时，查看[谜题解法](/zh/puzzles)。\n- 用[全 Boss 指南](/zh/bosses)区分必要、可选及可避开的战斗。\n\n## 证据与剧透原则 {#evidence-and-spoiler-policy}\n\n游戏身份、功能与发售信息使用官方 Steam、Andyland、Kickstarter 和 itch.io 页面。Neoseeker 用于步骤顺序，Fandom 帮助整理角色与分类；具体实机图像会在说明时核对。列出一个视频，不代表已经验证了其中的整段通关流程。\n\n> 涉及结局、隐藏身份或 Boss 职责的页面，会在答案前显示剧透提示。[Old/Lost Key 攻略](/zh/puzzles/old-key)现已覆盖钓鱼路线。由于尚未形成可靠的单一估算，本站仍不发布通关时长估计。\n\n## 首次访问建议 {#suggested-first-visit}\n\n新玩家可以打开流程目录，只阅读当前章节。回访玩家可使用上方目录直接跳到路线、角色、成就或谜题。若只需要一个密码或顺序，谜题页顶部的快速答案会在详细解释之前给出。\n",
+  "scope": "正式版 · 来源于 2026 年 10 月 29 日复核。路线细节依据所引用攻略，并非所有路线都已在每个游戏版本中重新实测。"
+}

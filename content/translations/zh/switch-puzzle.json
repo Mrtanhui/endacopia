@@ -1,0 +1,9 @@
+{
+  "slug": "puzzles/switch-puzzle",
+  "title": "Endacopia 开关谜题顺序",
+  "description": "说明适用于特定初始状态的 Office 开关顺序、另一份资料记录的三步方案，以及如何避免混用两者的初始条件。",
+  "readTime": "4 分钟",
+  "body": "## 正确顺序 {#correct-order}\n\nNeoseeker 的 Office 路线记录了从仅 Yellow 开启的状态出发的以下顺序：\n\n1. 将全部开关设为**关闭**，只留下 **Yellow（黄色）开启**。\n2. **关闭 Yellow**。\n3. **开启 Dark Blue（深蓝色）**。\n4. **开启 Light Blue（浅蓝色）**。\n5. **开启 Purple（紫色）**。\n6. **开启 Red（红色）**。\n\n简写为：先仅开启 Yellow，再执行 `Yellow off → Dark Blue → Light Blue → Purple → Red`。\n\n## 为什么必须重设初始状态 {#why-the-reset-matters}\n\n使用记录中的顺序时，面板初始状态很重要。上面的步骤假定仅 Yellow 开启，并未证明从任意状态都能通过某种通用重置操作到达这一状态。\n\n另一份 [Steam 三步攻略](https://steamcommunity.com/sharedfiles/filedetails/?id=3807332422)记录了 **Green → Dark Blue → Red**（左上 → 左中 → 右上）。作者没有说明初始状态。本站尚未重玩这一替代方案，不会把它当作通用解法。\n\n## 区分两种蓝色 {#identifying-the-two-blues}\n\n最常见的视觉错误是颠倒 **Dark Blue** 与 **Light Blue**。先深蓝，再浅蓝。输入最终顺序前，停一下，比较两枚开关的颜色。\n\n如果显示器亮度导致难以区分，请参考所链接实机资料中的位置，不要只凭饱和度猜测。\n\n## 完成信号 {#completion-signal}\n\n在正确状态下开启 Red 后，相连的机关或门应该响应。如果没有变化：\n\n- 将当前面板与所跟随路线的初始状态对照。\n- 确认起初只有 Yellow 开启。\n- 触碰任何蓝色开关前，先关闭 Yellow。\n- 先输入 Dark Blue，再输入 Light Blue。\n- 确保没有未列出的颜色仍然开启。\n\n## 路线背景 {#route-context}\n\n这个谜题位于 Office 路线上，在视频攻略中也可通过“Find Your Mouth”搜索。它不是 Ending C 路线后面出现的符号谜题。\n",
+  "quickAnswer": "一条记录路线从仅 Yellow 开启开始：Yellow off → Dark Blue → Light Blue → Purple → Red。另一份 Steam 攻略给出 Green → Dark Blue → Red，但未说明初始状态。不要假设任何一种顺序都适用于所有面板状态。",
+  "scope": "正式版 · 来源于 2026 年 10 月 29 日复核。路线细节依据所引用攻略，并非所有路线都已在每个游戏版本中重新实测。"
+}

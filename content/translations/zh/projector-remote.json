@@ -1,0 +1,23 @@
+{
+  "slug": "puzzles/projector-remote",
+  "title": "Endacopia Projector Remote：位置与隐藏地图路线",
+  "description": "找到电影帐篷内埋藏的遥控器，保存投影地图并进入隐藏通道，包含探测器前置条件与完成检查。",
+  "readTime": "6 分钟",
+  "body": "## 先取得 Metal Detector {#get-the-metal-detector-first}\n\nProjector Remote 埋在地下，因此取得 Timesville 的 **Metal Detector（金属探测器）**之前无法完成这条路线。返回 Misery Town 时请带上它。[探测器前置条件](/zh/puzzles/old-key#get-the-metal-detector)介绍 Telescope 和化石棚的准备步骤。\n\n电影帐篷位于 Circus 入口附近，有八个彩色座位；早先 Whack-a-Mole 流程使用的电影线索也在这里。\n\n## 挖出 Projector Remote {#dig-up-the-projector-remote}\n\n进入 Misery Town 电影帐篷，在沙地上使用 Metal Detector。搜索剧院内部，而不是外面的道路。埋藏物品是 **Projector Remote（投影仪遥控器）**。\n\n如果没有发现，确认你位于彩色座位电影帐篷中，并已把 Metal Detector 选为当前使用的物品。\n\n## 显示并保存隐藏地图 {#reveal-and-save-the-hidden-map}\n\n对投影仪或银幕使用 Projector Remote。新图像是一张路线图，对应黑白棋盘格或哑剧房间。\n\n离开前截图或抄下路线。它是行动提示，不是背景彩蛋；随意猜路可能让你被送回房间入口。\n\n## 跟随棋盘格路线 {#follow-the-checkerboard-route}\n\n1. 从黑白哑剧房间的入口开始，即蓝色小丑附近、曾经取得 **Hands** 的房间。剧院与此房间是两个不同地点。\n2. 把保存的投影地图放在游戏旁边，从入口跟随连续路线。按地图朝向走，不要把它换算成凭记忆的一串左右转。\n3. 继续穿过隐藏通道。变化后的区域淡出成白色并恢复后，寻找右下角的楼梯。\n4. 下楼并完成四个舱体／身体小游戏。本攻略尚未核实涉及指针边界的具体解法。\n5. 继续直到隐藏遭遇结束，并返回 Misery Town。只找到遥控器或进入通道，还不算完成。\n\n[成就流程攻略](https://steamcommunity.com/sharedfiles/filedetails/?id=3774754099)说明了白色淡出、楼梯和舱体标志。[全结局指南](https://steamcommunity.com/sharedfiles/filedetails/?id=3773635669)将保龄球瓶状人物列为这条路线的完成检查点。\n\n![路线概览：彩色座位剧院、投影地图、Hands 哑剧房间入口、隐藏通道、舱体谜题、返回](/images/projector-route.svg \"原创路线概览，并非逐格地图。准确路径请记录你自己投影仪显示的地图。\")\n\n如果可能，请在完成 Trapezist 流程并结束 Misery Town 之前走完隐藏路线。\n\n它只是完整秘密任务链的一部分。钓鱼条件见 [Old Key 攻略](/zh/puzzles/old-key)；在做出不可逆的结局选择前，请查看 [Ending C 攻略](/zh/endings/ending-c)。\n\n## 逐项检查路线标志 {#check-each-route-milestone}\n\n| 检查点 | 应出现的变化 |\n| --- | --- |\n| 已取得遥控器 | 物品栏中出现 Projector Remote，而不只是 Metal Detector。 |\n| 已启用投影 | 银幕显示之后要在 Hands 房间走的路线。离开前记录它。 |\n| 已按地图前进 | 抵达隐藏通道，而不是被重置到入口。 |\n| 已完成隐藏流程 | 保龄球瓶状人物的遭遇结束，并返回 Misery Town。 |\n\n完成最终标志后，返回[三区域完成检查](/zh/guide/secrets#check-what-you-have-actually-completed)。原始路线图片可查看[全结局指南的 Misery Town 部分](https://steamcommunity.com/sharedfiles/filedetails/?id=3773635669)。在没有经过核实的地图时，本页不会断言具体格子路线。\n\n## 无法进入路线时 {#if-the-route-does-not-open}\n\n| 现象 | 下一步检查 |\n| --- | --- |\n| 探测器没有发现 | 在有八个彩色座位的剧院内部搜索，确认已经选中探测器。 |\n| 仍播放普通电影 | 先对投影仪／银幕使用刚取得的遥控器，再记录地图。 |\n| 回到哑剧房间入口 | 从入口重新开始，把下一段与截图对照，避免凭记忆从中途续走。 |\n| 不知道通道后去哪里 | 查看引用攻略中的白色淡出和右下角楼梯标志。 |\n| 没有最终秘密遭遇 | 在舱体谜题后继续前进；拿到遥控器只是开始。 |\n\n本页没有经过测试的纯文字转向序列。准确格子请以游戏内投影为准；本页示意图解释地点和检查点，不会冒充那张地图。\n",
+  "quickAnswer": "把 Timesville 的 Metal Detector 带到 Misery Town 有八个彩色座位的电影帐篷，扫描沙地挖出 Projector Remote，再对投影仪使用它。保存显示的地图，并在曾找到 Hands 的黑白棋盘格房间沿线前进。",
+  "scope": "正式版 · 来源于 2026 年 10 月 29 日复核。路线细节依据所引用攻略，并非所有路线都已在每个游戏版本中重新实测。",
+  "taskLinks": [
+    {
+      "label": "找到遥控器",
+      "anchor": "dig-up-the-projector-remote"
+    },
+    {
+      "label": "跟随地图",
+      "anchor": "follow-the-checkerboard-route"
+    },
+    {
+      "label": "排查失败原因",
+      "anchor": "if-the-route-does-not-open"
+    }
+  ]
+}

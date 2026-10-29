@@ -1,0 +1,9 @@
+{
+  "slug": "characters/chameleon",
+  "title": "Endacopia 的 The Chameleon",
+  "description": "介绍 Timesville 的 Chameleon 在何处出现、相机如何用于追逐，以及 Steam 确认的击败和避战结果。",
+  "readTime": "7 分钟",
+  "body": "## Chameleon 是谁？ {#who-is-the-chameleon}\n\n社区资料将 Chameleon 定位于 Timesville，并将它列为主要 Boss。这场遭遇结合了夜间追逐、视觉变化，以及稍后是否完成常规战斗的选择。\n\n大致身份和应对方式来自社区目录与实机资料。Steam 成就列表则提供了最有力的官方证据，确认确实存在两种不同结果。\n\n## 夜间追逐 {#nighttime-pursuit}\n\n追逐时，注意 Chameleon 出现的位置，以及路线如何引导你使用 **camera（相机）**。相机在这里是防御或威慑工具，不只是收藏物品。\n\n一篇[玩家亲历讨论](https://www.reddit.com/r/Endacopia/comments/1v9ic45/camera/)报告了使用相机赶走追逐者的操作。本站尚未核实准确距离、面向方向或输入时机。请遵循你自己遭遇中出现的提示。\n\n## 战斗结果 {#fight-outcome}\n\n常规遭遇最终可以击败 Chameleon。Steam 官方成就 **No Strings Attached** 确认这一结果存在。\n\n社区战斗资料描述了外观变化和多种攻击行为。先学会辨认预兆，再在安全窗口行动。无伤 Boss 合集适合观察视觉时机，但前置条件仍以文字流程更容易核对。\n\n## 避战结果 {#avoid-outcome}\n\nSteam 的 **Case Closed** 确认存在避开常规击败路线的另一种结果。具体准备取决于 Timesville 流程状态，不要假设从任意追逐画面逃走就足够。\n\n如果你要收集成就，请在最终遭遇选择前保留存档。既然官方成就结构认可两种结果，就不应把其中一种说成唯一“正确”的路线。\n\n## 排查问题 {#troubleshooting}\n\n- 相机似乎无法互动时，确认追逐已经进入正确阶段。\n- Chameleon 再次出现时，将路线状态与引用的玩家报告对照；目前并未确认错过时机是唯一原因。\n- 成就与预期不符时，确认你完成的是战斗还是避战状态。\n- 跟随剪辑视频时，将前一个房间的准备与 Timesville 文字路线对照。\n",
+  "quickAnswer": "Chameleon 是与夜间追逐相关的 Timesville Boss。按路线提示使用相机，然后选择战斗结果（No Strings Attached）或避战结果（Case Closed）。",
+  "scope": "正式版 · 来源于 2026 年 10 月 29 日复核。路线细节依据所引用攻略，并非所有路线都已在每个游戏版本中重新实测。"
+}

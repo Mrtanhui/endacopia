@@ -7,10 +7,11 @@ import { getGuides } from "@/lib/guides";
 export const metadata: Metadata = {
   title: site.puzzles.title,
   description: site.puzzles.description,
-  alternates: { canonical: "/puzzles" },
+  alternates: { canonical: "/puzzles", languages: { en: "/puzzles", "zh-Hans": "/zh/puzzles", "x-default": "/puzzles" } },
 };
 
 export default function PuzzlesPage() {
+  const calloutLinks: string[][] = site.puzzles.callout.links;
   const puzzles = getGuides().filter((guide) => guide.category === "Puzzles");
   return (
     <>
@@ -23,11 +24,11 @@ export default function PuzzlesPage() {
       </section>
       <section className="section-shell section-pad listing-grid">
         {puzzles.map((guide) => <GuideCard guide={guide} key={guide.slug} />)}
-        {site.puzzles.callout.links.length > 0 && <article className="deferred-card">
+        {calloutLinks.length > 0 && <article className="deferred-card">
           <span>{site.puzzles.callout.label}</span>
           <h2>{site.puzzles.callout.title}</h2>
           <p>{site.puzzles.callout.description}</p>
-          {site.puzzles.callout.links.map(([label, href]) => <Link key={href} href={href}>{label} →</Link>)}
+          {calloutLinks.map(([label, href]) => <Link key={href} href={href}>{label} →</Link>)}
         </article>}
 
       </section>

@@ -1,0 +1,9 @@
+{
+  "slug": "puzzles/clown-puzzle",
+  "title": "Endacopia 小丑谜题解法",
+  "description": "区分黑白小丑路线与打地鼠颜色谜题，说明如何获得 Scalpel。",
+  "readTime": "6 分钟",
+  "body": "## 指的是哪个小丑谜题？ {#which-clown-puzzle}\n\n玩家所说的“clown puzzle”通常指两段相连的小丑互动：黑白涂鸦或哑剧路线，以及 Whack-a-Mole 的身份辨认谜题。先完成移动部分，再根据电影座位线索选择颜色目标。\n\n它与 Misery Town 的 Red Jester 和 Pierrot 任务链不同，尽管两者都采用马戏团意象。\n\n## 黑白路线 {#black-and-white-route}\n\n遵循黑白房间的移动逻辑，观察涂鸦或哑剧人物如何反应。这一部分的目的是推进相连的小丑流程，不能仅凭移动人物来猜后面的颜色。\n\n如果下一段互动没有开启，沿原路检查，确认每个必要移动或房间切换都已生效再离开。\n\n## 电影座位线索 {#movie-seat-clue}\n\n后面的 Whack-a-Mole 任务要求辨认死去的小丑。线索来自电影院座位场景。记下对应小丑的颜色，不要无差别地打每一个目标。\n\n已核对的目标颜色是：\n\n- **Red（红色）**\n- **Yellow（黄色）**\n- **Pink（粉色）**\n- **Purple（紫色）**\n\n## Whack-a-Mole 操作顺序 {#whack-a-mole-sequence}\n\n击打 Red、Yellow、Pink 和 Purple 小丑目标。继续击打正确颜色，直到它们变为墓碑。每种颜色只打一遍，不一定就是完成信号。\n\n避免在无关颜色上浪费轮次。如果状态似乎卡住，请对照线索颜色，并检查每个正确目标是否已变为墓碑。尚未确认观看电影本身是必须触发的解锁条件。\n\n## 奖励与后续用途 {#reward-and-later-use}\n\n完成相连流程后会获得 **Scalpel（手术刀）**，请保留它。在后续 Misery Town 路线中，Scalpel 可以让你在 Trapezist 演出中选择切断绳索的替代路线。\n\nSteam 成就结构也认可这一后续用途，所以这个看起来像可选支线的马戏团谜题，会影响高效完成路线。\n",
+  "quickAnswer": "根据电影座位线索辨认死去的小丑，再在 Whack-a-Mole 中击打 Red、Yellow、Pink 和 Purple，直到目标变成墓碑。完成相连流程后获得 Scalpel。",
+  "scope": "正式版 · 来源于 2026 年 10 月 29 日复核。路线细节依据所引用攻略，并非所有路线都已在每个游戏版本中重新实测。"
+}

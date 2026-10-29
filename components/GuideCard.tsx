@@ -10,7 +10,7 @@ export function GuideCard({ guide }: { guide: Guide }) {
       </div>
       <h3>{guide.title}</h3>
       <p>{guide.description}</p>
-      <span className="text-link">Read guide →</span>
+      <span className="text-link">{guide.language === "zh" ? "阅读攻略 →" : "Read guide →"}</span>
     </Link>
   );
 }

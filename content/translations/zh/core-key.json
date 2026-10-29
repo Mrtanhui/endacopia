@@ -1,0 +1,9 @@
+{
+  "slug": "puzzles/core-key",
+  "title": "Endacopia Core Key 与饮水机攻略",
+  "description": "取得 Transparent Mug，为 Office 植物浇水，用 Flower 换取 Wrench，并从饮水机管道中取得 Core Key。",
+  "readTime": "6 分钟",
+  "body": "## 开始物品链 {#reach-the-item-chain}\n\n一条社区路线通过电梯重新评估和与金钱有关的职业选择进入 Gambling Den。离开电梯时，拿走右侧的 **Transparent Mug（透明杯）**。另一份亲自通关的路线以 Strategic Probability Analyst 身份取得杯子后返回 Office；目前并未确认“先完成电话目标”是所有流程共有的前置条件。\n\n这条流程获得的是 **Core Key**。它与 Ending C 所用、通过钓鱼获得的 Old Key 或 Lost Key 不同。\n\n## 给 Office 植物浇水 {#water-the-office-plant}\n\n回到 Office，在饮水机处装满 Transparent Mug。将装水的杯子用于左侧植物，植物会给你一朵 **Flower（花）**。\n\n如果植物没有反应，确认杯子已在饮水机接水，并且你正在与 Office 中正确的植物互动。\n\n## 用 Flower 换取 Wrench {#trade-the-flower-for-the-wrench}\n\n返回该路线的车站或起始区域，把 Flower 交给拿着 **Wrench（扳手）**的人，再将 Wrench 带回 Office。\n\nWrench 用来拆饮水机面板。不要在管道上反复尝试无关物品。\n\n## 取出 Core Key {#release-the-core-key}\n\nNeoseeker 的描述是用 Wrench 打开饮水机面板，再放水让 **Core Key** 掉落。亲自通关的成就攻略则以不同顺序描述最后几次互动。两者均支持 Wrench 与饮水机这条物品链；本站尚未重新实测最后点击的准确顺序。\n\n拿到钥匙并不意味着立刻能进行所有 Core 相关互动。用 Wrench 处理左侧玻璃，与其他员工对话，并提高 Office 的 productivity。如果你在 Gambling Den 骰子游戏中赢得了 **Airplane Tickets（机票）**，先交给 Malia，再判断路线是否卡住。\n\n## Core Key 还是 Old Key？ {#core-key-or-old-key}\n\n- **Core Key**：Transparent Mug → 水 → 植物 → Flower → Wrench → 饮水机。\n- **Old Key 或 Lost Key**：Fishing Paper → 18 种不同的鱼 → 隐藏窗口保险锁。\n\n如果目标涉及鱼、黑白房间或 Ending C，请使用 [Old Key 攻略](/zh/puzzles/old-key)。周边的流程顺序见[完整流程目录](/zh/walkthrough)。\n",
+  "quickAnswer": "在 Gambling Den 电梯附近拿到 Transparent Mug，到 Office 饮水机接水，浇灌植物，用 Flower 换 Wrench，拆掉饮水机面板，再次放水，让 Core Key 从露出的管道掉落。",
+  "scope": "正式版 · 来源于 2026 年 10 月 29 日复核。路线细节依据所引用攻略，并非所有路线都已在每个游戏版本中重新实测。"
+}

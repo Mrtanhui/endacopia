@@ -1,14 +1,14 @@
 import Link from "@/components/InternalLink";
 import Script from "next/script";
 
-export function Analytics({ measurementId, origin }: { measurementId?: string; origin: string }) {
+export function Analytics({ measurementId, origin, language = "en" }: { measurementId?: string; origin: string; language?: "en" | "zh" }) {
   if (!measurementId) return null;
   return <>
     <section id="analytics-banner" data-measurement-id={measurementId} data-production-origin={origin} className="analytics-banner" aria-label="Analytics preferences" hidden>
-      <p>Allow optional analytics to help us improve these guides? Google Analytics measures page visits and guide links. The site works without it. <Link href="/privacy">Privacy details</Link></p>
+      <p>{language === "zh" ? "是否允许可选统计？Google Analytics 用于统计页面访问和攻略链接，拒绝后网站仍可正常使用。" : "Allow optional analytics to help us improve these guides? Google Analytics measures page visits and guide links. The site works without it."} <Link href="/privacy">{language === "zh" ? "隐私说明（英文）" : "Privacy details"}</Link></p>
       <div className="button-row">
-        <button type="button" className="button button-quiet" data-analytics-choice="denied">Decline analytics</button>
-        <button type="button" className="button button-quiet" data-analytics-choice="granted">Allow analytics</button>
+        <button type="button" className="button button-quiet" data-analytics-choice="denied">{language === "zh" ? "拒绝统计" : "Decline analytics"}</button>
+        <button type="button" className="button button-quiet" data-analytics-choice="granted">{language === "zh" ? "允许统计" : "Allow analytics"}</button>
       </div>
     </section>
     <Script id="site-analytics" src="/analytics.js" strategy="afterInteractive" />

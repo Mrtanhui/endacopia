@@ -1,0 +1,23 @@
+{
+  "slug": "walkthrough",
+  "title": "Endacopia 流程攻略：区域路线、关键物品与结局",
+  "description": "找到 House、Misery Town、Timesville 和 Office 对应路线，通过关键物品链接解决卡点，并在继续前准备 Ending C。",
+  "readTime": "5 分钟",
+  "body": "## 开始前 {#before-you-begin}\n\n这是流程目录：遇到卡点时，用它找到针对某个谜题的攻略。在 Boss 或结局选择前保留独立恢复存档，拿到新物品后先检查，再返回谜题。\n\n**区域不等于章节编号。** 不能仅仅因为某篇攻略在后面介绍 Misery Town、Timesville 和 Office，就将它们标为 Chapter 2 或 Chapter 3。[社区结局指南](https://steamcommunity.com/sharedfiles/filedetails/?id=3773635669)描述的是在 Chapter I 准备这三个区域。\n\n## 选择当前区域 {#choose-your-current-area}\n\n| 你的位置 | 当前需求 | 打开对应攻略 |\n| --- | --- | --- |\n| House 与开场房间 | 熟悉操作，跟随可用互动 | [游戏与攻略概览](/zh/wiki) |\n| 小丑与开关房间 | Scalpel 或彩色开关顺序 | [小丑谜题](/zh/puzzles/clown-puzzle) · [开关谜题](/zh/puzzles/switch-puzzle) |\n| Misery Town | 蓝色角色、演出路线或隐藏地图 | [让蓝色角色哭泣](/zh/puzzles/make-blue-guy-cry) · [Boss 结果](/zh/bosses) · [Projector Remote](/zh/puzzles/projector-remote) |\n| Timesville | 钓鱼、探测器或隐藏窗口锁 | [Old/Lost Key 路线](/zh/puzzles/old-key) · [缺少的鱼清单](/zh/puzzles/old-key#your-fish-progress) |\n| Office | 饮水机物品链或隐藏电话路线 | [Core Key](/zh/puzzles/core-key) · [Office 秘密](/zh/endings/ending-c#office-telephone-and-waiting-condition) |\n\n## 容易混淆的关键物品 {#key-items-that-are-easy-to-confuse}\n\n**Core Key** 用于常规 Office 任务链，来自饮水机谜题。**Old/Lost Key** 来自完成后的鱼类收集，用于隐藏窗口锁。两者是不同物品，前置条件也不同。\n\n找到 Fishing Paper 和 Projector Remote 都需要 **Metal Detector（金属探测器）**。如果到了剧院却没有它，先完成 [Timesville 探测器前置流程](/zh/puzzles/old-key#get-the-metal-detector)。找到遥控器并不代表完成了隐藏路线：记录投影，并继续进入棋盘格房间。\n\n## 准备隐藏路线 {#prepare-the-secret-route}\n\n结束区域路线前，用[秘密指南](/zh/guide/secrets)检查三处隐藏遭遇。[Ending C 条件](/zh/endings/ending-c#requirements-checklist)会区分持有物品和真正完成遭遇。\n\n保留恢复存档，不要假设早先的房间始终可进入。本目录并没有确认哪些后期存档能补回每一个漏掉的互动。\n\n## 选择结局 {#choose-an-ending}\n\n打开[结局概览](/zh/endings)了解可选路线。如果要走隐藏路线，请在前往常规结局门之前，将已完成的三处标志与 [Ending C 最终检查](/zh/endings/ending-c#final-symbol-sequence-and-commitment)对照。\n\n补成就时，参考[成就攻略](/zh/guide/achievements)与 [Boss 结果](/zh/bosses)。用不同存档规划互斥选择，不要假设一次流程能同时取得所有结果。\n",
+  "quickAnswer": "在下方选择当前区域，打开需要的具体谜题步骤。如果要走 Ending C，请在结束对应路线前准备三处可选区域秘密。",
+  "scope": "正式版流程目录 · 章节与区域标签于 2026 年 10 月 8 日复核。本概览并非逐房间攻略，也不是作者亲自通关记录。",
+  "taskLinks": [
+    {
+      "label": "选择我的区域",
+      "anchor": "choose-your-current-area"
+    },
+    {
+      "label": "准备 Ending C",
+      "anchor": "prepare-the-secret-route"
+    },
+    {
+      "label": "比较结局",
+      "anchor": "choose-an-ending"
+    }
+  ]
+}

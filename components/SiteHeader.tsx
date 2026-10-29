@@ -15,13 +15,14 @@ export function SiteHeader() {
         <nav className="desktop-nav" aria-label="Primary navigation">
           {navigation.map(([label, href]) => <Link href={href} key={href}>{label}</Link>)}
         </nav>
-        <div className="language-status" title={site.languageLabel}>
-          <span>{site.languageCode}</span><i aria-hidden="true" />
-        </div>
+        <Link className="language-status" href="/zh" hrefLang="zh-Hans" title="简体中文">
+          <span>中文</span><i aria-hidden="true" />
+        </Link>
         <Link className="search-link" href="/wiki#find-a-guide">Search</Link>
         <details className="mobile-menu">
           <summary aria-label="Open navigation"><span /><span /><span /></summary>
           <nav aria-label="Mobile navigation">
+            <Link href="/zh" hrefLang="zh-Hans">简体中文</Link>
             {navigation.map(([label, href]) => <Link href={href} key={href}>{label}</Link>)}
           </nav>
         </details>
