@@ -14,7 +14,7 @@
     "test:vercel": "SITE_URL=https://endacopia.example GOOGLE_SITE_VERIFICATION=gsc-test-token NEXT_PUBLIC_GA_ID=G-TEST123 npm run build && node --test tests/static-output.test.mjs",
     "lint": "eslint . --ignore-pattern dist --ignore-pattern .next --ignore-pattern .vercel --ignore-pattern .output",
     "db:generate": "drizzle-kit generate",
-    "check:content": "node scripts/check-content.mjs && node scripts/check-translations.mjs",
+    "check:content": "node scripts/check-content.mjs",
     "test:template": "node scripts/test-template.mjs",
     "typecheck": "tsc --noEmit -p tsconfig.site.json",
     "test:analytics": "node --test tests/analytics.test.mjs",

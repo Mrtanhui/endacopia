@@ -53,7 +53,6 @@ export function ArticlePage({ guide }: { guide: Guide }) {
         {guide.spoiler && <div className="spoiler-warning"><strong>{t("Spoilers ahead", "剧透提示")}</strong><span>{t("Steps below reveal puzzle solutions and route details.", "以下内容包含谜题解法与路线细节。")}</span></div>}
         {guide.quickAnswer && <section className="quick-answer" aria-label="Quick answer"><p>{t("QUICK ANSWER", "直接答案")}</p><strong>{guide.quickAnswer}</strong></section>}
         {guide.scope && <p className="guide-scope">{guide.scope}</p>}
-        <p className="guide-language"><Link href={zh ? `/${guide.originalSlug}` : `/zh/${guide.slug}`} hrefLang={zh ? "en" : "zh-Hans"}>{zh ? "Read in English" : "简体中文"}</Link></p>
         <p className="guide-byline">{t("Maintained by", "维护者")} <a href={site.maintainer.profileUrl} rel="noreferrer" target="_blank">{site.maintainer.name}</a> · <a href="#guide-sources">{t("Sources & corrections", "来源与纠错")}</a></p>
         {guide.taskLinks && <nav className="task-links" aria-label="Choose your next step">{guide.taskLinks.map((task) => <a key={task.anchor} href={`#${task.anchor}`}>{task.label}<span aria-hidden="true"> ↓</span></a>)}</nav>}
       </section>

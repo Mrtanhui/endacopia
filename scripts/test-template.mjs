@@ -28,9 +28,6 @@ try {
   }
   run(['scripts/check-content.mjs']);
   rmSync(join(root, 'content/translations'), {recursive:true, force:true});
-  mkdirSync(join(root, 'content/translations/zh'), {recursive:true});
-  for(const slug of ['wiki','puzzles/moon-gate']) writeFileSync(join(root,'content/translations/zh',slug.replaceAll('/','-')+'.json'),JSON.stringify({slug,title:'Moon Archive 中文攻略',description:'测试月亮门。',body:'## 打开门 {#open-the-gate}\n使用月亮令牌。'}));
-  run(['scripts/check-translations.mjs']);
   run([resolve('node_modules/next/dist/bin/next'), 'build', '--webpack']);
   writeFileSync(join(root, 'verify.mjs'), `
 import assert from 'node:assert/strict';
@@ -49,12 +46,12 @@ for (const path of ['/', '/wiki', '/puzzles', '/puzzles/moon-gate', '/about', '/
  assert.doesNotMatch(html, /googletagmanager/);
 }
 const sitemap = await render('/sitemap.xml').text();
-assert.equal((sitemap.match(/<url>/g) || []).length, 11);
+assert.equal((sitemap.match(/<url>/g) || []).length, 7);
 assert.doesNotMatch(sitemap, /endacopia|old-key/i);
 assert.equal(render('/puzzles/old-key').status, 404);
 `);
   run(['verify.mjs']);
-  console.log('Template replacement passed: second game renders 11 bilingual pages, correct canonical origin and sitemap, no old-game text or routes, analytics disabled.');
+  console.log('Template replacement passed: second game renders 7 English pages, correct canonical origin and sitemap, no old-game text or routes, analytics disabled.');
 } finally {
   rmSync(root, { recursive: true, force: true });
 }

@@ -36,7 +36,7 @@
 
 ## 模板验收
 
-`npm run test:template` 在临时目录中把配置、首页和攻略全部替换为虚构的 Moon Archive，真实执行生产构建，并验证首页、目录、谜题列表和详情页。它检查新域名、正确的 11 个双语 sitemap URL、旧游戏文字不残留、旧攻略返回 404、未配置统计时不加载 GA。测试不部署，结束后移除临时目录。
+`npm run test:template` 在临时目录中把配置、首页和攻略全部替换为虚构的 Moon Archive，真实执行生产构建，并验证首页、目录、谜题列表和详情页。它检查新域名、正确的 7 个英文 sitemap URL、旧游戏文字不残留、旧攻略返回 404、未配置统计时不加载 GA。测试不部署，结束后移除临时目录。
 
 ## 广告接入位置
 
@@ -44,7 +44,7 @@
 
 ## 统计校准与信息页（2026-09-11）
 
-新增 `/about`、`/contact`、`/privacy`，与攻略数量分开统计。维护者、GitHub 联系地址在 `config/site.json` 的 `maintainer` 中配置；复用时必须替换。`informationUpdated` 是信息页更新日期，不能用部署时间自动冒充政策更新。新增页面进入 sitemap，替换测试现构建 11 个双语页面。
+新增 `/about`、`/contact`、`/privacy`，与攻略数量分开统计。维护者、GitHub 联系地址在 `config/site.json` 的 `maintainer` 中配置；复用时必须替换。`informationUpdated` 是信息页更新日期，不能用部署时间自动冒充政策更新。新增页面进入 sitemap，替换测试现构建 7 个英文页面。
 
 统计由 `components/Analytics.tsx` 与 `public/analytics.js` 管理。仅正式 `SITE_URL` 域名、用户明确允许统计后加载 GA4；本地和 Vercel 预览不发正式统计。页面链接使用完整文档导航，只有一次 `gtag config` 自动发送 page_view，没有第二份手动 page_view。GA4 后台关闭基于浏览器历史的 page_view，避免页内目录操作混入浏览量。标准滚动事件保留；没有表单、搜索、嵌入视频/下载功能时不启用相应自动事件。
 
@@ -60,10 +60,6 @@
 统计口径：从此版本起仅计同意统计且未被排除的访问，不能直接拿改版前后的原始 PV 涨跌判断搜索增长。GA4 按页面路径比较完整 7 天（不足则延长），GSC 独立看同一 URL/查询的展示、点击、CTR 与抓取时间。GA4 中的 Internal Traffic 过滤器仍在 Testing，源头排除是日常维护的主要方式；不根据共享代理 IP 直接开启永久过滤。
 
 
-## 双语内容（2026-10-29）
+## 英文发布要求（2026-10-29用户更正）
 
-英语原文位于 `content/guides/*.mdx`；完整中文译文位于 `content/translations/zh/*.json`。每份译文用原文 `slug` 关联，路由自动添加 `/zh/`。译文包含 title、description、body，以及可选 quickAnswer、scope、readTime、taskLinks、checklist。日期和来源继承英文核对记录；来源核验范围可在原文提供 reviewNote / reviewNoteZh。
-
-翻译标题保留稳定锚点，例如 `## 开始前 {#before-you-start}`，与原文英文锚点对应。内部指南链接添加 `/zh/`，图片仍使用 `/images/`。清单id不能翻译，两种语言共用当前浏览器的收集进度。
-
-替换模板时必须同时替换或删除旧中文资产，补上新游戏译文。模板测试已实际构建 Moon Archive 的两篇中英文内容并检查原游戏文字和路由未混入。信息政策页目前提供英文版，中文页脚明确标注，不生成空壳中文政策页面。
+本项目只公开英文内容。原中文JSON保留为未发布的历史资料，`app/(zh)`已移除，页面没有中文切换或中文hreflang，sitemap只列英文路径。Vercel把旧`/zh`及其子路径永久转到对应英文网址。复制模板时清除旧译文资产；不能因旧课程摘要提到多语言而自动恢复中文。

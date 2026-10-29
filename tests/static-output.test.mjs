@@ -2,7 +2,7 @@ import assert from "node:assert/strict";
 import test from "node:test";
 import { guides } from "../scripts/check-content.mjs";
 
-import { readFileSync, existsSync, readdirSync } from 'node:fs';
+import { readFileSync, existsSync } from 'node:fs';
 async function render(pathname) {
  const file = `out${pathname === '/' ? '/index.html' : /\.(xml|txt)$/.test(pathname) ? pathname : pathname + '.html'}`;
  if (!existsSync(file)) return new Response(readFileSync('out/404.html', 'utf8'), {status:404});
@@ -32,7 +32,7 @@ test("Static Next.js output contains production SEO and Google integrations", as
   assert.match(robots, /Sitemap: https:\/\/endacopia\.example\/sitemap\.xml/);
 
   const sitemap = await (await render("/sitemap.xml")).text();
-  assert.equal((sitemap.match(/<url>/g) ?? []).length, guides.length * 2 + 7);
+  assert.equal((sitemap.match(/<url>/g) ?? []).length, guides.length + 5);
   assert.match(sitemap, /<loc>https:\/\/endacopia\.example\/puzzles<\/loc>/);
   assert.match(sitemap, /<loc>https:\/\/endacopia\.example\/puzzles\/old-key<\/loc>/);
 });
@@ -113,24 +113,19 @@ test("information pages are crawlable and linked without inflating guide counts"
 });
 
 
-test('Chinese pages have matching language, canonical, hreflang, anchors and all translated routes', async () => {
- const translations = readdirSync('content/translations/zh').filter(f=>f.endsWith('.json')).map(f=>JSON.parse(readFileSync('content/translations/zh/'+f,'utf8')));
- assert.equal(translations.length,guides.length);
- for(const g of translations) {
-  const response=await render('/zh/'+g.slug); assert.equal(response.status,200,g.slug);
-  const html=await response.text();
-  assert.match(html, /<html lang="zh-Hans"/);
-  assert.ok(html.includes(`rel="canonical" href="https://endacopia.example/zh/${g.slug}"`),g.slug);
-  assert.ok(html.includes(`hrefLang="en" href="https://endacopia.example/${g.slug}"`),g.slug);
-  assert.equal((html.match(/<h1\b/g)||[]).length,1);
-  const ids = new Set([...html.matchAll(/\bid="([^"]+)"/g)].map(m=>m[1]));
-  for(const m of html.matchAll(/href="#([^"]+)"/g)) assert.ok(ids.has(m[1]), `${g.slug}: missing #${m[1]}`);
-  assert.doesNotMatch(html,/\{#[a-z0-9-]+\}/);
-  for(const m of html.matchAll(/href="(\/zh[^"#?]*)/g)) assert.equal((await render(m[1])).status,200,`${g.slug}: ${m[1]}`);
+test('published pages are English-only and Chinese routes are retired', async () => {
+ const paths=['/','/wiki','/puzzles','/about','/contact','/privacy',...guides.map(g=>'/'+g.slug)];
+ for(const path of paths){
+  const html=await (await render(path)).text();
+  assert.match(html,/<html lang="en"/);
+  assert.doesNotMatch(html,/href="\/zh(?:["/])|hrefLang="zh/i);
+  const visible=html.replace(/<script[\s\S]*?<\/script>/g,'').replace(/<[^>]+>/g,'');
+  assert.doesNotMatch(visible,/[\u3400-\u9fff]/,path);
  }
- const key=await (await render('/zh/puzzles/old-key')).text();
- assert.equal((key.match(/type="checkbox"/g)||[]).length,18);
- assert.match(key, /data-language="zh"/);
- const english=await (await render('/puzzles/old-key')).text();
- assert.match(english, /hrefLang="zh-Hans" href="https:\/\/endacopia.example\/zh\/puzzles\/old-key"/);
+ assert.equal((await render('/zh')).status,404);
+ assert.equal((await render('/zh/puzzles/old-key')).status,404);
+ const config=JSON.parse(readFileSync('vercel.json','utf8'));
+ assert.ok(config.redirects.some(r=>r.source==='/zh/:path*'&&r.destination==='/:path*'&&r.permanent));
+ const map=await (await render('/sitemap.xml')).text();
+ assert.doesNotMatch(map,/\/zh(?:<|\/)|hreflang/i);
 });

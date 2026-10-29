@@ -7,7 +7,7 @@ import { getGuides } from "@/lib/guides";
 export const metadata: Metadata = {
   title: site.puzzles.title,
   description: site.puzzles.description,
-  alternates: { canonical: "/puzzles", languages: { en: "/puzzles", "zh-Hans": "/zh/puzzles", "x-default": "/puzzles" } },
+  alternates: { canonical: "/puzzles" },
 };
 
 export default function PuzzlesPage() {
