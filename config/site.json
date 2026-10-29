@@ -132,5 +132,19 @@
       "Privacy",
       "/privacy"
     ]
-  ]
+  ],
+  "theme": {
+    "ink": "#e9e8d8",
+    "paper": "#f4f1dc",
+    "night": "#07101e",
+    "night-2": "#0a1727",
+    "night-3": "#10233a",
+    "cyan": "#00d3e6",
+    "cyan-soft": "#8aeaf1",
+    "red": "#f04762",
+    "amber": "#f1cf76",
+    "muted": "#8fa3b7",
+    "line": "rgba(138, 234, 241, 0.18)",
+    "line-strong": "rgba(138, 234, 241, 0.36)"
+  }
 }

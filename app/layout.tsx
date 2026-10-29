@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import type { CSSProperties } from "react";
 import { Analytics } from "@/components/Analytics";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
@@ -27,7 +28,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang={site.language}>
+    <html lang={site.language} style={Object.fromEntries(Object.entries(site.theme).map(([key, value]) => [`--${key}`, value])) as CSSProperties}>
       <body>
         <a className="skip-link" href="#main-content">Skip to content</a>
         <div className="site-noise" aria-hidden="true" />
