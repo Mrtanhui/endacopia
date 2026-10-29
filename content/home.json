@@ -149,5 +149,28 @@
   "cta": {
     "eyebrow": "Guardian Angel, connected",
     "title": "Ready to help Mellow find a way home?"
+  },
+  "quickPaths": {
+    "title": "Endacopia secrets and the Lost Key",
+    "items": [
+      {
+        "title": "Where are the Ending C secrets?",
+        "description": "The community route identifies one hidden encounter in each of Misery Town, Timesville and the Office. Check the encounter, not just the item.",
+        "href": "/guide/secrets",
+        "label": "Compare the three routes"
+      },
+      {
+        "title": "How do I get the fishing key?",
+        "description": "Find the Fishing Paper with the Metal Detector, catch the 18 fish across the six clock states and inspect the completed paper to claim the Old or Lost Key.",
+        "href": "/puzzles/old-key",
+        "label": "Open the fish and key guide"
+      },
+      {
+        "title": "Where do I use the Lost Key?",
+        "description": "In the Timesville secret, complete the paired-room puzzle and switch to windowed mode to reveal the hidden lock. The Office Core Key is a separate item.",
+        "href": "/puzzles/old-key#use-the-key-on-the-hidden-window-lock",
+        "label": "Find the lock"
+      }
+    ]
   }
 }

@@ -62,11 +62,9 @@ export default function Home() {
       </section>
 
       <section className="section-shell section-pad" aria-labelledby="quick-paths-title">
-        <div className="section-heading"><p className="eyebrow">Quick paths</p><h2 id="quick-paths-title">Endacopia secrets and the Lost Key</h2></div>
+        <div className="section-heading"><p className="eyebrow">Quick paths</p><h2 id="quick-paths-title">{home.quickPaths.title}</h2></div>
         <div className="guide-grid">
-          <div className="start-card"><h3>Where are the Ending C secrets?</h3><p>The community route identifies one hidden encounter in each of Misery Town, Timesville and the Office. Check the encounter, not just the item.</p><Link className="text-link" href="/guide/secrets">Compare the three routes →</Link></div>
-          <div className="start-card"><h3>How do I get the fishing key?</h3><p>Find the Fishing Paper with the Metal Detector, catch the 18 fish across the six clock states and inspect the completed paper to claim the Old or Lost Key.</p><Link className="text-link" href="/puzzles/old-key">Open the fish and key guide →</Link></div>
-          <div className="start-card"><h3>Where do I use the Lost Key?</h3><p>In the Timesville secret, complete the paired-room puzzle and switch to windowed mode to reveal the hidden lock. The Office Core Key is a separate item.</p><Link className="text-link" href="/puzzles/old-key#use-the-key-on-the-hidden-window-lock">Find the lock →</Link></div>
+          {home.quickPaths.items.map((item) => <div className="start-card" key={item.href}><h3>{item.title}</h3><p>{item.description}</p><Link className="text-link" href={item.href}>{item.label} →</Link></div>)}
         </div>
       </section>
 
