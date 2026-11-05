@@ -1,0 +1,128 @@
+{
+  "date": "2026-11-05",
+  "scope": "5 Endacopia + 5 Krillion + 6 Probably Stolen existing pages",
+  "human_reviewed": false,
+  "playtested": false,
+  "reviews": [
+    {
+      "site": "endacopia",
+      "file": "content/guides/core-key.mdx",
+      "slug": "puzzles/core-key",
+      "title": "Endacopia Core Key & Water Cooler Guide",
+      "reviewed": "2026-11-05",
+      "reviewer": "AI editorial review",
+      "human_reviewed": false,
+      "playtested_this_round": false,
+      "verification_status": "未校验",
+      "decision": "修改速答后保留",
+      "checked_claims": [
+        "花→扳手→饮水机→Core Key的道具链得到Steam成就攻略支持；本地上轮记录指出末尾点击顺序有冲突。"
+      ],
+      "limits": [
+        "本轮Neoseeker读取403，不能声称已重新逐步验证其顺序。Steam成就作者与先前Neoseeker记录不同；无本轮实机。"
+      ],
+      "rechecked_source_urls": [
+        "https://steamcommunity.com/sharedfiles/filedetails/?id=3774754099",
+        "https://www.neoseeker.com/endacopia/Chapter_1"
+      ],
+      "actions": [
+        "将quickAnswer收窄为两来源共同支持的道具链，保留末尾顺序差异。"
+      ]
+    },
+    {
+      "site": "endacopia",
+      "file": "content/guides/projector-remote.mdx",
+      "slug": "puzzles/projector-remote",
+      "title": "Endacopia Projector Remote: Location & Hidden Map Route",
+      "reviewed": "2026-11-05",
+      "reviewer": "AI editorial review",
+      "human_reviewed": false,
+      "playtested_this_round": false,
+      "verification_status": "未校验",
+      "decision": "保留",
+      "checked_claims": [
+        "原始玩家讨论与结局攻略均支持影院沙地金属探测器→遥控器/地图→Hands棋盘房；当前正文已把隐藏路线和完成地标分开。"
+      ],
+      "limits": [
+        "本轮未重新验证胶囊小游戏的全部操作；不补写无来源的窗口边缘鼠标技巧。"
+      ],
+      "rechecked_source_urls": [
+        "https://steamcommunity.com/app/2684630/discussions/0/589559342036973040/",
+        "https://steamcommunity.com/sharedfiles/filedetails/?id=3773635669"
+      ],
+      "actions": []
+    },
+    {
+      "site": "endacopia",
+      "file": "content/guides/old-key.mdx",
+      "slug": "puzzles/old-key",
+      "title": "Endacopia Old / Lost Key: How to Get It & Where to Use It",
+      "reviewed": "2026-11-05",
+      "reviewer": "AI editorial review",
+      "human_reviewed": false,
+      "playtested_this_round": false,
+      "verification_status": "未校验",
+      "decision": "保留",
+      "checked_claims": [
+        "Viri原帖明确18鱼、检查Fishing Paper领钥匙、窗口化并重新进入较小同构房；成就攻略支持共享房间和探测器前置。"
+      ],
+      "limits": [
+        "18鱼逐个名称未在本轮重新实机或逐个截图核对。两篇社区攻略有相互引用，不能按URL数认定完全独立。"
+      ],
+      "rechecked_source_urls": [
+        "https://steamcommunity.com/sharedfiles/filedetails/?id=3773067527",
+        "https://steamcommunity.com/sharedfiles/filedetails/?id=3774754099"
+      ],
+      "actions": []
+    },
+    {
+      "site": "endacopia",
+      "file": "content/guides/ending-c.mdx",
+      "slug": "endings/ending-c",
+      "title": "Endacopia Ending C Walkthrough",
+      "reviewed": "2026-11-05",
+      "reviewer": "AI editorial review",
+      "human_reviewed": false,
+      "playtested_this_round": false,
+      "verification_status": "未校验",
+      "decision": "保留",
+      "checked_claims": [
+        "三个秘密完成地标、电话277-5944、楼梯等候约一分钟、最终回卧室得到原始社区攻略支持。原作者评论说明全布局百分号图形转感叹号。"
+      ],
+      "limits": [
+        "本轮读取文字与上轮审计，未重新进行七张图片逐像素核对；不宣称本轮实机。A/B结局与锯子前置仍有社区分歧。"
+      ],
+      "rechecked_source_urls": [
+        "https://steamcommunity.com/sharedfiles/filedetails/?id=3773635669",
+        "https://steamcommunity.com/sharedfiles/filedetails/?id=3773016498",
+        "https://steamcommunity.com/sharedfiles/filedetails/?id=3774754099"
+      ],
+      "actions": []
+    },
+    {
+      "site": "endacopia",
+      "file": "content/guides/switch-puzzle.mdx",
+      "slug": "puzzles/switch-puzzle",
+      "title": "Endacopia Switch Puzzle Order",
+      "reviewed": "2026-11-05",
+      "reviewer": "AI editorial review",
+      "human_reviewed": false,
+      "playtested_this_round": false,
+      "verification_status": "未校验",
+      "decision": "修改起始状态措辞后保留",
+      "checked_claims": [
+        "当前页面已经区分黄色单亮路线和起始状态不明的三步路线，但正文仍用reset动词。"
+      ],
+      "limits": [
+        "本轮Neoseeker403，三步Steam链接无法读取；依据10/29已保存审计保留有日期的归属，不提升成当日验证或通解。"
+      ],
+      "rechecked_source_urls": [
+        "https://www.neoseeker.com/endacopia/Chapter_1",
+        "https://steamcommunity.com/sharedfiles/filedetails/?id=3807332422"
+      ],
+      "actions": [
+        "将“设置/重置到黄色单亮”改为“先核对是否已经为黄色单亮”，避免伪造重置动作。"
+      ]
+    }
+  ]
+}

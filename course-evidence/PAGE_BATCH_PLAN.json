@@ -1,0 +1,632 @@
+{
+  "date": "2026-11-05",
+  "meaning": "50 existing pages grouped for evidence-led refresh; not 50 new pages generated or published today",
+  "pages": [
+    {
+      "site": "endacopia",
+      "file": "content/guides/achievements.mdx",
+      "slug": "guide/achievements",
+      "title": "Endacopia Achievement Guide",
+      "keyword": "endacopia achievement guide",
+      "batch": 1,
+      "type": "puzzle-route",
+      "sources": [
+        {
+          "label": "Steam global achievements",
+          "url": "https://steamcommunity.com/stats/2684630/achievements"
+        },
+        {
+          "label": "Neoseeker All Achievements",
+          "url": "https://www.neoseeker.com/endacopia/All_Achievements"
+        },
+        {
+          "label": "xixi — firsthand 100% achievement route",
+          "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3774754099"
+        }
+      ],
+      "status": "existing-page-refresh-plan",
+      "search_demand_status": "existing mapped query; inspect project query evidence before proposing a new URL",
+      "human_review": "pending user/editor review; do not auto-fill"
+    },
+    {
+      "site": "endacopia",
+      "file": "content/guides/bosses.mdx",
+      "slug": "bosses",
+      "title": "Endacopia Bosses and Encounter Routes",
+      "keyword": "endacopia all bosses",
+      "batch": 1,
+      "type": "puzzle-route",
+      "sources": [
+        {
+          "label": "Fandom Bosses category",
+          "url": "https://endacopia.fandom.com/wiki/Bosses"
+        },
+        {
+          "label": "Steam global achievements",
+          "url": "https://steamcommunity.com/stats/2684630/achievements"
+        },
+        {
+          "label": "All bosses no-damage gameplay video",
+          "url": "https://www.youtube.com/watch?v=yo1I-zi8I50"
+        },
+        {
+          "label": "xixi — firsthand 100% achievement route",
+          "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3774754099"
+        }
+      ],
+      "status": "existing-page-refresh-plan",
+      "search_demand_status": "existing mapped query; inspect project query evidence before proposing a new URL",
+      "human_review": "pending user/editor review; do not auto-fill"
+    },
+    {
+      "site": "endacopia",
+      "file": "content/guides/chameleon.mdx",
+      "slug": "characters/chameleon",
+      "title": "The Chameleon in Endacopia",
+      "keyword": "endacopia chameleon",
+      "batch": 1,
+      "type": "puzzle-route",
+      "sources": [
+        {
+          "label": "Fandom The Chameleon",
+          "url": "https://endacopia.fandom.com/wiki/The_Chameleon"
+        },
+        {
+          "label": "Steam global achievements",
+          "url": "https://steamcommunity.com/stats/2684630/achievements"
+        },
+        {
+          "label": "All bosses gameplay video",
+          "url": "https://www.youtube.com/watch?v=yo1I-zi8I50"
+        },
+        {
+          "label": "xixi — firsthand 100% achievement route",
+          "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3774754099"
+        },
+        {
+          "label": "Player camera discussion — reported deterrent interaction",
+          "url": "https://www.reddit.com/r/Endacopia/comments/1v9ic45/camera/"
+        }
+      ],
+      "status": "existing-page-refresh-plan",
+      "search_demand_status": "existing mapped query; inspect project query evidence before proposing a new URL",
+      "human_review": "pending user/editor review; do not auto-fill"
+    },
+    {
+      "site": "endacopia",
+      "file": "content/guides/characters.mdx",
+      "slug": "characters",
+      "title": "Endacopia Characters",
+      "keyword": "endacopia characters",
+      "batch": 1,
+      "type": "puzzle-route",
+      "sources": [
+        {
+          "label": "Fandom Characters category",
+          "url": "https://endacopia.fandom.com/wiki/Category:Characters"
+        },
+        {
+          "label": "Endacopia on Steam",
+          "url": "https://store.steampowered.com/app/2684630/Endacopia/"
+        },
+        {
+          "label": "Andyland Kickstarter",
+          "url": "https://www.kickstarter.com/projects/endacopia/endacopia"
+        },
+        {
+          "label": "Official game information",
+          "url": "https://andyl4nd.itch.io/endacopiademo"
+        }
+      ],
+      "status": "existing-page-refresh-plan",
+      "search_demand_status": "existing mapped query; inspect project query evidence before proposing a new URL",
+      "human_review": "pending user/editor review; do not auto-fill"
+    },
+    {
+      "site": "endacopia",
+      "file": "content/guides/clown-puzzle.mdx",
+      "slug": "puzzles/clown-puzzle",
+      "title": "Endacopia Clown Puzzle Solution",
+      "keyword": "endacopia clown puzzle",
+      "batch": 1,
+      "type": "puzzle-route",
+      "sources": [
+        {
+          "label": "Neoseeker Chapter 1",
+          "url": "https://www.neoseeker.com/endacopia/Chapter_1"
+        },
+        {
+          "label": "Clown puzzle and Trapezist gameplay video",
+          "url": "https://www.youtube.com/watch?v=IzLFpVHAGYc"
+        },
+        {
+          "label": "xixi — firsthand 100% achievement route",
+          "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3774754099"
+        },
+        {
+          "label": "muffinCat007 — Basic Text Walkthrough",
+          "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3773146799"
+        }
+      ],
+      "status": "existing-page-refresh-plan",
+      "search_demand_status": "existing mapped query; inspect project query evidence before proposing a new URL",
+      "human_review": "pending user/editor review; do not auto-fill"
+    },
+    {
+      "site": "endacopia",
+      "file": "content/guides/core-key.mdx",
+      "slug": "puzzles/core-key",
+      "title": "Endacopia Core Key & Water Cooler Guide",
+      "keyword": "endacopia water cooler",
+      "batch": 2,
+      "type": "puzzle-route",
+      "sources": [
+        {
+          "label": "Neoseeker Chapter 1",
+          "url": "https://www.neoseeker.com/endacopia/Chapter_1"
+        },
+        {
+          "label": "Endacopia Wiki — Core Key",
+          "url": "https://endacopia.wiki/items/core-key/"
+        },
+        {
+          "label": "Endacopia Wiki — Wrench",
+          "url": "https://endacopia.wiki/items/wrench/"
+        },
+        {
+          "label": "xixi — firsthand 100% achievement route",
+          "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3774754099"
+        }
+      ],
+      "status": "existing-page-refresh-plan",
+      "search_demand_status": "existing mapped query; inspect project query evidence before proposing a new URL",
+      "human_review": "pending user/editor review; do not auto-fill"
+    },
+    {
+      "site": "endacopia",
+      "file": "content/guides/ending-c.mdx",
+      "slug": "endings/ending-c",
+      "title": "Endacopia Ending C Walkthrough",
+      "keyword": "endacopia ending c",
+      "batch": 2,
+      "type": "puzzle-route",
+      "sources": [
+        {
+          "label": "Steam all-endings guide — area completion and final route",
+          "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3773635669"
+        },
+        {
+          "label": "Steam Behind Stairs guide — seven solved grids and hidden tile",
+          "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3773016498"
+        },
+        {
+          "label": "Steam Green room discussion — symbol count rule",
+          "url": "https://steamcommunity.com/app/2684630/discussions/0/589559079513582480/"
+        },
+        {
+          "label": "Steam achievement walkthrough — final encounter and book",
+          "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3774754099"
+        },
+        {
+          "label": "Steam Timesville secret — continuation after the key",
+          "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3773067527"
+        }
+      ],
+      "status": "existing-page-refresh-plan",
+      "search_demand_status": "existing mapped query; inspect project query evidence before proposing a new URL",
+      "human_review": "pending user/editor review; do not auto-fill"
+    },
+    {
+      "site": "endacopia",
+      "file": "content/guides/endings.mdx",
+      "slug": "endings",
+      "title": "Endacopia Endings Guide",
+      "keyword": "endacopia endings",
+      "batch": 2,
+      "type": "puzzle-route",
+      "sources": [
+        {
+          "label": "Fandom Endings",
+          "url": "https://endacopia.fandom.com/wiki/Endings"
+        },
+        {
+          "label": "Neoseeker All Endings",
+          "url": "https://www.neoseeker.com/endacopia/All_Endings"
+        },
+        {
+          "label": "xixi — firsthand 100% achievement route",
+          "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3774754099"
+        }
+      ],
+      "status": "existing-page-refresh-plan",
+      "search_demand_status": "existing mapped query; inspect project query evidence before proposing a new URL",
+      "human_review": "pending user/editor review; do not auto-fill"
+    },
+    {
+      "site": "endacopia",
+      "file": "content/guides/henry.mdx",
+      "slug": "characters/henry",
+      "title": "Henry in Endacopia",
+      "keyword": "endacopia henry",
+      "batch": 2,
+      "type": "puzzle-route",
+      "sources": [
+        {
+          "label": "Fandom Henry",
+          "url": "https://endacopia.fandom.com/wiki/Henry"
+        },
+        {
+          "label": "Neoseeker Chapter 2",
+          "url": "https://www.neoseeker.com/endacopia/Chapter_2"
+        },
+        {
+          "label": "xixi — firsthand 100% achievement route",
+          "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3774754099"
+        }
+      ],
+      "status": "existing-page-refresh-plan",
+      "search_demand_status": "existing mapped query; inspect project query evidence before proposing a new URL",
+      "human_review": "pending user/editor review; do not auto-fill"
+    },
+    {
+      "site": "endacopia",
+      "file": "content/guides/jester.mdx",
+      "slug": "characters/jester",
+      "title": "Endacopia Jester (Red Jester / Ticketo)",
+      "keyword": "endacopia jester",
+      "batch": 2,
+      "type": "puzzle-route",
+      "sources": [
+        {
+          "label": "Fandom Red Jester",
+          "url": "https://endacopia.fandom.com/wiki/Red_Jester"
+        },
+        {
+          "label": "Neoseeker Chapter 2",
+          "url": "https://www.neoseeker.com/endacopia/Chapter_2"
+        },
+        {
+          "label": "xixi — firsthand 100% achievement route",
+          "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3774754099"
+        },
+        {
+          "label": "muffinCat007 — Basic Text Walkthrough",
+          "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3773146799"
+        }
+      ],
+      "status": "existing-page-refresh-plan",
+      "search_demand_status": "existing mapped query; inspect project query evidence before proposing a new URL",
+      "human_review": "pending user/editor review; do not auto-fill"
+    },
+    {
+      "site": "endacopia",
+      "file": "content/guides/make-blue-guy-cry.mdx",
+      "slug": "puzzles/make-blue-guy-cry",
+      "title": "How to Make the Blue Guy Cry in Endacopia",
+      "keyword": "endacopia how do i make the blue fat guy cry",
+      "batch": 3,
+      "type": "puzzle-route",
+      "sources": [
+        {
+          "label": "Neoseeker Chapter 2",
+          "url": "https://www.neoseeker.com/endacopia/Chapter_2"
+        },
+        {
+          "label": "Endacopia all-endings and secret-puzzles video",
+          "url": "https://www.youtube.com/watch?v=JnhfGfeh8BM"
+        },
+        {
+          "label": "xixi — firsthand 100% achievement route",
+          "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3774754099"
+        }
+      ],
+      "status": "existing-page-refresh-plan",
+      "search_demand_status": "existing mapped query; inspect project query evidence before proposing a new URL",
+      "human_review": "pending user/editor review; do not auto-fill"
+    },
+    {
+      "site": "endacopia",
+      "file": "content/guides/mellow.mdx",
+      "slug": "characters/mellow",
+      "title": "Mellow in Endacopia",
+      "keyword": "endacopia mellow",
+      "batch": 3,
+      "type": "puzzle-route",
+      "sources": [
+        {
+          "label": "Endacopia on Steam",
+          "url": "https://store.steampowered.com/app/2684630/Endacopia/"
+        },
+        {
+          "label": "Andyland Kickstarter",
+          "url": "https://www.kickstarter.com/projects/endacopia/endacopia"
+        },
+        {
+          "label": "Fandom Mellow",
+          "url": "https://endacopia.fandom.com/wiki/Mellow"
+        }
+      ],
+      "status": "existing-page-refresh-plan",
+      "search_demand_status": "existing mapped query; inspect project query evidence before proposing a new URL",
+      "human_review": "pending user/editor review; do not auto-fill"
+    },
+    {
+      "site": "endacopia",
+      "file": "content/guides/old-key.mdx",
+      "slug": "puzzles/old-key",
+      "title": "Endacopia Old / Lost Key: How to Get It & Where to Use It",
+      "keyword": "endacopia old key",
+      "batch": 3,
+      "type": "puzzle-route",
+      "sources": [
+        {
+          "label": "Steam Community all-fish guide — species and clock states",
+          "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3772931269"
+        },
+        {
+          "label": "Steam Community Timesville guide — key and window lock",
+          "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3773067527"
+        },
+        {
+          "label": "Steam Community all-endings guide — route and save preparation",
+          "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3773635669"
+        },
+        {
+          "label": "Steam achievement guide — fishing access, detector and time progression",
+          "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3774754099"
+        },
+        {
+          "label": "Neoseeker Chapter 1 — shared-room setup",
+          "url": "https://www.neoseeker.com/endacopia/Chapter_1"
+        },
+        {
+          "label": "Endacopia Unstuck — key, room sequence and troubleshooting (community synthesis)",
+          "url": "https://endacopiaunstuck.com/guides/fish-key-strange-safe"
+        }
+      ],
+      "status": "existing-page-refresh-plan",
+      "search_demand_status": "existing mapped query; inspect project query evidence before proposing a new URL",
+      "human_review": "pending user/editor review; do not auto-fill"
+    },
+    {
+      "site": "endacopia",
+      "file": "content/guides/password.mdx",
+      "slug": "puzzles/password",
+      "title": "Endacopia Password — Saw Box Code",
+      "keyword": "endacopia password",
+      "batch": 3,
+      "type": "puzzle-route",
+      "sources": [
+        {
+          "label": "Neoseeker Chapter 2",
+          "url": "https://www.neoseeker.com/endacopia/Chapter_2"
+        },
+        {
+          "label": "Full-game gameplay walkthrough",
+          "url": "https://www.youtube.com/watch?v=JNN2VtQtUzo"
+        },
+        {
+          "label": "xixi — firsthand 100% achievement route",
+          "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3774754099"
+        }
+      ],
+      "status": "existing-page-refresh-plan",
+      "search_demand_status": "existing mapped query; inspect project query evidence before proposing a new URL",
+      "human_review": "pending user/editor review; do not auto-fill"
+    },
+    {
+      "site": "endacopia",
+      "file": "content/guides/projector-remote.mdx",
+      "slug": "puzzles/projector-remote",
+      "title": "Endacopia Projector Remote: Location & Hidden Map Route",
+      "keyword": "endacopia projector remote",
+      "batch": 3,
+      "type": "puzzle-route",
+      "sources": [
+        {
+          "label": "Neoseeker Chapter 2",
+          "url": "https://www.neoseeker.com/endacopia/Chapter_2"
+        },
+        {
+          "label": "Steam Community Ending C guide",
+          "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3773635669"
+        },
+        {
+          "label": "[[Kromer]] — I GOT ENDING C (firsthand player report)",
+          "url": "https://steamcommunity.com/app/2684630/discussions/0/589559342036973040/"
+        },
+        {
+          "label": "Steam Community Misery Town hidden puzzle discussion",
+          "url": "https://steamcommunity.com/app/2684630/discussions/0/589559342036948536/"
+        },
+        {
+          "label": "Steam achievement guide — hidden passage and capsule landmarks",
+          "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3774754099"
+        }
+      ],
+      "status": "existing-page-refresh-plan",
+      "search_demand_status": "existing mapped query; inspect project query evidence before proposing a new URL",
+      "human_review": "pending user/editor review; do not auto-fill"
+    },
+    {
+      "site": "endacopia",
+      "file": "content/guides/secrets.mdx",
+      "slug": "guide/secrets",
+      "title": "Endacopia Secrets & Easter Eggs: Three Area Routes",
+      "keyword": "endacopia secrets",
+      "batch": 4,
+      "type": "puzzle-route",
+      "sources": [
+        {
+          "label": "Steam Community all-endings guide — three area secrets and save preparation",
+          "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3773635669"
+        },
+        {
+          "label": "Steam Community Timesville secret — windowed-mode instructions",
+          "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3773067527"
+        },
+        {
+          "label": "Steam Community all-fish guide",
+          "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3772931269"
+        },
+        {
+          "label": "All secrets gameplay video — visual reference",
+          "url": "https://www.youtube.com/watch?v=5PTvoW-0NwI"
+        }
+      ],
+      "status": "existing-page-refresh-plan",
+      "search_demand_status": "existing mapped query; inspect project query evidence before proposing a new URL",
+      "human_review": "pending user/editor review; do not auto-fill"
+    },
+    {
+      "site": "endacopia",
+      "file": "content/guides/soccer-ball.mdx",
+      "slug": "puzzles/soccer-ball",
+      "title": "Endacopia Soccer Ball — Reach 100 Points",
+      "keyword": "endacopia soccer ball",
+      "batch": 4,
+      "type": "puzzle-route",
+      "sources": [
+        {
+          "label": "Steam global achievements",
+          "url": "https://steamcommunity.com/stats/2684630/achievements"
+        },
+        {
+          "label": "Official itch.io demo page and comments",
+          "url": "https://andyl4nd.itch.io/endacopiademo"
+        },
+        {
+          "label": "100 ball kicks gameplay video",
+          "url": "https://www.youtube.com/watch?v=e8-rQVGTLo0"
+        },
+        {
+          "label": "xixi — firsthand 100% achievement route",
+          "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3774754099"
+        }
+      ],
+      "status": "existing-page-refresh-plan",
+      "search_demand_status": "existing mapped query; inspect project query evidence before proposing a new URL",
+      "human_review": "pending user/editor review; do not auto-fill"
+    },
+    {
+      "site": "endacopia",
+      "file": "content/guides/switch-puzzle.mdx",
+      "slug": "puzzles/switch-puzzle",
+      "title": "Endacopia Switch Puzzle Order",
+      "keyword": "endacopia switch puzzle",
+      "batch": 4,
+      "type": "puzzle-route",
+      "sources": [
+        {
+          "label": "Neoseeker Chapter 1",
+          "url": "https://www.neoseeker.com/endacopia/Chapter_1"
+        },
+        {
+          "label": "Office light-switch puzzle gameplay video",
+          "url": "https://www.youtube.com/watch?v=xTTW254QPCM"
+        },
+        {
+          "label": "Steam — SWITCH PUZZLE IN 3 MOVES (starting state unspecified)",
+          "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3807332422"
+        }
+      ],
+      "status": "existing-page-refresh-plan",
+      "search_demand_status": "existing mapped query; inspect project query evidence before proposing a new URL",
+      "human_review": "pending user/editor review; do not auto-fill"
+    },
+    {
+      "site": "endacopia",
+      "file": "content/guides/trapezist.mdx",
+      "slug": "characters/trapezist",
+      "title": "Endacopia Trapezist Guide",
+      "keyword": "endacopia trapezist",
+      "batch": 4,
+      "type": "puzzle-route",
+      "sources": [
+        {
+          "label": "Fandom Trapezist",
+          "url": "https://endacopia.fandom.com/wiki/Trapezist"
+        },
+        {
+          "label": "Neoseeker Chapter 2",
+          "url": "https://www.neoseeker.com/endacopia/Chapter_2"
+        },
+        {
+          "label": "Steam global achievements",
+          "url": "https://steamcommunity.com/stats/2684630/achievements"
+        },
+        {
+          "label": "xixi — firsthand 100% achievement route",
+          "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3774754099"
+        }
+      ],
+      "status": "existing-page-refresh-plan",
+      "search_demand_status": "existing mapped query; inspect project query evidence before proposing a new URL",
+      "human_review": "pending user/editor review; do not auto-fill"
+    },
+    {
+      "site": "endacopia",
+      "file": "content/guides/walkthrough.mdx",
+      "slug": "walkthrough",
+      "title": "Endacopia Walkthrough: Area Routes, Key Items & Endings",
+      "keyword": "endacopia walkthrough",
+      "batch": 4,
+      "type": "puzzle-route",
+      "sources": [
+        {
+          "label": "Neoseeker Endacopia walkthrough",
+          "url": "https://www.neoseeker.com/endacopia/walkthrough"
+        },
+        {
+          "label": "Full-game gameplay walkthrough",
+          "url": "https://www.youtube.com/watch?v=JNN2VtQtUzo"
+        },
+        {
+          "label": "Steam all-endings guide — Chapter I area preparation",
+          "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3773635669"
+        },
+        {
+          "label": "Official game information",
+          "url": "https://store.steampowered.com/app/2684630/Endacopia/"
+        },
+        {
+          "label": "muffinCat007 — Basic Text Walkthrough",
+          "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3773146799"
+        }
+      ],
+      "status": "existing-page-refresh-plan",
+      "search_demand_status": "existing mapped query; inspect project query evidence before proposing a new URL",
+      "human_review": "pending user/editor review; do not auto-fill"
+    },
+    {
+      "site": "endacopia",
+      "file": "content/guides/wiki.mdx",
+      "slug": "wiki",
+      "title": "Endacopia Wiki",
+      "keyword": "endacopia wiki",
+      "batch": 5,
+      "type": "puzzle-route",
+      "sources": [
+        {
+          "label": "Endacopia on Steam",
+          "url": "https://store.steampowered.com/app/2684630/Endacopia/"
+        },
+        {
+          "label": "Endacopia Wiki on Fandom",
+          "url": "https://endacopia.fandom.com/wiki/Endacopia_Wiki"
+        },
+        {
+          "label": "Official Steam achievements",
+          "url": "https://steamcommunity.com/stats/2684630/achievements"
+        },
+        {
+          "label": "Official game information",
+          "url": "https://andyl4nd.itch.io/endacopiademo"
+        }
+      ],
+      "status": "existing-page-refresh-plan",
+      "search_demand_status": "existing mapped query; inspect project query evidence before proposing a new URL",
+      "human_review": "pending user/editor review; do not auto-fill"
+    }
+  ]
+}

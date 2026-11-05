@@ -1,0 +1,417 @@
+{
+  "schema_version": 1,
+  "course_stage": 1,
+  "record_type": "actual_three_candidate_reevaluation",
+  "evaluation_date": "2026-11-05",
+  "timezone": "America/Los_Angeles",
+  "verification_status": "未校验",
+  "decision_author": "AI evidence-based editorial decision; not user sign-off",
+  "purpose": "对既有Endacopia项目补做一次有实际数据与结论的三候选重评，决定继续投入的范围。",
+  "historical_boundary": "没有找到Endacopia原始建站前的三候选比较表。本记录不回填历史，也不宣称这三词曾在当时同时比较。",
+  "execution_completed": [
+    "读取三个候选各自的已保存关键词指标与口径",
+    "复读2026-11-04 GSC记录并保留其窗口/属性边界",
+    "2026-11-05重新读取官方游戏/FAQ/公告并对照现有内容素材",
+    "完成每候选做与不做的理由、内容切口与维护约束",
+    "选定Endacopia继续作为该既有项目的主词"
+  ],
+  "not_executed": [
+    "2026-11-05实时Trends曲线刷新",
+    "2026-11-05实时搜索量或KD采购/刷新",
+    "2026-11-05Google后台再次查询",
+    "新域名购买或新网站创建",
+    "课程平台提交或人工签署"
+  ],
+  "comparability": [
+    "三候选Similarweb记录均注明全球市场，但Endacopia旧笔记未明确保留引擎/流量拆分；观察日期也不同，不能据此排名今天热度。",
+    "OpenSEO美国月均量与Similarweb全球28天估计不属于同一口径。",
+    "Trends为相对指数，每词曾各自与GPTs配对，不将不同图指数当绝对量或横向比例。",
+    "GSC是本网站表现，第三方关键词量是市场估计；二者不能互相替代。",
+    "Krillion 11/4记录仅覆盖旧主机名；近28天与滚动24小时也不能相加。"
+  ],
+  "candidates": [
+    {
+      "keyword": "Endacopia",
+      "project_context": "既有英文谜题/流程攻略站，现有21篇内容页。",
+      "identity": {
+        "type": "单人点击解谜冒险",
+        "official_url": "https://store.steampowered.com/app/2684630/Endacopia/",
+        "official_release_date": "2026-07-27",
+        "read_on": "2026-11-05",
+        "note": "官方商店当前可读；非本月新发售游戏。"
+      },
+      "historical_metrics": [
+        {
+          "source": "Similarweb historical saved record",
+          "recorded_on": "2026-08-14",
+          "period": "Last 28 days, as of 2026-08-10",
+          "market": "Worldwide; engine/traffic split not explicitly preserved in source note",
+          "keyword": "endacopia",
+          "volume": 397900,
+          "kd": 8,
+          "evidence_path": "/Users/tan/Desktop/ai/endacopia/关键词.md",
+          "status": "historical; re-read 2026-11-05, not refreshed"
+        },
+        {
+          "source": "OpenSEO historical saved report",
+          "recorded_on": "2026-10-29",
+          "period": "database monthly estimate",
+          "market": "United States / English",
+          "keyword": "endacopia walkthrough",
+          "volume": 480,
+          "kd": 3,
+          "evidence_path": "/Users/tan/Desktop/ai/游戏站成品/2026-10-30/OpenSEO-Endacopia关键词研究-2026-10-29原版.html",
+          "status": "historical; not refreshed"
+        },
+        {
+          "source": "OpenSEO historical saved report",
+          "recorded_on": "2026-10-29",
+          "period": "database monthly estimate",
+          "market": "United States / English",
+          "keyword": "endacopia secrets",
+          "volume": 140,
+          "kd": 0,
+          "evidence_path": "/Users/tan/Desktop/ai/游戏站成品/2026-10-30/OpenSEO-Endacopia关键词研究-2026-10-29原版.html",
+          "status": "historical; not refreshed"
+        }
+      ],
+      "historical_trend": {
+        "status": "unknown_quantitative_series",
+        "note": "8/14记录包含Trends相关查询，但本轮未发现可用于品牌增速重算的同口径逐日曲线；不编造增速。",
+        "evidence_path": "/Users/tan/Desktop/ai/endacopia/关键词.md"
+      },
+      "current_trend": {
+        "value": null,
+        "status": "未刷新"
+      },
+      "current_kd": {
+        "value": null,
+        "status": "未刷新"
+      },
+      "today_observed_state": {
+        "observed_on": "2026-11-05",
+        "facts": [
+          "官方新闻页当前首条为10/16周边公告；可见1.08更新日期为8/7。没有据此声称11月新玩法爆发。",
+          "Steam原始秘密/结局攻略仍有可读正文；Core Key末尾顺序存在资料差异，Switch起始状态不能等同通用重置。"
+        ],
+        "urls": [
+          "https://steamcommunity.com/app/2684630/allnews/",
+          "https://steamcommunity.com/sharedfiles/filedetails/?id=3774754099",
+          "https://steamcommunity.com/sharedfiles/filedetails/?id=3773067527"
+        ],
+        "content_review_path": "/Users/tan/Desktop/ai/游戏站成品/2026-11-05/completion-research/content/ai-page-review-16.json"
+      },
+      "site_evidence": {
+        "observed_on": "2026-11-04",
+        "period": "GSC selected 28 days; chart 2026-10-06..2026-11-02",
+        "impressions": 2811,
+        "clicks": 48,
+        "visible_queries": [
+          "endacopia easter eggs",
+          "endacopia secrets",
+          "endacopia lost key"
+        ],
+        "index_observation": "11/4网址检查显示Old Key已编入索引；最后抓取10/31。",
+        "evidence_path": "/Users/tan/Desktop/ai/游戏站成品/2026-11-04/五站Google数据核查.md",
+        "current_read_on": null
+      },
+      "search_intent": "秘密/结局条件、缺失物品、谜题状态与路线恢复，区别于纯品牌购买/下载。",
+      "competition": {
+        "basis": "10/29已存SERP与11/5来源可读性",
+        "finding": "Steam原始攻略及同类攻略已有覆盖；历史secrets/easter eggs结果曾有本站可见度。不能因KD低就叫无竞争。",
+        "fresh_serp_on": null,
+        "evidence_path": "/Users/tan/Desktop/ai/游戏站成品/2026-10-30/OpenSEO-Endacopia关键词研究-2026-10-29原版.html"
+      },
+      "content_supply": {
+        "existing_pages": 21,
+        "reviewed_this_round": 5,
+        "strength": "原始玩家攻略、Steam讨论和既有逐页来源台账可支持具体问题；已有真实查询。",
+        "constraint": "部分步骤来源互引或冲突，少数外站当前不可读；收窄具体断言比填充万能步骤更可靠。"
+      },
+      "do": [
+        "保留Endacopia为本项目主词并继续维护现有站。",
+        "优先Secrets与Old/Lost Key的同一任务闭环；应用Core Key和Switch的已准备准确性修补。",
+        "以现有页面承接近义词，修改后观察同口径页面/查询表现。"
+      ],
+      "do_reasons": [
+        "当前已有可验证的搜索曝光、点击及关键页收录；继续准确性维护有实际对象。",
+        "21篇已建页面与来源积累使定点维护成本低于重新建同主题站。",
+        "明确缺口是路线措辞与完成信号，能在不捏造玩法的前提下修复。"
+      ],
+      "do_not": [
+        "不把8月397.9K写成11月当前搜索量。",
+        "不以这份补记重新创建Endacopia同主题站或大量同义词页面。",
+        "不把未刷新Trends或KD标成当日热词门槛通过。"
+      ],
+      "do_not_reasons": [
+        "历史指标无法证明今天仍在增长。",
+        "现有页面已覆盖主要任务，重复URL会分散维护与意图。",
+        "没有当前量化证据，应保留unknown。"
+      ],
+      "decision": "SELECT_CONTINUE_EXISTING_PROJECT",
+      "maintenance_cost": "相对较低：以已发布谜题纠错与检索改进为主；这是一项AI判断，不是工时测量。"
+    },
+    {
+      "keyword": "Krillion",
+      "project_context": "既有英文联机指南站，现有14篇内容页。",
+      "identity": {
+        "type": "官方浏览器分类答题游戏，含Daily、Unlimited及Puffer Party入口",
+        "official_url": "https://krillion.io/faq",
+        "official_release_date": null,
+        "read_on": "2026-11-05",
+        "note": "未查得可作为本记录事实的正式首发日期；本轮不猜测。"
+      },
+      "historical_metrics": [
+        {
+          "source": "Similarweb historical saved record",
+          "recorded_on": "2026-10-27",
+          "period": "Last 28 days, as of 2026-10-24",
+          "market": "Worldwide / Google / All traffic",
+          "keyword": "krillion",
+          "volume": 18600000,
+          "kd": 4,
+          "evidence_path": "/Users/tan/Desktop/ai/游戏站选词/2026-10-27/第一关最终三词.json",
+          "detail_path": "/Users/tan/Desktop/ai/游戏站选词/2026-10-27/Similarweb-Krillion.json",
+          "status": "historical estimate; not refreshed"
+        },
+        {
+          "source": "OpenSEO historical saved report",
+          "recorded_on": "2026-10-29",
+          "period": "database monthly estimate",
+          "market": "United States / English",
+          "keyword": "krillion",
+          "volume": 165000,
+          "kd": 0,
+          "evidence_path": "/Users/tan/Desktop/ai/游戏站成品/2026-10-30/OpenSEO三站关键词研究-2026-10-29原版.html",
+          "status": "historical; not refreshed"
+        }
+      ],
+      "historical_trend": {
+        "source": "Google Trends saved paired-term series",
+        "recorded_on": "2026-10-27",
+        "period": "2026-09-27..2026-10-26",
+        "market": "Worldwide / Web Search / search term paired with GPTs",
+        "previous_7_day_mean": 63.142857142857146,
+        "recent_7_day_mean": 88,
+        "growth_percent": 39.36651583710407,
+        "latest_date": "2026-10-26",
+        "evidence_path": "/Users/tan/Desktop/ai/游戏站选词/2026-10-27/第一关最终三词.json",
+        "status": "historical; not refreshed"
+      },
+      "current_trend": {
+        "value": null,
+        "status": "未刷新"
+      },
+      "current_kd": {
+        "value": null,
+        "status": "未刷新"
+      },
+      "today_observed_state": {
+        "observed_on": "2026-11-05",
+        "facts": [
+          "官方FAQ正文可读且导航列Puffer Party；FAQ正文仍残留将多人视作未来计划的说法。",
+          "本轮文本获取未展示动态Party/Unlimited完整控件，因此不把10/27私房及10/29公共非排位记录改称11/5实测。"
+        ],
+        "urls": [
+          "https://krillion.io/faq",
+          "https://krillion.io/party"
+        ],
+        "content_review_path": "/Users/tan/Desktop/ai/游戏站成品/2026-11-05/completion-research/content/ai-page-review-16.json"
+      },
+      "site_evidence": {
+        "observed_on": "2026-11-04",
+        "period": "GSC selected 28 days, available old-host history 2026-10-26..2026-11-02",
+        "host_scope": "old fizzydaisy14 property only",
+        "impressions": 512,
+        "clicks": 7,
+        "visible_queries": [
+          "krillionpufferparty",
+          "krillionparty",
+          "puffer party cheats"
+        ],
+        "coverage_note": "11/4记录未见新mr-tan主机名GSC属性，不能作为新主站完整数据；主线程后续配置另行记录。",
+        "evidence_path": "/Users/tan/Desktop/ai/游戏站成品/2026-11-04/五站Google数据核查.md",
+        "current_read_on": null
+      },
+      "search_intent": "官方入口、指定朋友建房/代码加入、随机1v1、模式差别与答案反馈；品牌总词大量为导航需求。",
+      "competition": {
+        "basis": "10/27候选研究、10/29报告及11/5二次资料复读",
+        "finding": "答案、归档、算分器已有竞品；Puffer Party房间操作也已有可读指南。历史品牌大盘不能直接分给本站。",
+        "fresh_serp_on": null,
+        "evidence_paths": [
+          "/Users/tan/Desktop/ai/游戏站选词/2026-10-27/第一关最终三词.json",
+          "/Users/tan/Desktop/ai/游戏站成品/2026-10-30/OpenSEO三站关键词研究-2026-10-29原版.html"
+        ],
+        "example_url": "https://nisu.io/guides/krillion-multiplayer/"
+      },
+      "content_supply": {
+        "existing_pages": 14,
+        "reviewed_this_round": 5,
+        "strength": "官方FAQ与此前有日期的房间操作记录可支撑明确场景。",
+        "constraint": "动态UI会变化，Rated公式/等待时间未验证；二次来源不一定独立。"
+      },
+      "do": [
+        "保留既有联机站，维持Party/私房/1v1三种任务区分。",
+        "先确认新旧主机名统计覆盖，再评价改版后的流量。",
+        "将旧界面观察和历史报价保留日期，按实际变化修订。"
+      ],
+      "do_reasons": [
+        "已有Party真实查询；房间操作问题可以具体解决。",
+        "当前覆盖缺口会误导流量判断，先补可观测性有必要。"
+      ],
+      "do_not": [
+        "不为替换Endacopia另开一个Krillion站。",
+        "不依据18.6M历史品牌估计或KD4宣称现在容易获取等量访问。",
+        "不投入没有当前题库授权/验证的每日答案搬运或复杂算分工具。"
+      ],
+      "do_not_reasons": [
+        "用户已有该站，另开同题项目不能补齐已有站的明确缺口。",
+        "指标时期和搜索意图不等于本站可得流量；当天趋势未刷新。",
+        "已有竞争和持续维护负担，当前优势是可靠联机指南。"
+      ],
+      "decision": "KEEP_SEPARATE_EXISTING_PROJECT_NO_REPLACEMENT",
+      "maintenance_cost": "中等：动态界面、模式规则、付费入口可能变化，需要按范围核查；AI判断。"
+    },
+    {
+      "keyword": "Probably Stolen",
+      "project_context": "既有英文物品/经营操作指南站，现有15篇内容页。",
+      "identity": {
+        "type": "赛博朋克商店经营游戏",
+        "official_url": "https://steamcommunity.com/app/4348910/allnews/",
+        "official_release_date": "2026-10-28",
+        "read_on": "2026-11-05",
+        "note": "当前读取的公告中包含正式版发布及10/31的1.0.0.6变更。"
+      },
+      "historical_metrics": [
+        {
+          "source": "Similarweb historical saved record",
+          "recorded_on": "2026-10-31",
+          "period": "Last 28 days, as of 2026-10-27",
+          "market": "Worldwide / Google / All traffic",
+          "keyword": "probably stolen",
+          "volume": 41200,
+          "kd": 2,
+          "evidence_path": "/Users/tan/Desktop/ai/游戏站选词/2026-10-31/三词研究结论.json",
+          "status": "historical; not refreshed"
+        }
+      ],
+      "historical_trend": {
+        "source": "Google Trends saved paired-term series",
+        "recorded_on": "2026-10-31",
+        "period": "2026-10-01..2026-10-30",
+        "market": "Worldwide / Web Search / search term paired with GPTs",
+        "previous_window": "2026-10-17..2026-10-23",
+        "recent_window": "2026-10-24..2026-10-30",
+        "previous_7_day_mean": 3.4285714285714284,
+        "recent_7_day_mean": 34.42857142857143,
+        "growth_percent": 904.1666666666667,
+        "latest_date": "2026-10-30",
+        "evidence_path": "/Users/tan/Desktop/ai/游戏站选词/2026-10-31/三词研究结论.json",
+        "status": "historical launch-period growth; not refreshed"
+      },
+      "current_trend": {
+        "value": null,
+        "status": "未刷新"
+      },
+      "current_kd": {
+        "value": null,
+        "status": "未刷新"
+      },
+      "today_observed_state": {
+        "observed_on": "2026-11-05",
+        "facts": [
+          "官方10/31 1.0.0.6新增Menu / Back绑定并改变模组系统；这是可执行内容维护依据，不能用它推导搜索增长。",
+          "本轮发现Access Cards原NPC Tips来源返回410，已找到可读机器资料并准备多夜进度修补。"
+        ],
+        "urls": [
+          "https://steamcommunity.com/app/4348910/allnews/",
+          "https://wikily.gg/probably-stolen/machines/cryptographic-desequencer"
+        ],
+        "content_review_path": "/Users/tan/Desktop/ai/游戏站成品/2026-11-05/completion-research/content/ai-page-review-16.json"
+      },
+      "site_evidence": {
+        "observed_on": "2026-11-04",
+        "period": "GSC rolling 24 hours spanning Nov 3–4; not full Nov 4 calendar day",
+        "impressions": 195,
+        "clicks": 5,
+        "page_rows": [
+          {
+            "page": "AgeWell",
+            "impressions": 26,
+            "clicks": 5
+          },
+          {
+            "page": "Access Cards",
+            "impressions": 87,
+            "clicks": 0
+          },
+          {
+            "page": "Controls",
+            "impressions": 55,
+            "clicks": 0
+          }
+        ],
+        "visible_queries": [
+          "probably stolen agewell",
+          "agewell probably stolen",
+          "probably stolen rotate items",
+          "probably stolen how to rotate items"
+        ],
+        "coverage_note": "小样本，不能据此证明稳定增长或标题差；近28天记录截止11/2，不能与该窗口相加。",
+        "evidence_path": "/Users/tan/Desktop/ai/游戏站成品/2026-11-04/五站Google数据核查.md",
+        "current_read_on": null
+      },
+      "search_intent": "正式版设备输入/供电/制作进度、按键、门卡、鉴伪和Demo迁移排错。",
+      "competition": {
+        "basis": "10/31历史研究及11/5已读取资料",
+        "finding": "Wikily与AllThings.How等已经覆盖多个机制；具体任务仍可用清楚的版本与来源差异说明改善。",
+        "fresh_serp_on": null,
+        "evidence_path": "/Users/tan/Desktop/ai/游戏站选词/2026-10-31/三词研究结论.json",
+        "example_urls": [
+          "https://wikily.gg/probably-stolen/machines/agewell",
+          "https://allthings.how/probably-stolen-how-to-make-wine/"
+        ]
+      },
+      "content_supply": {
+        "existing_pages": 15,
+        "reviewed_this_round": 6,
+        "strength": "官方补丁频繁提供清楚更新，Wiki和有操作记录的攻略可以核对已出现查询的机器问题。",
+        "constraint": "正式版与Demo资料混杂，部分链接失效、制作周期与物品接受条件需逐项注明。"
+      },
+      "do": [
+        "继续现有站，优先修Controls/Access Cards版本和步骤；保持AgeWell核心解答。",
+        "用同日期的官方补丁优先更新变化部分。",
+        "保留测试范围与来源差异，按页面和查询观察后续完整窗口。"
+      ],
+      "do_reasons": [
+        "三个实际页面已有曝光，AgeWell已有搜索点击；修补有明确落点。",
+        "1.0.0.6和失效来源是当前可验证的维护需求。"
+      ],
+      "do_not": [
+        "不把10/24–30发售期+904.17%写成11/5仍持续增长。",
+        "不再复制新的同题站替换Endacopia。",
+        "不把Wiki所有物品批量铺成空泛词条，也不保证固定NPC库存和一晚制作。"
+      ],
+      "do_not_reasons": [
+        "发售峰值可能回落，今天曲线未刷新。",
+        "已有站已承接需求，新增同题站无新增证据。",
+        "有竞争且版本变化快，应集中已出现任务和可证机制。"
+      ],
+      "decision": "KEEP_SEPARATE_EXISTING_PROJECT_TARGETED_UPDATES",
+      "maintenance_cost": "相对较高：新发售补丁、模组兼容和机器机制需要持续维护；AI判断。"
+    }
+  ],
+  "final_decision": {
+    "selected_for_endacopia_project": "Endacopia",
+    "result": "继续现有Endacopia站；不将它换成Krillion或Probably Stolen。另两站继续各自已授权维护。",
+    "reason": "Endacopia已有可见查询/点击和关键页收录，核心内容与来源积累成熟，可定点改善。其他两个词虽有历史热度，但已有独立站且当前市场数据未刷新，不能据旧指标推翻既有项目。",
+    "chosen_angle": "Secrets / Old-Lost Key / state-specific puzzle troubleshooting",
+    "new_domain_purchase": false,
+    "result_limits": "已实际完成三候选重评与选择理由；没有补出原始历史三候选证据，也没有证明2026-11-05实时热度/KD门槛全部通过。",
+    "review_triggers": [
+      "官方玩法或版本变化影响核心路线",
+      "新的GSC页面/查询证据显示独立未满足任务",
+      "同口径当前Trends、搜索量/KD和SERP取得后再评估是否扩大投入"
+    ]
+  }
+}
