@@ -1,0 +1,52 @@
+{
+  "/images/lost-key-before.jpg": {
+    "width": 615,
+    "height": 554,
+    "credit": "Viri",
+    "sourcePage": "https://steamcommunity.com/sharedfiles/filedetails/?id=3773067527",
+    "sourceImage": "https://images.steamusercontent.com/ugc/13961609768614721684/C47F00DA0A2AAF1C1AAB1D58298224F210614E8D/",
+    "checked": "2026-11-05",
+    "kind": "Community gameplay screenshot; unmodified source file",
+    "sha256": "2e548eea66ec99419d0b357088f8173463db966530120db1772790bfb979a708"
+  },
+  "/images/lost-key-after.jpg": {
+    "width": 619,
+    "height": 576,
+    "credit": "Viri",
+    "sourcePage": "https://steamcommunity.com/sharedfiles/filedetails/?id=3773067527",
+    "sourceImage": "https://images.steamusercontent.com/ugc/15704748953925547651/040E74CC8AEB6E4FFFE0142627799500AB6BEDE9/",
+    "checked": "2026-11-05",
+    "kind": "Community gameplay screenshot; unmodified source file",
+    "sha256": "5670587d5a7a71258fd42204b6577e4b8740a3472622b31fa9888fc4b216902f"
+  },
+  "/images/projector-map.jpg": {
+    "width": 1920,
+    "height": 1080,
+    "credit": "xixi",
+    "sourcePage": "https://steamcommunity.com/sharedfiles/filedetails/?id=3774754099",
+    "sourceImage": "https://images.steamusercontent.com/ugc/15466783496355650676/73F2149148321E4971EF31755DDEBF1D49B3B6CB/",
+    "checked": "2026-11-05",
+    "kind": "Community gameplay screenshot; unmodified source file",
+    "sha256": "9a450b216f32473442d3169f84c2a47b15125956d0b3f3a8603935d34f8de67c"
+  },
+  "/images/capsule-room.jpg": {
+    "width": 1920,
+    "height": 1080,
+    "credit": "xixi",
+    "sourcePage": "https://steamcommunity.com/sharedfiles/filedetails/?id=3774754099",
+    "sourceImage": "https://images.steamusercontent.com/ugc/11360731744163070029/1815721BBC08452EDD28FC1FD871292BAD79A94C/",
+    "checked": "2026-11-05",
+    "kind": "Community gameplay screenshot; unmodified source file",
+    "sha256": "fcd35172f4f8c5d8f3c05ffc5712d14db1ef49d33c77493a2d2150e61a35fcac"
+  },
+  "/images/office-stage-six.jpg": {
+    "width": 1920,
+    "height": 1080,
+    "credit": "Behind Stairs Secret Puzzle Guide author",
+    "sourcePage": "https://steamcommunity.com/sharedfiles/filedetails/?id=3773016498",
+    "sourceImage": "https://images.steamusercontent.com/ugc/15938758292493910124/7E0061F002177B334495D645202EDD6F212F50EE/",
+    "checked": "2026-11-05",
+    "kind": "Community gameplay screenshot; unmodified source file",
+    "sha256": "6ac528cb27671940cb16b1a9850edc951f3be581392a0e78f91597e6f89f4b17"
+  }
+}
