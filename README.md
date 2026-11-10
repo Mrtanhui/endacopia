@@ -4,6 +4,17 @@ An independent, spoiler-conscious guide site for **Endacopia**. It brings
 walkthroughs, endings, puzzle answers, character notes, secrets, bosses, and
 achievements into one searchable content hub.
 
+## Read the guide
+
+[Open Endacopia Field Guide](https://endacopia.asia/) for the published English guides.
+
+- [Search all guides](https://endacopia.asia/wiki#find-a-guide) by item, puzzle, character or area.
+- [Old / Lost Key and the 18-fish checklist](https://endacopia.asia/puzzles/old-key#your-fish-progress): track catches and follow the key's hidden-lock route.
+- [Secrets and Easter eggs](https://endacopia.asia/guide/secrets): compare the three area routes and check which steps are still missing.
+- [Projector Remote and hidden map](https://endacopia.asia/puzzles/projector-remote): find the remote and follow the illustrated route.
+
+These pages contain puzzle spoilers. Sources and corrections are linked on each guide.
+
 ## Included pages
 
 - Homepage with featured guides and topic navigation
