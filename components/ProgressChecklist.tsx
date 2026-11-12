@@ -2,10 +2,10 @@ import Script from "next/script";
 import Link from "@/components/InternalLink";
 import type { GuideChecklist } from "@/lib/guides";
 
-export function ProgressChecklist({ checklist, language = "en" }: { checklist: GuideChecklist; language?: "en" | "zh" }) {
+export function ProgressChecklist({ checklist, language = "en", anchorPrefix = "" }: { checklist: GuideChecklist; language?: "en" | "zh"; anchorPrefix?: string }) {
   const t = (en: string, zh: string) => language === "zh" ? zh : en;
   const count = checklist.groups.reduce((total, group) => total + group.items.length, 0);
-  return <section className="progress-checklist" id={`${checklist.id}-checklist`} data-checklist={checklist.id} data-language={language} aria-labelledby={`${checklist.id}-title`}>
+  return <section className="progress-checklist" id={`${anchorPrefix}${checklist.id}-checklist`} data-checklist={checklist.id} data-language={language} aria-labelledby={`${checklist.id}-title`}>
     <div className="checklist-heading">
       <h3 id={`${checklist.id}-title`}>{checklist.title}</h3>
       <output data-checklist-count aria-live="polite" aria-atomic="true" hidden>0 / {count} collected</output>

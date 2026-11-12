@@ -25,6 +25,9 @@ export type Guide = {
   updated: string;
   readTime: string;
   spoiler?: boolean;
+  hints?: { gentle: string; detailed: string };
+  review?: { method: string; playtest: string; version: string };
+  anchorAliases?: { id: string; target: string }[];
   quickAnswer?: string;
   relatedSlugs?: string[];
   scope?: string;

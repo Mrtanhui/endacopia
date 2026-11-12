@@ -129,3 +129,45 @@ test('published pages are English-only and Chinese routes are retired', async ()
  const map=await (await render('/sitemap.xml')).text();
  assert.doesNotMatch(map,/\/zh(?:<|\/)|hreflang/i);
 });
+
+test('homepage and guide metadata avoid revealing puzzle answers', async () => {
+  const home = await (await render('/')).text();
+  assert.doesNotMatch(home, /Lost Key|18.fish|windowed mode|277-5944|Ending C/i);
+  assert.match(home, /action="\/wiki#find-a-guide"/);
+  const key = await (await render('/puzzles/old-key')).text();
+  const hero = key.match(/<section class="article-hero[\s\S]*?<\/section>/)[0];
+  assert.doesNotMatch(hero, /Alt\+Enter|windowed mode|catch all 18/);
+  assert.match(hero, /No first-hand playtest recorded/);
+  assert.match(hero, /exact game build not verified/);
+});
+
+test('solutions and images remain in native closed details in every full guide', async () => {
+  for (const guide of guides.filter(item => item.slug !== 'wiki')) {
+    const html = await (await render(`/${guide.slug}`)).text();
+    const start = html.indexOf('<details id="full-guide"');
+    const end = html.indexOf('<details class="source-disclosure"');
+    assert.ok(start > 0 && end > start, guide.slug);
+    assert.doesNotMatch(html.slice(start, html.indexOf('>', start)), /\bopen\b/);
+    if (guide.quickAnswer) assert.ok(html.indexOf('aria-label="Quick answer"') > start, guide.slug);
+    assert.ok(html.indexOf('class="article-body"') > start, guide.slug);
+    for (const image of html.matchAll(/<figure class="guide-figure"/g)) assert.ok(image.index > start && image.index < end, guide.slug);
+    assert.ok(html.indexOf('class="desktop-toc"') > start, guide.slug);
+    assert.ok(html.indexOf('class="related"') === -1 || html.indexOf('class="related"') > start, guide.slug);
+  }
+});
+
+test('public section links and retired key anchors cannot auto-open solutions', async () => {
+  for (const guide of guides.filter(item => item.slug !== 'wiki')) {
+    const html = await (await render(`/${guide.slug}`)).text();
+    const full = html.indexOf('<details id="full-guide"');
+    for (const alias of html.matchAll(/<span[^>]+id="([^"]+)"[^>]+data-anchor-target="([^"]+)"/g)) {
+      assert.ok(alias.index < full, `${guide.slug}#${alias[1]} must remain outside closed details`);
+      assert.equal((html.match(new RegExp(`id="${alias[1]}"`, 'g')) ?? []).length, 1);
+      assert.ok(html.indexOf(`id="${alias[2]}"`) > full, `${guide.slug}: missing real section`);
+    }
+  }
+  const key = await (await render('/puzzles/old-key')).text();
+  for (const id of ['where-do-you-use-the-fishing-or-lost-key', 'i-already-have-the-fishing-key-what-next']) {
+    assert.match(key, new RegExp(`id="${id}" data-anchor-target="guide-section-use-the-key-on-the-hidden-window-lock"`));
+  }
+});

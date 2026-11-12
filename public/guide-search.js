@@ -16,5 +16,7 @@
     root.querySelector('[data-search-empty]').hidden = count > 0;
   }
   input.addEventListener('input', applyFilter);
+  // The homepage search uses a normal GET link, without a separate search service.
+  if (typeof location !== 'undefined') input.value = new URLSearchParams(location.search).get('q')?.slice(0, 120) ?? '';
   applyFilter();
 })();

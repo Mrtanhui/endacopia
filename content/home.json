@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-08",
+  "updated": "2026-11-12",
   "stats": [
     [
       "Released",
@@ -22,28 +22,28 @@
     {
       "number": "01",
       "title": "Walkthrough & area routes",
-      "description": "Choose your current area, find the puzzle steps you need, and prepare optional secrets before committing to an ending.",
+      "description": "Find your current part of the game and open the route when you need it.",
       "href": "/walkthrough",
       "label": "Start the route"
     },
     {
       "number": "02",
       "title": "Endings",
-      "description": "Compare the main outcomes without spoilers first, then open the exact route you want when you are ready.",
+      "description": "Choose when to reveal ending requirements and the steps that lead to them.",
       "href": "/endings",
       "label": "Choose an ending"
     },
     {
       "number": "03",
       "title": "Characters",
-      "description": "Meet Mellow and the strange residents of the House, Misery Town, Timesville, and the Office.",
+      "description": "Look up a character when you are ready to read about their role and encounters.",
       "href": "/characters",
       "label": "Open the index"
     },
     {
       "number": "04",
       "title": "Puzzle solutions",
-      "description": "Get focused help for the clown room, blue inflatable man, password, soccer ball, and switch puzzle.",
+      "description": "Browse focused guides for individual puzzles. Answers open only when you choose.",
       "href": "/puzzles",
       "label": "Solve a puzzle"
     }
@@ -85,7 +85,7 @@
     "puzzles/projector-remote",
     "endings/ending-c"
   ],
-  "heroLead": "Find Endacopia secrets, the Lost Key, endings and puzzle solutions in a spoiler-aware guide built around your next step.",
+  "heroLead": "Stuck on a puzzle or looking for your next step? Find the guide you need, then choose how much help to reveal.",
   "primaryLink": {
     "href": "/walkthrough",
     "label": "Start the walkthrough"

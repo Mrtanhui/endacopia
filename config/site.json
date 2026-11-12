@@ -7,8 +7,8 @@
   "languageLabel": "English edition",
   "languageCode": "EN",
   "copyrightYear": 2026,
-  "title": "Endacopia Guide — Secrets, Lost Key & Walkthrough",
-  "description": "Find Endacopia secrets, the Lost Key, Ending C routes and puzzle solutions with source-linked steps and spoiler-aware guidance.",
+  "title": "Endacopia Hints & Guides — Walkthrough and Puzzle Help",
+  "description": "Find help for Endacopia puzzles, characters and walkthroughs. Choose a hint or reveal a full guide, with credited sources and clear review limits.",
   "keywords": [
     "endacopia",
     "endacopia wiki",
@@ -93,21 +93,21 @@
   ],
   "puzzles": {
     "title": "Endacopia Puzzle Solutions",
-    "description": "Direct, source-checked answers for Endacopia's key, projector, clown, password, switch, soccer ball, and blue inflatable man puzzles.",
+    "description": "Browse Endacopia puzzle guides, then choose when to reveal the solution. Selected guides also offer small hints and more specific clues.",
     "heading": "Endacopia puzzle solutions",
-    "intro": "Choose the scene that has you stuck. Every answer begins with the shortest verified route, then explains the item chain or timing behind it.",
+    "intro": "Choose the puzzle you are working on. Solutions stay closed until you reveal the full guide; selected pages also offer hints first.",
     "callout": {
-      "label": "KEY CHECK",
-      "title": "Which Endacopia key are you missing?",
-      "description": "The Old or Lost Key belongs to the Ending C fishing route. The Core Key comes from the Office plant, Wrench, and water-cooler chain.",
+      "label": "READ AT YOUR OWN PACE",
+      "title": "Choose how much help to reveal",
+      "description": "Guide titles name items and encounters. On each guide, open the full solution when you are ready. Sources and review limits explain what the advice is based on.",
       "links": [
         [
-          "Find the Old Key",
-          "/puzzles/old-key"
+          "Browse all guide titles",
+          "/wiki"
         ],
         [
-          "Find the Core Key",
-          "/puzzles/core-key"
+          "Read the source policy",
+          "/about"
         ]
       ]
     }
@@ -117,7 +117,7 @@
     "profileUrl": "https://github.com/Mrtanhui",
     "issuesUrl": "https://github.com/Mrtanhui/endacopia/issues"
   },
-  "informationUpdated": "2026-09-11",
+  "informationUpdated": "2026-11-12",
   "privacyUpdated": "2026-10-01",
   "informationPages": [
     [

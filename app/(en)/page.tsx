@@ -1,164 +1,44 @@
-import site from "@/config/site.json";
-import home from "@/content/home.json";
 import type { Metadata } from "next";
 import Link from "@/components/InternalLink";
-import { GuideCard } from "@/components/GuideCard";
-import { getGuides } from "@/lib/guides";
+import site from "@/config/site.json";
+import home from "@/content/home.json";
 
-export const metadata: Metadata = {
-  alternates: { canonical: "/" },
-};
-
-
-
-
-
-
+export const metadata: Metadata = { alternates: { canonical: "/" } };
 
 export default function Home() {
-  const featured = home.featuredSlugs.flatMap((slug) => getGuides().filter((guide) => guide.slug === slug));
-  const priorityGuides = home.prioritySlugs.flatMap((slug) => getGuides().filter((guide) => guide.slug === slug));
-
-  return (
-    <>
-      <section className="hero section-shell">
-        <div className="hero-copy">
-          <p className="eyebrow"><span className="pulse" /> Independent game guide · v0.1</p>
-          <h1>Find your way through <span>{site.gameName}</span></h1>
-          <p className="hero-lead">
-            {home.heroLead}
-          </p>
-          <div className="button-row">
-            <Link className="button button-primary" href={home.primaryLink.href}>{home.primaryLink.label} <span aria-hidden="true">→</span></Link>
-            <Link className="button button-quiet" href="/wiki">Browse the wiki</Link>
-          </div>
-          <dl className="hero-stats">
-            {home.stats.map(([label, value]) => (
-              <div key={label}>
-                <dt>{label}</dt>
-                <dd>{value}</dd>
-              </div>
-            ))}
-          </dl>
-        </div>
-
-        <div className="hero-console" aria-label="Guide coverage overview">
-          <div className="console-bar">
-            <span>{home.consoleName}</span>
-            <span className="console-dots" aria-hidden="true"><i /><i /><i /></span>
-          </div>
-          <div className="eye-mark" aria-hidden="true"><span /></div>
-          <p className="console-kicker">CURRENT OBJECTIVE</p>
-          <p className="console-objective">{home.objective}</p>
-          <div className="signal-grid" aria-hidden="true">
-            {home.areas.map(([name, status]) => <div className="signal-row" key={name}><span>{name}</span><b>{status}</b></div>)}
-          </div>
-        </div>
-      </section>
-
-      <section className="section-shell section-pad" aria-labelledby="stuck-title">
-        <div className="section-heading"><p className="eyebrow">Stuck on a secret?</p><h2 id="stuck-title">Find the missing step</h2></div>
-        <div className="guide-grid">{priorityGuides.map((guide) => <GuideCard guide={guide} key={guide.slug} />)}</div>
-      </section>
-
-      <section className="section-shell section-pad" aria-labelledby="quick-paths-title">
-        <div className="section-heading"><p className="eyebrow">Quick paths</p><h2 id="quick-paths-title">{home.quickPaths.title}</h2></div>
-        <div className="guide-grid">
-          {home.quickPaths.items.map((item) => <div className="start-card" key={item.href}><h3>{item.title}</h3><p>{item.description}</p><Link className="text-link" href={item.href}>{item.label} →</Link></div>)}
-        </div>
-      </section>
-
-      <section className="start-section section-shell section-pad">
-        <div className="section-heading split-heading">
-          <div>
-            <p className="eyebrow">Start here</p>
-            <h2>Choose your next move</h2>
-          </div>
-          <p>Four ways into the guide. Each route brings you back to the larger map when you need more context.</p>
-        </div>
-        <div className="start-grid">
-          {home.starts.map((item) => (
-            <Link className="start-card" href={item.href} key={item.number}>
-              <span className="card-number">{item.number}</span>
-              <h3>{item.title}</h3>
-              <p>{item.description}</p>
-              <span className="text-link">{item.label} →</span>
-            </Link>
-          ))}
-        </div>
-      </section>
-
-      <section className="archive-section section-pad">
-        <div className="section-shell">
-          <div className="section-heading split-heading">
-            <div>
-              <p className="eyebrow">Guide archive</p>
-              <h2>Search by intent, not by accident</h2>
-            </div>
-            <Link className="text-link header-link" href="/wiki">View every published guide →</Link>
-          </div>
-          <div className="category-grid">
-            {home.categories.map(([eyebrow, title, description, href], index) => (
-              <Link className="category-card" href={href} key={title}>
-                <span>0{index + 1} / {eyebrow}</span>
-                <h3>{title}</h3>
-                <p>{description}</p>
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="about-section section-shell section-pad">
-        <div className="about-label">
-          <span className="vertical-word">ABOUT THE GAME</span>
-        </div>
-        <div className="about-copy">
-          <p className="eyebrow">{home.about.eyebrow}</p>
-          <h2>{home.about.title}</h2>
-          <p className="about-lead">
-            {home.about.lead}
-          </p>
-          <p>
-            {home.about.description}
-          </p>
-          <ul className="feature-list">
-            {home.about.features.map((feature) => <li key={feature}>{feature}</li>)}
-          </ul>
-          <a className="button button-quiet" href={home.about.trailer} rel="noreferrer" target="_blank">Watch the official trailer ↗</a>
-        </div>
-        <aside className="game-file">
-          <p>FILE / {home.about.fileLabel}</p>
-          <dl>
-            {home.about.facts.map(([label, value]) => <div key={label}><dt>{label}</dt><dd>{value}</dd></div>)}
-          </dl>
-        </aside>
-      </section>
-
-      <section className="featured-section section-shell section-pad">
-        <div className="section-heading split-heading">
-          <div>
-            <p className="eyebrow">Frequently needed</p>
-            <h2>Guides worth bookmarking</h2>
-          </div>
-          <p>These pages cover the routes and missable details that are hardest to reconstruct after the fact.</p>
-        </div>
-        <div className="guide-grid">
-          {featured.map((guide) => <GuideCard guide={guide} key={guide.slug} />)}
-        </div>
-      </section>
-
-      <section className="final-cta section-shell">
-        <div>
-          <p className="eyebrow">{home.cta.eyebrow}</p>
-          <h2>{home.cta.title}</h2>
-          <p>Begin with the full route, or jump straight to the exact character, boss, ending, or puzzle that brought you here.</p>
-        </div>
-        <div className="button-row">
-          <Link className="button button-primary" href={home.primaryLink.href}>{home.primaryLink.label} →</Link>
-          <Link className="button button-quiet" href="/wiki">View all guides</Link>
-        </div>
-      </section>
-    </>
-  );
+  return <>
+    <section className="hero guide-home-hero section-shell">
+      <div className="hero-copy">
+        <p className="eyebrow">Independent fan guide</p>
+        <h1>{site.gameName}<span>hints and guides</span></h1>
+        <p className="hero-lead">{home.heroLead}</p>
+        <form action="/wiki#find-a-guide" method="get" role="search" className="home-search">
+          <label htmlFor="home-query">What has you stuck?</label>
+          <div><input id="home-query" name="q" type="search" placeholder="An item, puzzle or character…" maxLength={120} /><button type="submit" className="button button-primary">Find a guide →</button></div>
+        </form>
+        <Link className="text-link" href="#browse-guides">Browse by topic ↓</Link>
+      </div>
+      <aside className="help-preview" aria-labelledby="help-preview-title">
+        <p className="eyebrow">You choose how much to reveal</p>
+        <h2 id="help-preview-title">A nudge, or the whole answer.</h2>
+        <ol>
+          <li><span>01</span><div><h3>A small hint</h3><p>A direction to try, without the full sequence.</p></div></li>
+          <li><span>02</span><div><h3>A little more help</h3><p>A more specific clue, if you still need one.</p></div></li>
+          <li><span>03</span><div><h3>The full guide</h3><p>Reveal the steps, screenshots and troubleshooting when you are ready.</p></div></li>
+        </ol>
+        <p className="help-preview-note">Hints are available on selected puzzle and route guides. Full guides stay closed until you open them.</p>
+      </aside>
+    </section>
+    <section className="section-shell home-browse" id="browse-guides" aria-labelledby="browse-title">
+      <div className="section-heading"><p className="eyebrow">Browse by topic</p><h2 id="browse-title">Find the help you need</h2><p>Guide titles name items and encounters. Choose a topic when you are ready to see its directory.</p></div>
+      <div className="start-grid">{home.starts.map(item => <Link className="start-card" href={item.href} key={item.href}>
+        <span className="card-number">{item.number}</span><h3>{item.title}</h3><p>{item.description}</p><span className="text-link">{item.label} →</span>
+      </Link>)}</div>
+      <p className="home-directory-link"><Link href="/wiki">Browse all guide titles →</Link></p>
+    </section>
+    <section className="section-shell home-editorial" aria-labelledby="editorial-title">
+      <div><p className="eyebrow">About these guides</p><h2 id="editorial-title">Know what each answer is based on.</h2></div>
+      <div><p>These guides organize official information and credited community walkthroughs, with AI assistance. Source review is separate from playing through a route ourselves.</p><p>Each guide explains its evidence and limitations. If a step behaves differently in your game, you can report the version and what happened.</p><Link className="text-link" href="/about">Read our source and correction policy →</Link></div>
+    </section>
+  </>;
 }

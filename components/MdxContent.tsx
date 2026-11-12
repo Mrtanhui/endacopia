@@ -105,12 +105,12 @@ function parse(body: string): Block[] {
   return blocks;
 }
 
-export function MdxContent({ body, checklist, language = "en" }: { body: string; checklist?: GuideChecklist; language?: "en" | "zh" }) {
+export function MdxContent({ body, checklist, language = "en", anchorPrefix = "" }: { body: string; checklist?: GuideChecklist; language?: "en" | "zh"; anchorPrefix?: string }) {
   const blocks = parse(body);
   return (
     <div className="mdx-content">
       {blocks.map((block, index) => {
-        if (block.type === "checklist") return checklist ? <ProgressChecklist language={language} checklist={checklist} key={index} /> : null;
+        if (block.type === "checklist") return checklist ? <ProgressChecklist language={language} checklist={checklist} anchorPrefix={anchorPrefix} key={index} /> : null;
         // Keyboard users must be able to focus and horizontally scroll wide tables.
         // eslint-disable-next-line jsx-a11y/no-noninteractive-tabindex
         if (block.type === "table") return <div className="guide-table-scroll" key={index} tabIndex={0} role="region" aria-label="Guide reference table"><table><thead><tr>{block.headers.map((cell, cellIndex) => <th scope="col" key={cellIndex}>{inline(cell)}</th>)}</tr></thead><tbody>{block.rows.map((row, rowIndex) => <tr key={rowIndex}>{block.headers.map((_, cellIndex) => <td key={cellIndex}>{inline(row[cellIndex] ?? "")}</td>)}</tr>)}</tbody></table></div>;
@@ -120,8 +120,8 @@ export function MdxContent({ body, checklist, language = "en" }: { body: string;
           // eslint-disable-next-line @next/next/no-img-element
           return <figure className="guide-figure" key={index}><a href={block.src} aria-label={`Open full-size image: ${block.alt}`}><img src={block.src} alt={block.alt} loading="lazy" decoding="async" width={dimensions.width} height={dimensions.height} /></a>{block.caption && <figcaption>{inline(block.caption)}</figcaption>}</figure>;
         }
-        if (block.type === "h2") return <h2 id={anchor(block.text)} key={index}>{headingText(block.text)}</h2>;
-        if (block.type === "h3") return <h3 id={anchor(block.text)} key={index}>{headingText(block.text)}</h3>;
+        if (block.type === "h2") return <h2 id={`${anchorPrefix}${anchor(block.text)}`} key={index}>{headingText(block.text)}</h2>;
+        if (block.type === "h3") return <h3 id={`${anchorPrefix}${anchor(block.text)}`} key={index}>{headingText(block.text)}</h3>;
         if (block.type === "quote") return <blockquote key={index}>{inline(block.text)}</blockquote>;
         if (block.type === "ul") return <ul key={index}>{block.items.map((item) => <li key={item}>{inline(item)}</li>)}</ul>;
         if (block.type === "ol") return <ol key={index}>{block.items.map((item) => <li key={item}>{inline(item)}</li>)}</ol>;
@@ -131,8 +131,8 @@ export function MdxContent({ body, checklist, language = "en" }: { body: string;
   );
 }
 
-export function getHeadings(body: string) {
+export function getHeadings(body: string, includeSubheadings = false) {
   return parse(body)
-    .filter((block): block is Extract<Block, { type: "h2" }> => block.type === "h2")
+    .filter((block): block is Extract<Block, { type: "h2" | "h3" }> => block.type === "h2" || (includeSubheadings && block.type === "h3"))
     .map((block) => ({ text: headingText(block.text), id: anchor(block.text) }));
 }

@@ -14,6 +14,14 @@ assert.equal(slugs.size, guides.length, 'Duplicate guide slug');
 const paths = new Set(['/', '/puzzles', ...site.informationPages.map(([, path]) => path), ...guides.map((guide) => `/${guide.slug}`)]);
 const anchor = (text) => text.toLowerCase().replace(/[^a-z0-9\s-]/g, '').trim().replace(/\s+/g, '-');
 const headings = new Map(guides.map((guide) => [`/${guide.slug}`, new Set([...guide.body.matchAll(/^#{2,3} (.+)$/gm)].map((match) => anchor(match[1])))]));
+for (const guide of guides) {
+  const ids = headings.get(`/${guide.slug}`);
+  for (const alias of guide.anchorAliases ?? []) {
+    assert.ok(ids.has(alias.target), `${guide.slug}: missing legacy anchor target ${alias.target}`);
+    assert.ok(!ids.has(alias.id), `${guide.slug}: duplicate legacy anchor ${alias.id}`);
+    ids.add(alias.id);
+  }
+}
 const checkLink = (href) => {
   if (href.startsWith('/') && !href.startsWith('//')) {
     const [path, id] = href.split('#');
