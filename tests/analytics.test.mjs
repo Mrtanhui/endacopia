@@ -22,6 +22,7 @@ function harness({ origin = 'https://endacopia.example', consent, excluded, sear
   vm.runInContext(source, context);
   const commands = () => Array.from(window.dataLayer ?? [], (args) => Array.from(args));
   return { window, scripts, banner, status, commands, context, listeners, store,
+    reveal: (level, sectionId = '', open = true) => listeners.toggle({ target: Object.assign(new Element(), { open, dataset: { helpLevel: level, sectionId } }) }),
     choose: (value) => listeners.click({ target: new Element({ '[data-analytics-choice]': { dataset: { analyticsChoice: value } } }) }),
     click: (href, matches = {}) => listeners.click({ target: new Element({ 'a[href]': Object.assign(new Element(matches), { href }) }) })
   };
@@ -30,6 +31,26 @@ test('no consent, declined, excluded and preview visits never load Google', () =
   for (const options of [{}, {consent:'denied'}, {consent:'granted',excluded:true}, {consent:'granted',origin:'http://localhost:3000'}, {consent:'granted',origin:'https://preview.vercel.app'}, {consent:'granted',search:'?analytics=off'}]) {
     const h = harness(options); assert.equal(h.scripts.length, 0); assert.equal(h.commands().length, 0);
   }
+});
+test('guide reveal events respect consent, exclude free text and stop after withdrawal', () => {
+  const h = harness();
+  h.reveal('section', 'current-step');
+  assert.equal(h.commands().length, 0);
+  h.choose('granted');
+  h.reveal('section', 'current-step');
+  h.reveal('hint', 'private@example.com');
+  h.reveal('section', 'current-step', false);
+  h.reveal('unknown', 'current-step');
+  let events = h.commands().filter(([name]) => name === 'event');
+  assert.equal(events.length, 2);
+  assert.equal(events[0][1], 'guide_reveal');
+  assert.equal(events[0][2].section_id, 'current-step');
+  assert.equal(events[1][2].section_id, 'hint');
+  assert.ok(!JSON.stringify(events).includes('private'));
+  h.choose('denied');
+  h.reveal('section', 'later-step');
+  events = h.commands().filter(([name]) => name === 'event');
+  assert.equal(events.length, 2);
 });
 test('consent starts one config pageview, repeat consent and script execution do not duplicate it', () => {
   const h = harness({search:'?email=private#secret'}); h.choose('granted'); h.choose('granted'); vm.runInContext(source, h.context);

@@ -46,8 +46,8 @@ export function ArticlePage({ guide }: { guide: Guide }) {
     : guides.filter((item) => item.category === guide.category && item.slug !== guide.slug).slice(0, 3);
 
   const contents = <>
-    {guide.quickAnswer && <section className="quick-answer" aria-label="Quick answer"><p>{t("QUICK ANSWER", "直接答案")}</p><strong>{guide.quickAnswer}</strong></section>}
-    {guide.taskLinks && <nav className="task-links" aria-label="Choose your next step">{guide.taskLinks.map((task) => <a key={task.anchor} href={`#${task.anchor}`}>{task.label}<span aria-hidden="true"> ↓</span></a>)}</nav>}
+    {gated && <div className="guide-controls" data-guide-controls hidden><p>{t("Open one section below, or choose all steps.", "逐段展开，或查看全部步骤。")}</p><div><button type="button" className="button button-primary" data-open-all>{t("Reveal all steps", "展开全部步骤")}</button><button type="button" className="button" data-close-all>{t("Close all steps", "收起全部步骤")}</button></div></div>}
+    {guide.quickAnswer && (gated ? <details className="short-answer" data-guide-panel data-guide-answer data-help-level="answer"><summary>{t("Reveal a short answer", "展开简短答案")}</summary><section className="quick-answer" aria-label="Quick answer" data-nosnippet><strong>{guide.quickAnswer}</strong></section></details> : <section className="quick-answer" aria-label="Quick answer"><p>{t("QUICK ANSWER", "直接答案")}</p><strong>{guide.quickAnswer}</strong></section>)}
     <div className="article-layout">
       <aside className="article-sidebar">
         <nav className="desktop-toc" aria-label="Table of contents"><p className="sidebar-title">{t("ON THIS PAGE", "本页目录")}</p>{headings.map((heading, index) => <a href={`#${heading.id}`} key={heading.id}><span>{String(index + 1).padStart(2, "0")}</span>{heading.text}</a>)}</nav>
@@ -56,7 +56,7 @@ export function ArticlePage({ guide }: { guide: Guide }) {
       <article className="article-body">
         {guide.checklist && <nav className="collection-shortcuts" aria-label="Collection shortcuts"><a href={`#${guide.checklist.id}-checklist`}>{t("18-fish checklist", "18 种鱼收集清单")}</a><a href="#use-the-key-on-the-hidden-window-lock">{t("Use the key", "使用钥匙")}</a><a href="#if-a-step-does-not-work">{t("Troubleshooting", "问题排查")}</a></nav>}
         {isWiki && <><GuideDirectory language={zh ? "zh" : "en"} /><WikiNavigator language={zh ? "zh" : "en"} /></>}
-        <MdxContent body={guide.body} checklist={guide.checklist} language={zh ? "zh" : "en"} anchorPrefix={anchorPrefix} />
+        <MdxContent body={guide.body} checklist={guide.checklist} language={zh ? "zh" : "en"} anchorPrefix={anchorPrefix} collapsibleSections={gated} sensitiveSections={guide.sensitiveSections} />
         <div className="guide-correction inline-correction"><h3>{t("Did a step fail in your game?", "某一步没有成功？")}</h3><p>{t("Tell us the step, game version and what happened. A GitHub account is needed to submit a correction.", "请提供步骤、游戏版本和实际结果。提交纠错需要 GitHub 账号。")}</p><a href={correction.toString()} rel="noreferrer" target="_blank">{t("Report this step on GitHub ↗", "到 GitHub 提交这一步的纠错 ↗")}</a></div>
         <a className="back-to-top" href="#main-content">{t("Back to top ↑", "返回顶部 ↑")}</a>
       </article>
@@ -70,21 +70,22 @@ export function ArticlePage({ guide }: { guide: Guide }) {
       <nav className="breadcrumbs" aria-label="Breadcrumb">{crumbs.map((crumb, i) => <span className="breadcrumb-item" key={crumb.path}>{i > 0 && <span aria-hidden="true">/</span>}{i === crumbs.length - 1 ? <span aria-current="page">{crumb.name}</span> : <Link href={crumb.path}>{crumb.name}</Link>}</span>)}</nav>
       <div className="article-title-row"><div><p className="eyebrow">{guide.category} · {guide.readTime}</p><h1>{guide.title}</h1><p className="article-description">{guide.description}</p></div><div className="article-stamp"><span>{t("PAGE UPDATED", "页面更新")}</span><b>{guide.updated}</b></div></div>
       <p className="guide-byline">{t("Maintained by", "维护者")} <a href={site.maintainer.profileUrl} rel="noreferrer" target="_blank">{site.maintainer.name}</a> · <a href="#guide-sources">{t("Sources & corrections", "来源与纠错")}</a></p>
-      {guide.review && <dl className="guide-review" aria-label="Guide evidence">
+      {guide.review && <details className="guide-evidence-details"><summary>{t("Source-reviewed guide · playtest and version details", "资料核对攻略 · 实测与版本说明")}</summary><dl className="guide-review" aria-label="Guide evidence">
         <div><dt>{t("Evidence", "资料依据")}</dt><dd>{guide.review.method}</dd></div>
         <div><dt>{t("Playtest status", "实机验证")}</dt><dd>{guide.review.playtest}</dd></div>
         <div><dt>{t("Version / platform", "版本与平台")}</dt><dd>{guide.review.version}</dd></div>
-      </dl>}
+      </dl></details>}
     </section>
     <div className="section-shell guide-reading">
       {sectionLinks.map(link => <span key={link.id} id={link.id} data-anchor-target={link.target} className="anchor-alias" aria-hidden="true" />)}
       {gated && <section className="guide-help" aria-labelledby="guide-help-title">
         <p className="eyebrow">{t("Choose your level of help", "选择提示程度")}</p><h2 id="guide-help-title">{t("How much would you like to reveal?", "你想看到多少提示？")}</h2>
-        <p>{t("The full guide includes solutions, screenshots and later discoveries. Open only what you need.", "完整攻略包含答案、截图和后续发现，请按需展开。")}</p>
-        {guide.hints && <div className="hint-panels"><details data-guide-panel className="hint-panel"><summary>{t("Give me a small hint", "给我一点提示")}</summary><p>{guide.hints.gentle}</p></details><details data-guide-panel className="hint-panel"><summary>{t("Give me a more specific hint", "给我更具体的提示")}</summary><p>{guide.hints.detailed}</p></details></div>}
+        <p>{t("Choose a hint or open a single section. Answers and images stay closed until you choose them.", "选择提示或单个章节，答案和图片只在你选择后展开。")}</p>
+        {guide.hints && <div className="hint-panels"><details data-guide-panel data-help-level="hint" className="hint-panel"><summary>{t("Give me a small hint", "给我一点提示")}</summary><p>{guide.hints.gentle}</p></details><details data-guide-panel data-help-level="clue" className="hint-panel"><summary>{t("Give me a more specific hint", "给我更具体的提示")}</summary><p>{guide.hints.detailed}</p></details></div>}
+        {guide.taskLinks && <nav className="task-links" aria-label="Choose your next step">{guide.taskLinks.map((task) => <a key={task.anchor} href={`#${task.anchor}`}>{task.label}<span aria-hidden="true"> ↓</span></a>)}</nav>}
       </section>}
       <div className="linked-section-notice" data-linked-notice hidden role="status"><p>{t("Your link points to a section inside a closed guide. Reveal that section to continue; it may contain spoilers.", "链接指向尚未展开的内容。继续查看可能包含剧透。")}</p><button type="button" className="button button-primary" data-reveal-linked>{t("Reveal linked section", "展开链接章节")}</button></div>
-      {gated ? <details id="full-guide" className="full-guide" data-guide-panel><summary><span>{t("Reveal the full guide", "展开完整攻略")}</span><small>{t("Solutions, images and section directory · spoilers", "答案、图片与目录 · 包含剧透")}</small></summary><div className="full-guide-content">{contents}</div></details> : <div className="open-guide">{contents}</div>}
+      {gated ? <details id="full-guide" className="full-guide" data-guide-panel><summary><span>{t("Browse guide sections", "查看攻略章节")}</span><small>{t("Section titles may name discoveries. Each answer opens separately.", "章节标题可能包含发现；各段答案分别展开。")}</small></summary><div className="full-guide-content">{contents}</div></details> : <div className="open-guide">{contents}</div>}
       <details className="source-disclosure" id="guide-sources" data-guide-panel>
         <summary>{t("Sources, review notes & corrections", "来源、核对说明与纠错")}<small>{t("Source titles may name discoveries", "来源标题可能包含剧透")}</small></summary>
         <section className="source-panel">

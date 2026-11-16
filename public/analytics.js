@@ -109,6 +109,18 @@
       transport_type: 'beacon'
     });
   });
+  document.addEventListener('toggle', function (event) {
+    var panel = event.target;
+    if (!active || !(panel instanceof Element) || !panel.open || !panel.dataset) return;
+    var level = panel.dataset.helpLevel;
+    if (!['hint', 'clue', 'section', 'answer'].includes(level)) return;
+    window.gtag('event', 'guide_reveal', {
+      page_path: location.pathname,
+      help_level: level,
+      section_id: /^[a-z0-9-]+$/.test(panel.dataset.sectionId || '') ? panel.dataset.sectionId : level,
+      transport_type: 'beacon'
+    });
+  }, true);
   window.addEventListener('storage', function (event) {
     if (event.key === consentKey || event.key === exclusionKey || event.key === null) {
       consent = read(consentKey);

@@ -39,6 +39,7 @@ for (const guide of guides) {
   for (const source of guide.sources) assert.match(source.url, /^https:\/\//);
   for (const related of guide.relatedSlugs ?? []) assert.ok(slugs.has(related), `${guide.slug}: missing related ${related}`);
   for (const task of guide.taskLinks ?? []) assert.ok(task.label && headings.get(`/${guide.slug}`).has(task.anchor), `${guide.slug}: invalid task link`);
+  for (const id of guide.sensitiveSections ?? []) assert.ok(headings.get(`/${guide.slug}`).has(id), `${guide.slug}: invalid sensitive section ${id}`);
   const markers = guide.body.match(/^:::checklist$/gm) ?? [];
   assert.equal(markers.length, guide.checklist ? 1 : 0, `${guide.slug}: checklist needs one matching insertion marker`);
   if (guide.checklist) {

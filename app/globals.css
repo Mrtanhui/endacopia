@@ -231,7 +231,7 @@ p { line-height: 1.72; }
 .guide-card { background: rgba(16,35,58,.46); border: 1px solid var(--line); display: flex; flex-direction: column; min-height: 300px; padding: 1.7rem; transition: border-color .2s ease, transform .2s ease; }
 .guide-card:hover { border-color: var(--cyan); transform: translateY(-4px); }
 .guide-card-top { color: var(--muted); display: flex; font-family: var(--mono); font-size: .57rem; justify-content: space-between; letter-spacing: .08em; text-transform: uppercase; }
-.guide-card h3 { font-size: 1.55rem; margin: 4rem 0 .8rem; }
+.guide-card h2, .guide-card h3 { font-size: 1.55rem; margin: 4rem 0 .8rem; }
 .guide-card p { color: var(--muted); font-size: .88rem; margin: 0; }
 
 .final-cta { align-items: center; background: var(--cyan); color: var(--night); display: grid; gap: 3rem; grid-template-columns: 1fr auto; margin-bottom: 7rem; padding: clamp(2rem, 5vw, 4rem); position: relative; }
@@ -496,7 +496,7 @@ p { line-height: 1.72; }
 }
 
 /* Reading controls: solution content is closed in the HTML, before scripts run. */
-.guide-home-hero { min-height: auto; padding-block: 4.5rem; gap: 3.5rem; align-items: start; }
+.guide-home-hero { min-height: auto; padding-block: 3rem; gap: 3rem; align-items: start; }
 .guide-home-hero h1 { font-size: clamp(2.7rem, 5.3vw, 4.8rem); line-height: 1.04; }
 .guide-home-hero .hero-lead { max-width: 36rem; font-size: 1.1rem; }
 .home-search { margin-block: 2rem 1.3rem; }
@@ -512,6 +512,40 @@ p { line-height: 1.72; }
 .help-preview h3 { font-size: 1.1rem; margin: 0; }
 .help-preview p { color: var(--muted); font-size: .9rem; margin: .5rem 0 0; }
 .help-preview .help-preview-note { font-size: .8rem; padding-top: .75rem; border-top: 1px solid var(--line); }
+.home-fast-links { display: flex; flex-wrap: wrap; gap: .6rem; margin-top: 1.3rem; }
+.home-fast-links a { border: 1px solid var(--line-strong); border-radius: 4px; padding: .6rem .9rem; font-size: .9rem; }
+.home-fast-links a:hover { background: var(--night-3); color: var(--cyan-soft); }
+.home-game-intro { padding-block: 1rem 3rem; display: grid; grid-template-columns: 1fr 2fr; gap: 2rem; }
+.home-game-intro h2 { font-size: 1.6rem; }
+.home-game-intro p { color: #bdcbd6; margin: 0; }
+.home-game-intro a { color: var(--cyan-soft); text-decoration: underline; text-underline-offset: 3px; }
+.guide-evidence-details { margin-top: 1rem; }
+.guide-evidence-details > summary { cursor: pointer; padding-block: .75rem; color: var(--cyan-soft); font-size: .9rem; }
+.guide-controls { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1rem; margin-bottom: 1rem; }
+.guide-controls[hidden] { display: none; }
+.guide-controls p { margin: 0; color: var(--muted); }
+.guide-controls > div { display: flex; flex-wrap: wrap; gap: .6rem; }
+.short-answer { border: 1px solid var(--line-strong); border-radius: 4px; }
+.short-answer > summary { padding: 1rem; cursor: pointer; color: var(--cyan-soft); }
+.short-answer .quick-answer { margin: 0; border: 0; }
+.guide-section { border: 1px solid var(--line); border-radius: 6px; margin-bottom: 1rem; overflow: clip; }
+.guide-section > summary { cursor: pointer; display: flex; gap: .8rem; align-items: baseline; padding: 1.1rem; list-style: none; min-height: 48px; }
+.guide-section > summary::-webkit-details-marker { display: none; }
+.guide-section .section-number { color: var(--cyan-soft); font: .8rem var(--mono); flex-shrink: 0; }
+.guide-section > summary h2 { font-size: 1.25rem; line-height: 1.4; margin: 0; padding: 0; border: 0; flex: 1; }
+.section-action { font-size: .75rem; color: var(--muted); flex-shrink: 0; }
+.guide-section[open] > summary { background: var(--night-3); border-bottom: 1px solid var(--line); }
+.guide-section[open] > summary .section-action { font-size: 0; }
+.guide-section[open] > summary .section-action::after { content: "Close section"; font-size: .75rem; }
+.guide-section-content { padding: 1.3rem; }
+.guide-section-content > :last-child { margin-bottom: 0; }
+@media (max-width: 700px) {
+  .home-game-intro { grid-template-columns: 1fr; gap: .7rem; }
+  .guide-section > summary { padding: 1rem .8rem; gap: .6rem; }
+  .guide-section > summary h2 { font-size: 1.1rem; }
+  .guide-section-content { padding: 1rem; }
+  .section-action { display: none; }
+}
 .home-browse { padding-block: 2rem 4rem; scroll-margin-top: 100px; }
 .home-browse h2 { font-size: clamp(2rem, 3vw, 3rem); }
 .home-browse .section-heading { margin-bottom: 1.5rem; }

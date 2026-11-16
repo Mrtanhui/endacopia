@@ -1,0 +1,586 @@
+{
+  "commit": "b31a74a62b16aa2ae184df9e8529f4eb762ef7f8",
+  "oldDomain": "endacopia-seven.vercel.app",
+  "newDomain": "endacopia.asia",
+  "guides": [
+    {
+      "slug": "guide/achievements",
+      "title": "Endacopia Achievement Guide",
+      "anchors": [
+        "achievement-plan",
+        "boss-outcome-achievements",
+        "skill-and-activity-achievements",
+        "ending-achievements",
+        "clean-up-checklist"
+      ],
+      "sources": [
+        "https://steamcommunity.com/stats/2684630/achievements",
+        "https://www.neoseeker.com/endacopia/All_Achievements",
+        "https://steamcommunity.com/sharedfiles/filedetails/?id=3774754099"
+      ],
+      "checklist": null,
+      "bodySha256": "a402c4b1c441d0b931b42d51c421c84bef0bb756fc7f2edd82a96a063b75b55c"
+    },
+    {
+      "slug": "bosses",
+      "title": "Endacopia Bosses and Encounter Routes",
+      "anchors": [
+        "regional-encounters",
+        "trapezist",
+        "the-chameleon",
+        "the-ai-and-later-encounters",
+        "minor-and-secret-encounters",
+        "general-combat-approach"
+      ],
+      "sources": [
+        "https://endacopia.fandom.com/wiki/Bosses",
+        "https://steamcommunity.com/stats/2684630/achievements",
+        "https://www.youtube.com/watch?v=yo1I-zi8I50",
+        "https://steamcommunity.com/sharedfiles/filedetails/?id=3774754099"
+      ],
+      "checklist": null,
+      "bodySha256": "0f5ed83c7980432cce3cea17504aa4a8012be064155f1e5661d03ee532ecf3d9"
+    },
+    {
+      "slug": "characters/chameleon",
+      "title": "The Chameleon in Endacopia",
+      "anchors": [
+        "who-is-the-chameleon",
+        "nighttime-pursuit",
+        "fight-outcome",
+        "avoid-outcome",
+        "troubleshooting"
+      ],
+      "sources": [
+        "https://endacopia.fandom.com/wiki/The_Chameleon",
+        "https://steamcommunity.com/stats/2684630/achievements",
+        "https://www.youtube.com/watch?v=yo1I-zi8I50",
+        "https://steamcommunity.com/sharedfiles/filedetails/?id=3774754099",
+        "https://www.reddit.com/r/Endacopia/comments/1v9ic45/camera/"
+      ],
+      "checklist": null,
+      "bodySha256": "e3e732d335f0e3965b70023b48e8dded7683af80337090944dca06e95a244796"
+    },
+    {
+      "slug": "characters",
+      "title": "Endacopia Characters",
+      "anchors": [
+        "mellow-and-the-guardian-angel",
+        "the-house",
+        "misery-town",
+        "timesville",
+        "the-office-and-wider-cast"
+      ],
+      "sources": [
+        "https://endacopia.fandom.com/wiki/Category:Characters",
+        "https://store.steampowered.com/app/2684630/Endacopia/",
+        "https://www.kickstarter.com/projects/endacopia/endacopia",
+        "https://andyl4nd.itch.io/endacopiademo"
+      ],
+      "checklist": null,
+      "bodySha256": "fad824d47926e336c1d115a87c063ffcd32252513600cb601b23d7cc637311d6"
+    },
+    {
+      "slug": "puzzles/clown-puzzle",
+      "title": "Endacopia Clown Puzzle Solution",
+      "anchors": [
+        "which-clown-puzzle",
+        "black-and-white-route",
+        "movie-seat-clue",
+        "whack-a-mole-sequence",
+        "reward-and-later-use"
+      ],
+      "sources": [
+        "https://www.neoseeker.com/endacopia/Chapter_1",
+        "https://www.youtube.com/watch?v=IzLFpVHAGYc",
+        "https://steamcommunity.com/sharedfiles/filedetails/?id=3774754099",
+        "https://steamcommunity.com/sharedfiles/filedetails/?id=3773146799"
+      ],
+      "checklist": null,
+      "bodySha256": "c7dee2fb44b37c949731d5f18415d215c32cc5086b5f811cc4be4c843eaa3e2a"
+    },
+    {
+      "slug": "puzzles/core-key",
+      "title": "Endacopia Core Key & Water Cooler Guide",
+      "anchors": [
+        "reach-the-item-chain",
+        "water-the-office-plant",
+        "trade-the-flower-for-the-wrench",
+        "release-the-core-key",
+        "use-the-core-key-and-check-the-office-gate",
+        "if-the-cooler-or-door-is-not-working",
+        "core-key-or-old-key"
+      ],
+      "sources": [
+        "https://www.neoseeker.com/endacopia/Chapter_1",
+        "https://endacopia.wiki/items/core-key/",
+        "https://endacopia.wiki/items/wrench/",
+        "https://steamcommunity.com/sharedfiles/filedetails/?id=3774754099"
+      ],
+      "checklist": null,
+      "bodySha256": "4a58cd4c248191154207a3a75dd8d0716c7f544c15bacf30a2b3966aad220194"
+    },
+    {
+      "slug": "endings/ending-c",
+      "title": "Endacopia Ending C Walkthrough",
+      "anchors": [
+        "requirements-checklist",
+        "save-preparation",
+        "fish-and-the-old-key",
+        "projector-route",
+        "office-telephone-and-waiting-condition",
+        "seven-office-symbol-stages",
+        "stage-six-reference",
+        "if-an-office-symbol-stage-will-not-clear",
+        "final-symbol-sequence-and-commitment",
+        "diagnose-a-missing-final-encounter"
+      ],
+      "sources": [
+        "https://steamcommunity.com/sharedfiles/filedetails/?id=3773635669",
+        "https://steamcommunity.com/sharedfiles/filedetails/?id=3773016498",
+        "https://steamcommunity.com/app/2684630/discussions/0/589559079513582480/",
+        "https://steamcommunity.com/sharedfiles/filedetails/?id=3774754099",
+        "https://steamcommunity.com/sharedfiles/filedetails/?id=3773067527"
+      ],
+      "checklist": null,
+      "bodySha256": "a1f22c3aee4d5211efdd16cca3bc53520d364e9600313678b84e6e5aa86a935a"
+    },
+    {
+      "slug": "endings",
+      "title": "Endacopia Endings Guide",
+      "anchors": [
+        "spoiler-free-comparison",
+        "ending-a-and-ending-b",
+        "ending-c",
+        "extra-yeti-ending",
+        "save-advice"
+      ],
+      "sources": [
+        "https://endacopia.fandom.com/wiki/Endings",
+        "https://www.neoseeker.com/endacopia/All_Endings",
+        "https://steamcommunity.com/sharedfiles/filedetails/?id=3774754099"
+      ],
+      "checklist": null,
+      "bodySha256": "eb4679efb88a301e80640481af55e14799fdba50f772e1c99e6cdb6953d67fcc"
+    },
+    {
+      "slug": "characters/henry",
+      "title": "Henry in Endacopia",
+      "anchors": [
+        "henrys-role",
+        "chapter-2-encounter",
+        "floppy-disk-and-computer-profile",
+        "using-code-471",
+        "why-henry-matters-to-the-guide"
+      ],
+      "sources": [
+        "https://endacopia.fandom.com/wiki/Henry",
+        "https://www.neoseeker.com/endacopia/Chapter_2",
+        "https://steamcommunity.com/sharedfiles/filedetails/?id=3774754099"
+      ],
+      "checklist": null,
+      "bodySha256": "d1e79d808388efde12a56f91f13ac624e30a5dcd103afe2d7f556267a450120e"
+    },
+    {
+      "slug": "characters/jester",
+      "title": "Endacopia Jester (Red Jester / Ticketo)",
+      "anchors": [
+        "which-jester-do-players-mean",
+        "booth-and-announcer-role",
+        "plushie-and-gift-sequence",
+        "microphone-and-crowd",
+        "common-mix-ups"
+      ],
+      "sources": [
+        "https://endacopia.fandom.com/wiki/Red_Jester",
+        "https://www.neoseeker.com/endacopia/Chapter_2",
+        "https://steamcommunity.com/sharedfiles/filedetails/?id=3774754099",
+        "https://steamcommunity.com/sharedfiles/filedetails/?id=3773146799"
+      ],
+      "checklist": null,
+      "bodySha256": "ce63dc9ac6eccbef0e1d1e74b7b3fe5a390e34a663489cb6331906e97b8683b0"
+    },
+    {
+      "slug": "puzzles/make-blue-guy-cry",
+      "title": "How to Make the Blue Guy Cry in Endacopia",
+      "anchors": [
+        "exact-steps",
+        "where-the-red-ball-comes-from",
+        "completing-bingo",
+        "correct-response",
+        "if-it-does-not-work"
+      ],
+      "sources": [
+        "https://www.neoseeker.com/endacopia/Chapter_2",
+        "https://www.youtube.com/watch?v=JnhfGfeh8BM",
+        "https://steamcommunity.com/sharedfiles/filedetails/?id=3774754099"
+      ],
+      "checklist": null,
+      "bodySha256": "f20c435973d94bca4182652debd9a1393ec1f429cbb21fba3dc1a471ba4ce96f"
+    },
+    {
+      "slug": "characters/mellow",
+      "title": "Mellow in Endacopia",
+      "anchors": [
+        "mellows-official-role",
+        "how-the-player-relates-to-him",
+        "appearance-and-personality",
+        "story-significance",
+        "related-guides"
+      ],
+      "sources": [
+        "https://store.steampowered.com/app/2684630/Endacopia/",
+        "https://www.kickstarter.com/projects/endacopia/endacopia",
+        "https://endacopia.fandom.com/wiki/Mellow"
+      ],
+      "checklist": null,
+      "bodySha256": "09f4af7b0c37d0094f57cfe5f5bdcd4c04f717ca6f76f007d880f3235dbcc2d1"
+    },
+    {
+      "slug": "puzzles/old-key",
+      "title": "Endacopia Old / Lost Key: How to Get It & Where to Use It",
+      "anchors": [
+        "where-do-you-use-the-fishing-or-lost-key",
+        "i-already-have-the-fishing-key-what-next",
+        "before-you-start",
+        "unlock-fishing",
+        "get-the-metal-detector",
+        "find-the-fishing-paper",
+        "read-the-clock-and-advance-time",
+        "all-18-fish-by-time-period",
+        "your-fish-progress",
+        "claim-the-old-or-lost-key",
+        "complete-the-shared-room-puzzle",
+        "use-the-key-on-the-hidden-window-lock",
+        "visual-references-for-the-difficult-steps",
+        "if-a-step-does-not-work"
+      ],
+      "sources": [
+        "https://steamcommunity.com/sharedfiles/filedetails/?id=3772931269",
+        "https://steamcommunity.com/sharedfiles/filedetails/?id=3773067527",
+        "https://steamcommunity.com/sharedfiles/filedetails/?id=3773635669",
+        "https://steamcommunity.com/sharedfiles/filedetails/?id=3774754099",
+        "https://www.neoseeker.com/endacopia/Chapter_1",
+        "https://endacopiaunstuck.com/guides/fish-key-strange-safe"
+      ],
+      "checklist": {
+        "id": "timesville-fish",
+        "title": "Your 18-fish checklist",
+        "groups": [
+          {
+            "title": "Day 1",
+            "items": [
+              {
+                "id": "nautilus",
+                "label": "Nautilus"
+              },
+              {
+                "id": "colisa-lalia",
+                "label": "Colisa Lalia"
+              },
+              {
+                "id": "jantic-fish",
+                "label": "Jantic Fish"
+              }
+            ]
+          },
+          {
+            "title": "Day 2",
+            "items": [
+              {
+                "id": "peter-panini",
+                "label": "Peter Panini"
+              },
+              {
+                "id": "seahorse",
+                "label": "Seahorse"
+              },
+              {
+                "id": "singin-fish",
+                "label": "Singin' Fish"
+              }
+            ]
+          },
+          {
+            "title": "Day 3",
+            "items": [
+              {
+                "id": "eel",
+                "label": "Eel"
+              },
+              {
+                "id": "reddest-fish-ever",
+                "label": "Reddest Fish Ever"
+              },
+              {
+                "id": "sea-man",
+                "label": "Sea Man"
+              }
+            ]
+          },
+          {
+            "title": "Night 1",
+            "items": [
+              {
+                "id": "pirate",
+                "label": "Pirate"
+              },
+              {
+                "id": "skele-fish",
+                "label": "Skele-Fish"
+              },
+              {
+                "id": "rc-ship",
+                "label": "RC Ship"
+              }
+            ]
+          },
+          {
+            "title": "Night 2",
+            "items": [
+              {
+                "id": "crab",
+                "label": "Crab"
+              },
+              {
+                "id": "starfish",
+                "label": "Starfish"
+              },
+              {
+                "id": "big-worm",
+                "label": "Big Worm"
+              }
+            ]
+          },
+          {
+            "title": "Night 3",
+            "items": [
+              {
+                "id": "drawing-of-a-fish",
+                "label": "Drawing of a Fish"
+              },
+              {
+                "id": "jelly",
+                "label": "Jelly"
+              },
+              {
+                "id": "crate",
+                "label": "Crate"
+              }
+            ]
+          }
+        ]
+      },
+      "bodySha256": "6bad94ec99be3f2116e0b088c65927e674b2300b599cd377f4a9f73f6a802dc6"
+    },
+    {
+      "slug": "puzzles/password",
+      "title": "Endacopia Password — Saw Box Code",
+      "anchors": [
+        "the-code",
+        "where-471-comes-from",
+        "where-to-enter-it",
+        "demo-password-warning",
+        "troubleshooting"
+      ],
+      "sources": [
+        "https://www.neoseeker.com/endacopia/Chapter_2",
+        "https://www.youtube.com/watch?v=JNN2VtQtUzo",
+        "https://steamcommunity.com/sharedfiles/filedetails/?id=3774754099"
+      ],
+      "checklist": null,
+      "bodySha256": "ee8b7808e1fd04889f11540d2cd1b2924456ff0f0dcd04dc230a95b28b1b27e9"
+    },
+    {
+      "slug": "puzzles/projector-remote",
+      "title": "Endacopia Projector Remote: Location & Hidden Map Route",
+      "anchors": [
+        "get-the-metal-detector-first",
+        "dig-up-the-projector-remote",
+        "reveal-and-save-the-hidden-map",
+        "follow-the-checkerboard-route",
+        "complete-the-four-capsule-puzzles",
+        "check-each-route-milestone",
+        "if-the-route-does-not-open"
+      ],
+      "sources": [
+        "https://www.neoseeker.com/endacopia/Chapter_2",
+        "https://steamcommunity.com/sharedfiles/filedetails/?id=3773635669",
+        "https://steamcommunity.com/app/2684630/discussions/0/589559342036973040/",
+        "https://steamcommunity.com/app/2684630/discussions/0/589559342036948536/",
+        "https://steamcommunity.com/sharedfiles/filedetails/?id=3774754099"
+      ],
+      "checklist": null,
+      "bodySha256": "fee3abfda46aa2e98d9ee4150680ec917a9a9194681435e018208887462228bf"
+    },
+    {
+      "slug": "guide/secrets",
+      "title": "Endacopia Secrets & Easter Eggs: Three Area Routes",
+      "anchors": [
+        "are-all-easter-eggs-required-for-ending-c",
+        "choose-your-game-version-and-goal",
+        "choose-the-secret-you-are-working-on",
+        "what-counts-as-finished",
+        "find-your-current-stopping-point",
+        "prepare-a-save-before-the-area-bosses",
+        "misery-town-remote-and-hidden-map",
+        "timesville-fish-collection-and-window-lock",
+        "the-office-clue-waiting-condition-and-symbols",
+        "optional-interactions-and-achievement-cleanup",
+        "earlier-demo-secrets-and-easter-eggs",
+        "check-what-you-have-actually-completed"
+      ],
+      "sources": [
+        "https://steamcommunity.com/sharedfiles/filedetails/?id=3773635669",
+        "https://steamcommunity.com/sharedfiles/filedetails/?id=3773067527",
+        "https://steamcommunity.com/sharedfiles/filedetails/?id=3772931269",
+        "https://www.youtube.com/watch?v=5PTvoW-0NwI"
+      ],
+      "checklist": null,
+      "bodySha256": "cc2c994dbe3b3d5425adc49c788307be1c817619f125bde7b948594e574921f5"
+    },
+    {
+      "slug": "puzzles/soccer-ball",
+      "title": "Endacopia Soccer Ball — Reach 100 Points",
+      "anchors": [
+        "official-target",
+        "visual-timing-cue",
+        "building-the-streak",
+        "common-mistakes",
+        "achievement-cleanup-advice"
+      ],
+      "sources": [
+        "https://steamcommunity.com/stats/2684630/achievements",
+        "https://andyl4nd.itch.io/endacopiademo",
+        "https://www.youtube.com/watch?v=e8-rQVGTLo0",
+        "https://steamcommunity.com/sharedfiles/filedetails/?id=3774754099"
+      ],
+      "checklist": null,
+      "bodySha256": "2ad74fe670d87601c8ae483f544e713157dd60629b8653b70c5f1b9131043325"
+    },
+    {
+      "slug": "puzzles/switch-puzzle",
+      "title": "Endacopia Switch Puzzle Order",
+      "anchors": [
+        "correct-order",
+        "why-the-starting-state-matters",
+        "identifying-the-two-blues",
+        "completion-signal",
+        "route-context"
+      ],
+      "sources": [
+        "https://www.neoseeker.com/endacopia/Chapter_1",
+        "https://www.youtube.com/watch?v=xTTW254QPCM",
+        "https://steamcommunity.com/sharedfiles/filedetails/?id=3807332422"
+      ],
+      "checklist": null,
+      "bodySha256": "663ba62c84658227f2753f51f91926a17c970e479dd981776a71526da7ebdb45"
+    },
+    {
+      "slug": "characters/trapezist",
+      "title": "Endacopia Trapezist Guide",
+      "anchors": [
+        "who-is-the-trapezist",
+        "reaching-the-performance",
+        "fight-route",
+        "avoid-route",
+        "common-reasons-the-route-stalls"
+      ],
+      "sources": [
+        "https://endacopia.fandom.com/wiki/Trapezist",
+        "https://www.neoseeker.com/endacopia/Chapter_2",
+        "https://steamcommunity.com/stats/2684630/achievements",
+        "https://steamcommunity.com/sharedfiles/filedetails/?id=3774754099"
+      ],
+      "checklist": null,
+      "bodySha256": "de425f36bebf143ea8e032b9f95f0e824dc959c0caa8cc379bec3e4b5ed7fb02"
+    },
+    {
+      "slug": "walkthrough",
+      "title": "Endacopia Walkthrough: Area Routes, Key Items & Endings",
+      "anchors": [
+        "before-you-begin",
+        "choose-your-current-area",
+        "key-items-that-are-easy-to-confuse",
+        "prepare-the-secret-route",
+        "choose-an-ending"
+      ],
+      "sources": [
+        "https://www.neoseeker.com/endacopia/walkthrough",
+        "https://www.youtube.com/watch?v=JNN2VtQtUzo",
+        "https://steamcommunity.com/sharedfiles/filedetails/?id=3773635669",
+        "https://store.steampowered.com/app/2684630/Endacopia/",
+        "https://steamcommunity.com/sharedfiles/filedetails/?id=3773146799"
+      ],
+      "checklist": null,
+      "bodySha256": "2c93668a4e7b37e87290560bf1cee55d0ca26fac9e0f17efe2fe1d25ef3db544"
+    },
+    {
+      "slug": "wiki",
+      "title": "Endacopia Wiki",
+      "anchors": [
+        "what-is-endacopia",
+        "how-this-wiki-is-organized",
+        "evidence-and-spoiler-policy",
+        "suggested-first-visit"
+      ],
+      "sources": [
+        "https://store.steampowered.com/app/2684630/Endacopia/",
+        "https://endacopia.fandom.com/wiki/Endacopia_Wiki",
+        "https://steamcommunity.com/stats/2684630/achievements",
+        "https://andyl4nd.itch.io/endacopiademo"
+      ],
+      "checklist": null,
+      "bodySha256": "7fa4da2b1d7391db5786b5cff5944c4d890152c0fb3a38fdf6b195b4fe9dfd8b"
+    }
+  ],
+  "assets": [
+    "public/favicon.png",
+    "public/favicon.svg",
+    "public/file.svg",
+    "public/globe.svg",
+    "public/images/capsule-room.jpg",
+    "public/images/fishing-clock.svg",
+    "public/images/lost-key-after.jpg",
+    "public/images/lost-key-before.jpg",
+    "public/images/office-stage-six.jpg",
+    "public/images/old-key-flow.svg",
+    "public/images/projector-map.jpg",
+    "public/images/projector-route.svg",
+    "public/images/window-lock-flow.svg",
+    "public/og.png",
+    "public/window.svg"
+  ],
+  "publicPaths": [
+    "/",
+    "/about",
+    "/bosses",
+    "/characters",
+    "/characters/chameleon",
+    "/characters/henry",
+    "/characters/jester",
+    "/characters/mellow",
+    "/characters/trapezist",
+    "/contact",
+    "/endings",
+    "/endings/ending-c",
+    "/guide/achievements",
+    "/guide/secrets",
+    "/privacy",
+    "/puzzles",
+    "/puzzles/clown-puzzle",
+    "/puzzles/core-key",
+    "/puzzles/make-blue-guy-cry",
+    "/puzzles/old-key",
+    "/puzzles/password",
+    "/puzzles/projector-remote",
+    "/puzzles/soccer-ball",
+    "/puzzles/switch-puzzle",
+    "/walkthrough",
+    "/wiki"
+  ],
+  "homeAnchors": [
+    "stuck-title",
+    "quick-paths-title"
+  ]
+}

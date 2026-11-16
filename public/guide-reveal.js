@@ -6,6 +6,16 @@
   root.dataset.initialized = 'true';
   var notice = root.querySelector('[data-linked-notice]');
   var button = root.querySelector('[data-reveal-linked]');
+  var controls = root.querySelector('[data-guide-controls]');
+  if (controls) {
+    controls.hidden = false;
+    controls.querySelector('[data-open-all]').addEventListener('click', function () {
+      root.querySelectorAll('[data-guide-section], [data-guide-answer]').forEach(function (panel) { panel.open = true; });
+    });
+    controls.querySelector('[data-close-all]').addEventListener('click', function () {
+      root.querySelectorAll('[data-guide-section], [data-guide-answer]').forEach(function (panel) { panel.open = false; });
+    });
+  }
   var pending = null;
   function linkedTarget() {
     var id;

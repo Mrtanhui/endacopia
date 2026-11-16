@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "@/components/InternalLink";
 import { InfoPage } from "@/components/InfoPage";
 import site from "@/config/site.json";
+import { siteUrl } from "@/lib/site-url";
 
 export const metadata: Metadata = { title: "About", description: "Who maintains this guide, how sources are checked, and how corrections are handled.", alternates: { canonical: "/about" } };
 export default function AboutPage() {
@@ -15,7 +16,9 @@ export default function AboutPage() {
     <p><strong>Source review</strong> means the page is based on the credited materials, with any cross-checks described in its source notes. It does not mean we personally completed the route. <strong>First-hand playtest</strong> means a maintainer played the relevant steps; we would identify the platform, game build, date and steps tested. No guide currently records such a playtest.</p>
     <p>When an exact game build is unknown, we say so. Conflicting community accounts remain labelled rather than being treated as a confirmed solution. Page update dates describe edits to the page; the source notes retain the dates and scope of earlier checks.</p>
     <h2>Reading without accidental spoilers</h2>
-    <p>The homepage uses broad topics. Directories and individual guide titles can name items, characters or discoveries, so they are not completely spoiler-free. On a guide page, hints, the full answer and source titles have separate reveal controls. The full answer contains the short solution, detailed steps, images and related guides.</p>
+    <p>The homepage uses broad topics. Directories and guide section titles can name items, characters or discoveries, so they are not completely spoiler-free. Hints, the short answer and individual sections open separately. A direct section link asks before opening that section; later steps stay closed. “Reveal all steps” is available when you want the complete route. Sources have their own reveal control.</p>
+    <h2>Current website address</h2>
+    <p>All guides are published at <a href={siteUrl.origin}>{siteUrl.hostname}</a>. Links using our earlier Vercel address redirect to the corresponding page here. Existing guide links, collection tools and source credits are retained during updates.</p>
     <p>Community screenshots are credited to their original authors and are not presented as our own gameplay captures. Original diagrams are labelled as diagrams. This is an independent fan resource; a community allowing a link does not imply its endorsement of the site.</p>
     <h2>Corrections and attribution</h2>
     <p>If a step fails in your version, please include the page URL, game version, platform and the step that differs. We review corrections against available evidence. <Link href="/contact">Send a correction</Link> or report a missing credit through the same contact page.</p>

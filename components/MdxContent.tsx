@@ -105,11 +105,9 @@ function parse(body: string): Block[] {
   return blocks;
 }
 
-export function MdxContent({ body, checklist, language = "en", anchorPrefix = "" }: { body: string; checklist?: GuideChecklist; language?: "en" | "zh"; anchorPrefix?: string }) {
+export function MdxContent({ body, checklist, language = "en", anchorPrefix = "", collapsibleSections = false, sensitiveSections = [] }: { body: string; checklist?: GuideChecklist; language?: "en" | "zh"; anchorPrefix?: string; collapsibleSections?: boolean; sensitiveSections?: string[] }) {
   const blocks = parse(body);
-  return (
-    <div className="mdx-content">
-      {blocks.map((block, index) => {
+  const renderBlock = (block: Block, index: number) => {
         if (block.type === "checklist") return checklist ? <ProgressChecklist language={language} checklist={checklist} anchorPrefix={anchorPrefix} key={index} /> : null;
         // Keyboard users must be able to focus and horizontally scroll wide tables.
         // eslint-disable-next-line jsx-a11y/no-noninteractive-tabindex
@@ -126,9 +124,24 @@ export function MdxContent({ body, checklist, language = "en", anchorPrefix = ""
         if (block.type === "ul") return <ul key={index}>{block.items.map((item) => <li key={item}>{inline(item)}</li>)}</ul>;
         if (block.type === "ol") return <ol key={index}>{block.items.map((item) => <li key={item}>{inline(item)}</li>)}</ol>;
         return <p key={index}>{inline(block.text)}</p>;
-      })}
-    </div>
-  );
+  };
+  if (!collapsibleSections) return <div className="mdx-content">{blocks.map(renderBlock)}</div>;
+
+  const sections: { heading?: string; blocks: Block[] }[] = [];
+  for (const block of blocks) {
+    if (block.type === "h2") sections.push({ heading: block.text, blocks: [] });
+    else {
+      if (!sections.length) sections.push({ blocks: [] });
+      sections[sections.length - 1].blocks.push(block);
+    }
+  }
+  return <div className="mdx-content sectioned-guide">{sections.map((section, index) => {
+    const id = section.heading ? anchor(section.heading) : "introduction";
+    return <details className="guide-section" data-guide-panel data-guide-section data-help-level="section" data-section-id={id} key={id}>
+      <summary><span className="section-number" aria-hidden="true">{String(index + 1).padStart(2, "0")}</span><h2 id={`${anchorPrefix}${id}`}>{section.heading ? headingText(section.heading) : "Before you begin"}</h2><span className="section-action" aria-hidden="true">Open section</span></summary>
+      <div className="guide-section-content" data-nosnippet={sensitiveSections.includes(id) ? "" : undefined}>{section.blocks.map(renderBlock)}</div>
+    </details>;
+  })}</div>;
 }
 
 export function getHeadings(body: string, includeSubheadings = false) {

@@ -162,7 +162,7 @@ test('public section links and retired key anchors cannot auto-open solutions', 
     const full = html.indexOf('<details id="full-guide"');
     for (const alias of html.matchAll(/<span[^>]+id="([^"]+)"[^>]+data-anchor-target="([^"]+)"/g)) {
       assert.ok(alias.index < full, `${guide.slug}#${alias[1]} must remain outside closed details`);
-      assert.equal((html.match(new RegExp(`id="${alias[1]}"`, 'g')) ?? []).length, 1);
+      assert.equal((html.match(new RegExp(`\\sid="${alias[1]}"`, 'g')) ?? []).length, 1);
       assert.ok(html.indexOf(`id="${alias[2]}"`) > full, `${guide.slug}: missing real section`);
     }
   }
@@ -170,4 +170,34 @@ test('public section links and retired key anchors cannot auto-open solutions', 
   for (const id of ['where-do-you-use-the-fishing-or-lost-key', 'i-already-have-the-fishing-key-what-next']) {
     assert.match(key, new RegExp(`id="${id}" data-anchor-target="guide-section-use-the-key-on-the-hidden-window-lock"`));
   }
+});
+
+test('each guide section and short answer is separately closed in server HTML', async () => {
+  for (const guide of guides.filter(item => item.slug !== 'wiki')) {
+    const html = await (await render(`/${guide.slug}`)).text();
+    const sections = [...html.matchAll(/<details class="guide-section"[^>]*>/g)];
+    assert.equal(sections.length, (guide.body.match(/^## /gm) ?? []).length, guide.slug);
+    for (const [tag] of sections) assert.doesNotMatch(tag, /\bopen(?:=|\s|>)/, guide.slug);
+    if (guide.quickAnswer) {
+      assert.match(html, /<details class="short-answer"[^>]*data-guide-answer/);
+      assert.match(html, /aria-label="Quick answer" data-nosnippet/);
+    }
+    assert.match(html, /data-open-all/);
+    assert.match(html, /data-close-all/);
+    for (const id of guide.sensitiveSections ?? []) {
+      const start = html.indexOf(`data-section-id="${id}"`);
+      assert.ok(start > 0, `${guide.slug}#${id}`);
+      assert.match(html.slice(start, html.indexOf('</details>', start)), /guide-section-content" data-nosnippet/);
+    }
+  }
+});
+
+test('all migrated pages, asset paths and homepage fragments are retained', async () => {
+  const baseline = JSON.parse(readFileSync('tests/fixtures/migration-baseline.json', 'utf8'));
+  for (const path of baseline.publicPaths) assert.equal((await render(path)).status, 200, path);
+  for (const asset of baseline.assets) assert.ok(existsSync(asset.replace(/^public\//, 'out/')), asset);
+  const home = await (await render('/')).text();
+  for (const id of baseline.homeAnchors) assert.ok(home.includes(`id="${id}"`), id);
+  const puzzles = await (await render('/puzzles')).text();
+  assert.doesNotMatch(puzzles, /<h3>/);
 });

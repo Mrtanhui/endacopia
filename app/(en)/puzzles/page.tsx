@@ -23,7 +23,7 @@ export default function PuzzlesPage() {
         <p><Link className="search-link" href="/wiki#find-a-guide">Search all guides →</Link></p>
       </section>
       <section className="section-shell section-pad listing-grid">
-        {puzzles.map((guide) => <GuideCard guide={guide} key={guide.slug} />)}
+        {puzzles.map((guide) => <GuideCard guide={guide} key={guide.slug} headingLevel="h2" />)}
         {calloutLinks.length > 0 && <article className="deferred-card">
           <span>{site.puzzles.callout.label}</span>
           <h2>{site.puzzles.callout.title}</h2>

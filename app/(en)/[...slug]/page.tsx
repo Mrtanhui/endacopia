@@ -17,7 +17,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const guide = getGuide(slug.join("/"));
   if (!guide) return {};
   return {
-    title: guide.title,
+    title: guide.seoTitle ?? guide.title,
     description: guide.description,
     alternates: { canonical: `/${guide.slug}` },
     openGraph: { title: guide.title, description: guide.description, type: "article", url: `/${guide.slug}`, modifiedTime: new Date(guide.updated).toISOString(), images: [{ url: site.socialImage, width: 1200, height: 630, alt: site.siteName }] },

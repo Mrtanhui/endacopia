@@ -19,6 +19,7 @@ export type Guide = {
   language?: "en" | "zh";
   originalSlug?: string;
   title: string;
+  seoTitle?: string;
   description: string;
   category: string;
   keyword: string;
@@ -28,6 +29,7 @@ export type Guide = {
   hints?: { gentle: string; detailed: string };
   review?: { method: string; playtest: string; version: string };
   anchorAliases?: { id: string; target: string }[];
+  sensitiveSections?: string[];
   quickAnswer?: string;
   relatedSlugs?: string[];
   scope?: string;
