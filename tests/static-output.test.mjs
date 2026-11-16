@@ -37,6 +37,27 @@ test("Static Next.js output contains production SEO and Google integrations", as
   assert.match(sitemap, /<loc>https:\/\/endacopia\.example\/puzzles\/old-key<\/loc>/);
 });
 
+test('text sitemap retains the complete XML URL set and both maps are discoverable', async () => {
+  const response = await render('/sitemap.txt');
+  assert.equal(response.status, 200);
+  const text = await response.text();
+  assert.ok(text.endsWith('\n'));
+  assert.ok(!text.startsWith('\uFEFF'));
+  const urls = text.trim().split('\n');
+  const xml = await (await render('/sitemap.xml')).text();
+  const xmlURLs = [...xml.matchAll(/<loc>([^<]+)<\/loc>/g)].map(match => match[1]);
+  assert.deepEqual(urls, xmlURLs);
+  assert.equal(new Set(urls).size, guides.length + 5);
+  for (const url of urls) {
+    assert.equal(new URL(url).origin, 'https://endacopia.example');
+    assert.equal(new URL(url).search, '');
+    assert.equal(new URL(url).hash, '');
+    assert.equal((await render(new URL(url).pathname)).status, 200, url);
+  }
+  const robots = await (await render('/robots.txt')).text();
+  for (const name of ['sitemap.xml', 'sitemap.txt']) assert.ok(robots.includes(`Sitemap: https://endacopia.example/${name}`));
+});
+
 test("key and secrets answers include readable tables, sources and task links", async () => {
   const key = await (await render("/puzzles/old-key")).text();
   assert.match(key, /<table>/);
