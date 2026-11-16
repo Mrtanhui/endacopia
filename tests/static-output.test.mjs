@@ -18,6 +18,12 @@ test("Static Next.js output serves the public page types and 404", async () => {
 
   const missing = await render("/not-a-real-guide");
   assert.equal(missing.status, 404);
+  const missingHTML = await missing.text();
+  assert.match(missingHTML, /Find another guide/);
+  assert.match(missingHTML, /action="\/wiki#find-a-guide"/);
+  assert.match(missingHTML, /name="robots" content="noindex"/);
+  assert.equal((missingHTML.match(/<html\b/g) ?? []).length, 1);
+  assert.equal((missingHTML.match(/<h1\b/g) ?? []).length, 1);
 });
 
 test("Static Next.js output contains production SEO and Google integrations", async () => {

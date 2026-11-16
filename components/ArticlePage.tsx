@@ -46,6 +46,7 @@ export function ArticlePage({ guide }: { guide: Guide }) {
     : guides.filter((item) => item.category === guide.category && item.slug !== guide.slug).slice(0, 3);
 
   const contents = <>
+    {isWiki && <GuideDirectory language={zh ? "zh" : "en"} />}
     {gated && <div className="guide-controls" data-guide-controls hidden><p>{t("Open one section below, or choose all steps.", "逐段展开，或查看全部步骤。")}</p><div><button type="button" className="button button-primary" data-open-all>{t("Reveal all steps", "展开全部步骤")}</button><button type="button" className="button" data-close-all>{t("Close all steps", "收起全部步骤")}</button></div></div>}
     {guide.quickAnswer && (gated ? <details className="short-answer" data-guide-panel data-guide-answer data-help-level="answer"><summary>{t("Reveal a short answer", "展开简短答案")}</summary><section className="quick-answer" aria-label="Quick answer" data-nosnippet><strong>{guide.quickAnswer}</strong></section></details> : <section className="quick-answer" aria-label="Quick answer"><p>{t("QUICK ANSWER", "直接答案")}</p><strong>{guide.quickAnswer}</strong></section>)}
     <div className="article-layout">
@@ -55,7 +56,7 @@ export function ArticlePage({ guide }: { guide: Guide }) {
       </aside>
       <article className="article-body">
         {guide.checklist && <nav className="collection-shortcuts" aria-label="Collection shortcuts"><a href={`#${guide.checklist.id}-checklist`}>{t("18-fish checklist", "18 种鱼收集清单")}</a><a href="#use-the-key-on-the-hidden-window-lock">{t("Use the key", "使用钥匙")}</a><a href="#if-a-step-does-not-work">{t("Troubleshooting", "问题排查")}</a></nav>}
-        {isWiki && <><GuideDirectory language={zh ? "zh" : "en"} /><WikiNavigator language={zh ? "zh" : "en"} /></>}
+        {isWiki && <details className="wiki-topic-directory"><summary>{t("Browse the full topic directory", "浏览完整分类目录")}</summary><WikiNavigator language={zh ? "zh" : "en"} /></details>}
         <MdxContent body={guide.body} checklist={guide.checklist} language={zh ? "zh" : "en"} anchorPrefix={anchorPrefix} collapsibleSections={gated} sensitiveSections={guide.sensitiveSections} />
         <div className="guide-correction inline-correction"><h3>{t("Did a step fail in your game?", "某一步没有成功？")}</h3><p>{t("Tell us the step, game version and what happened. A GitHub account is needed to submit a correction.", "请提供步骤、游戏版本和实际结果。提交纠错需要 GitHub 账号。")}</p><a href={correction.toString()} rel="noreferrer" target="_blank">{t("Report this step on GitHub ↗", "到 GitHub 提交这一步的纠错 ↗")}</a></div>
         <a className="back-to-top" href="#main-content">{t("Back to top ↑", "返回顶部 ↑")}</a>

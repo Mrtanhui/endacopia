@@ -19,7 +19,7 @@
     "test:template": "node scripts/test-template.mjs",
     "typecheck": "tsc --noEmit -p tsconfig.site.json",
     "test:analytics": "node --test tests/analytics.test.mjs",
-    "test:guide-tools": "node --test tests/guide-tools.test.mjs tests/guide-reveal.test.mjs"
+    "test:guide-tools": "node --test tests/guide-tools.test.mjs tests/guide-reveal.test.mjs tests/guide-search.test.mjs"
   },
   "dependencies": {
     "drizzle-orm": "0.45.2",

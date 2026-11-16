@@ -75,31 +75,3 @@ test('malformed and denied storage do not prevent using a checklist', () => {
   assert.equal(page.parts.count.textContent, '1 / 3 collected');
   assert.match(page.parts.status.textContent, /storage is unavailable/);
 });
-
-test('directory filters every query term, handles no matches and restores all links', () => {
-  const input = element({ value: '' });
-  const status = element();
-  const empty = element();
-  const rows = ['Old Key fish Timesville', 'Projector Remote Misery'].map((text) => element({ dataset: { searchText: text } }));
-  const root = element({ querySelector(selector) { return selector === 'input' ? input : selector === '[data-search-status]' ? status : empty; }, querySelectorAll() { return rows; } });
-  vm.runInNewContext(readFileSync('public/guide-search.js', 'utf8'), { document: { querySelector() { return root; } } });
-  input.value = ' FISH  key '; input.handlers.input();
-  assert.deepEqual(rows.map((row) => row.hidden), [false, true]);
-  input.value = 'unavailable'; input.handlers.input();
-  assert.equal(empty.hidden, false);
-  input.value = ''; input.handlers.input();
-  assert.deepEqual(rows.map((row) => row.hidden), [false, false]);
-  assert.equal(status.textContent, '2 guides found');
-});
-
-test('homepage search carries its query into the directory and filters on arrival', () => {
-  const input = element({ value: '' });
-  const status = element();
-  const empty = element();
-  const rows = ['Old Key fish Timesville', 'Projector Remote Misery'].map((text) => element({ dataset: { searchText: text } }));
-  const root = element({ querySelector(selector) { return selector === 'input' ? input : selector === '[data-search-status]' ? status : empty; }, querySelectorAll() { return rows; } });
-  vm.runInNewContext(readFileSync('public/guide-search.js', 'utf8'), { document: { querySelector() { return root; } }, location: { search: '?q=fish+key' }, URLSearchParams });
-  assert.equal(input.value, 'fish key');
-  assert.deepEqual(rows.map((row) => row.hidden), [false, true]);
-  assert.equal(status.textContent, '1 guide found');
-});

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "@/components/InternalLink";
 import site from "@/config/site.json";
 import home from "@/content/home.json";
+import { GuideSearchForm } from "@/components/GuideSearchForm";
 
 export const metadata: Metadata = { alternates: { canonical: "/" } };
 
@@ -13,10 +14,7 @@ export default function Home() {
         <p className="eyebrow">Independent fan guide</p>
         <h1>{site.gameName}<span>hints and guides</span></h1>
         <p className="hero-lead">{home.heroLead}</p>
-        <form action="/wiki#find-a-guide" method="get" role="search" className="home-search">
-          <label htmlFor="home-query">What has you stuck?</label>
-          <div><input id="home-query" name="q" type="search" placeholder="An item, puzzle or character…" maxLength={120} /><button type="submit" className="button button-primary">Find a guide →</button></div>
-        </form>
+        <GuideSearchForm />
         <nav className="home-fast-links" aria-label="Choose a guide topic">{site.navigation.filter(([, href]) => href !== "/wiki").slice(0, 4).map(([label, href]) => <Link href={href} key={href}>{label}</Link>)}</nav>
       </div>
       <aside className="help-preview" aria-labelledby="help-preview-title">
